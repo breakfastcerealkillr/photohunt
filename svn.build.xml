@@ -1,0 +1,40 @@
+<project name="svn" default="svn.sensor">
+  <description>
+  Provides an Ant task to extract Commit data from a Subversion server, then send this data off to
+    Hackystat.
+
+  Note: You typically invoke this with:
+    ant -Dsvn.default.userkey=[userkey] -Dsvn.default.smptserver=[smtpserver] -f svn.build.xml
+  </description>
+
+  <import file="build.xml"/>
+<!--  <property name="svn.default.userkey" value="unknown"/> -->
+  <property name="svn.default.smtpserver" value="mail.hawaii.edu"/>
+  <property name="svn.default.fromemailaddress" value="kiet@hawaii.edu"/>
+  <property name="svn.default.toemailaddress" value="kiet@hawaii.edu"/>
+
+  <target name="svn.sensor" description="Extracts Commit data from Subversion and sends it to the Hackystat server" >
+    <!-- Define the svn extractor taskdef, failing the build if the sensor is not installed. -->
+    <available classname="org.hackystat.sensor.svn.SvnSensorAntTask" property="svn.sensor.available"/>
+    <fail unless="svn.sensor.available" message="Error: Subversion sensor not installed."/>
+    <taskdef name="hacky-svn" classname="org.hackystat.sensor.svn.SvnSensorAntTask" />
+
+    <hacky-svn 
+      repositoryName="GoogleCode" 
+      repositoryUrl="http://traffometer-base-grey.googlecode.com/svn/trunk"
+      fileNamePrefix="C:\svn-google\traffometer-base-grey"
+      verbose="true"
+      fromDate="2006-11-24"
+      toDate="2006-11-27"
+      fromEmail="${svn.default.fromemailaddress}" 
+      toEmail="${svn.default.toemailaddress}" 
+      smtpServer="${svn.default.smtpserver}"
+    />
+  </target>
+
+  <!--
+      defaultHackystatAccountKey="${svn.default.userkey}"
+      debug="true"      
+  -->
+
+</project>

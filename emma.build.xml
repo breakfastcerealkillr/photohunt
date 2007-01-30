@@ -1,0 +1,197 @@
+<project name="emma" default="emma">
+  <description>
+  Generates coverage data for JUnit tests. Cleans, compiles, instruments, runs JUnit, cleans. 
+  Invocation: ant -f emma.build.xml
+  </description>
+
+  <import file="build.xml"/>
+  <import file="tomcat.build.xml"/>
+  <property name="emma.dir" location="${build.dir}/emma" />
+  <property name="junit.dir" location="${build.dir}/junit" />
+  <property name="emma.thresholds" value="class:100,method:100,block:100,line:100" />
+  <property name="junit.haltonfailure" value="false" />
+
+  <!-- Make sure emma is installed. We need version 2.0.5312. -->
+  <available file="${env.EMMA_HOME}/lib/emma.jar" property="emma.available"/>
+  <fail unless="emma.available"  message="Error: EMMA_HOME not set or emma.jar not found, indicating Emma is not installed."/>
+
+  <!-- Define the path and taskdef containing the emma binaries. -->
+  <property name="emma.lib.dir" value="${env.EMMA_HOME}/lib" />
+  <path id="emma.lib.dir" >
+    <pathelement location="${emma.lib.dir}/emma.jar" />
+    <pathelement location="${emma.lib.dir}/emma_ant.jar" />
+  </path>
+  <taskdef resource="emma_ant.properties" classpathref="emma.lib.dir" />
+
+  <target name="emma" depends="emma.report, emma.sensor" description="Runs Emma."/>
+
+  <target name="emma.tool" depends="clean, compile, emma.instrument, emma.junit.server, tomcat.deploy,
+    emma.junit.webapp, emma.dump" 
+    description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
+
+  <target name="emma.tool.webapp" depends="clean, compile, emma.instrument, tomcat.deploy,
+    emma.junit.webapp, emma.dump" 
+    description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
+
+  <target name="emma.tool.server" depends="clean, compile, emma.instrument, emma.junit.server" 
+    description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
+
+  <target name="emma.instrument" 
+    description="Instruments the class files in the war/WEB-INF/classes directory, and adds emma.jar to WEB-INF/lib">
+    <!-- Instrument the .class files. -->
+    <mkdir dir="${emma.dir}" />
+    <emma enabled="true" >
+      <instr instrpath="${build.dir}/classes"
+             destdir="${build.dir}/classes"
+             metadatafile="${emma.dir}/metadata-server.emma"
+             merge="true" mode="overwrite">
+        <filter excludes="edu.hawaii.*.Test*"/>
+        <filter excludes="edu.hawaii.*.Example*"/>
+      </instr>
+      <instr instrpath="${war.web-inf.classes.dir}"
+             destdir="${war.web-inf.classes.dir}"
+             metadatafile="${emma.dir}/metadata-webapp.emma"
+             merge="true" mode="overwrite">
+        <filter excludes="org.traffometer.*.Test*"/>
+        <filter excludes="org.traffometer.*.Example*"/>
+      </instr>
+    </emma>
+    <!-- Add emma.jar to WEB-INF/lib. -->
+    <copy todir="${war.web-inf.lib.dir}">
+      <fileset file="${env.EMMA_HOME}/lib/emma.jar" />
+    </copy>
+  </target>
+
+  <target name="emma.junit.webapp"
+    description="Runs JUnit with additional Emma jars and properties.">
+    <mkdir dir="${junit.dir}" />
+    <!-- Copy the current packet store file to another place and replace it with a test store file -->
+    <move file="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}packetStore.txt"
+      tofile="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}backUpStore.txt"/>
+    <copy file="${lib.dir}/test/test-packetstore.csv"
+      tofile="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}packetStore.txt"/>
+    <junit printsummary="withOutAndErr" fork="yes" haltonfailure="${junit.haltonfailure}">
+      <classpath>
+        <path refid="compile.classpath"/>
+        <pathelement location="${env.HTTPUNIT_HOME}/jars/Tidy.jar"/>
+        <pathelement location="${env.HTTPUNIT_HOME}/jars/js.jar"/>
+        <path refid="emma.lib.dir" />
+        <pathelement location="${java.class.path}" />
+      </classpath>
+      <sysproperty key="test.host" value="${test.host}"/>
+      <sysproperty key="photohunt.context.root" value="${system.name}"/>
+      <sysproperty key="emma.coverage.out.file" value="${emma.dir}/client.emma" />
+      <sysproperty key="emma.coverage.out.merge" value="true" />
+      <sysproperty key="emma.rt.control" value="false" />
+      <formatter type="xml" />
+      <batchtest todir="${junit.dir}">
+        <fileset dir="${src.dir}">
+          <!-- Must be changed -->
+          <include name="org/traffometer/traffobase/webapp/**/Test*.java" /> 
+        </fileset>
+      </batchtest>
+    </junit>
+  </target> 
+
+  <target name="emma.junit.server" depends="clean, compile, emma.instrument" 
+    description="Cleans, compiles, instruments byte codes, runs unit tests.">
+    
+    <!-- Run JUnit with the instrumented class files. --> 
+    <mkdir dir="${junit.dir}" />
+    <junit printsummary="withOutAndErr" fork="yes" haltonfailure="${junit.haltonfailure}">
+      <classpath path="${build.dir}/classes;${java.class.path}">
+        <path refid="emma.lib.dir" />
+        <path refid="compile.classpath"/>          
+      </classpath>
+      <sysproperty key="emma.coverage.out.file" value="${build.dir}/emma/coverage.emma" />
+      <sysproperty key="emma.coverage.out.merge" value="true" />
+      <formatter type="xml" />
+      <batchtest todir="${junit.dir}">
+        <fileset dir="${src.dir}">
+          <include name="**/Test*.java" />
+          <!-- Must be changed -->
+          <exclude name="org/traffometer/traffobase/webapp/**/Test*.java" />
+        </fileset>
+      </batchtest>
+    </junit>
+
+    <!-- Now delete the instrumented .class files. -->
+    <delete dir="${build.dir}/classes" />
+  </target>
+
+  <target name="emma.dump"
+    description="Stops the server in order to get the coverage data from Tomcat.">
+
+    <!-- Extra credit implemented by way of the nice "osfamily" parameter -->
+    <exec executable="cmd.exe" spawn="false" osfamily="windows">
+      <arg line="/c shutdown.bat"/>
+    </exec>
+    <!-- Looks like Mac OS X counts as osfamily unix, making life easier -->
+    <exec executable="shutdown.sh" spawn="false" osfamily="unix" />
+
+    <echo message="Wait for coverage.ec (maximum of 10 seconds)."/>
+    <waitfor maxwait="10" maxwaitunit="second">
+      <available file="${basedir}/coverage.ec"/>
+    </waitfor>
+    <copy file="${basedir}/coverage.ec" tofile="${emma.dir}/server.ec" />
+    <delete file="${basedir}/coverage.ec" />
+  </target>
+
+  <target name="emma.report" depends="emma.tool"
+    description="Generates XML and HTML reports.">
+    <emma enabled="true" >
+      <report sourcepath="${src.dir}"
+              sort="+name"
+              metrics="${emma.thresholds}">
+        <fileset dir="${emma.dir}" >
+          <include name="*.emma" />
+          <include name="*.ec" />
+        </fileset>
+        <xml outfile="${emma.dir}/coverage.xml" depth="method" />
+        <html outfile="${emma.dir}/index.html"
+              depth="method" columns="name,class,method,block,line" />
+      </report>
+    </emma>
+  </target>
+  
+  <target name="emma.verify" depends="emma.tool, emma.report">
+    <emma enabled="true" >
+      <report sourcepath="${src.dir}"
+              sort="+name"
+              metrics="${emma.thresholds}">
+        <fileset dir="${emma.dir}" >
+          <include name="*.emma" />
+        </fileset>
+        <txt outfile="${emma.dir}/coverage.txt" depth="method"
+          columns="class,method,block,line,name"/>
+      </report>
+    </emma>
+    <!-- Read in the coverage TXT report and look for the final warnings line. The key is to look
+         for a line near the top containing "!" which is used for underthreshold metrics -->
+    <loadfile property="emma.coverageBelowThreshold" srcfile="${emma.dir}/coverage.txt">
+      <filterchain>
+        <headfilter lines="10"/>
+        <linecontainsregexp>
+          <regexp pattern="^.*!.*\s+all classes" />
+        </linecontainsregexp>
+      </filterchain>
+    </loadfile>
+    <!--
+    <fail if="emma.coverageBelowThreshold"
+        message="Emma reported test coverage below thresholds. Thresholds: ${emma.thresholds}, actual: ${emma.coverageBelowThreshold}" />  -->
+   
+  </target>
+    
+  <target name="emma.sensor" description="Sends Emma coverage data to Hackystat using the Emma sensor.">
+    <!-- Define the emma sensor taskdef, failing the build if the sensor is not installed. -->
+    <available classname="org.hackystat.sensor.emma.EmmaSensor" property="emma.sensor.available"/>
+    <fail unless="emma.sensor.available" message="Error: Emma sensor not installed."/>
+    <taskdef name="hacky-emma" classname="org.hackystat.sensor.emma.EmmaSensor"/>
+    
+    <!-- Send Coverage data to Hackystat using the Emma sensor. --> 
+    <hacky-emma verbose="true" emmaReportXmlFile="${emma.dir}/coverage.xml">
+      <fileset dir="${src.dir}" includes="**/*.java" />
+    </hacky-emma>
+  </target>
+  
+</project>

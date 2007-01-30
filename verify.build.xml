@@ -1,0 +1,42 @@
+<project name="verify" default="verify">
+  <description>
+    Runs javadoc, checkstyle, pmd, findbugs, sclc, emma (and junit implicitly via emma), failing
+    the build if problems found. Invocation: ant -f verify.build.xml.
+  </description>
+  
+  <!-- First, override the default settings of these properties. -->
+  <property name="javadoc.failonerror" value="true" />
+  <property name="pmd.failonerror" value="true" />
+  <property name="findbugs.failOnError" value="true" />
+  <property name="checkstyle.failOnViolation" value="true" />
+  <property name="junit.haltonfailure" value="true" />
+  <!-- Coverage below these emma thresholds will cause the build to fail, overriding the value
+       in emma.build.xml 
+  <property name="emma.thresholds" value="class:90,method:90,block:90,line:90" /> -->
+
+  <!-- Now import the target definitions. -->
+  <import file="javadoc.build.xml" />
+  <import file="pmd.build.xml" />
+  <import file="findbugs.build.xml" />
+  <import file="checkstyle.build.xml" />
+  <import file="sclc.build.xml" />
+  <import file="emma.build.xml" />
+
+  <target name="verify" depends="clean, compile, javadoc, checkstyle.tool, pmd.tool, findbugs.tool, sclc.tool "
+    description="Invoke analyzers, fail if any errors found.">
+    
+    
+    <!-- Read in the output of javac (created by compile target) and look for the final warnings
+         line -->
+    <loadfile property="verify.javacWarningsFound" srcfile="${javac.output}">
+      <filterchain>
+        <linecontainsregexp>
+          <regexp pattern="^\d+ warning" />
+        </linecontainsregexp>
+      </filterchain>
+    </loadfile>
+
+    <fail if="verify.javacWarningsFound" message="javac reported warnings." />
+
+  </target>
+</project>
