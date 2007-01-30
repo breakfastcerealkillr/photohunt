@@ -1,0 +1,26 @@
+<project name="analyze" default="analyze">
+  <description>
+    Runs javadoc, checkstyle, pmd, findbugs, sclc, emma (and junit implicitly via emma),
+    generating reports and HackyStat data for each tool. Unlike verify, analyze does NOT
+    abort if a tool finds errors, it just keeps on running the rest of the tools. analyze
+    is more useful than verify for interactive use since it runs reports and doesn't stop
+    at the first problem.
+    
+    Invocation: ant -f analyze.build.xml.
+  </description>
+
+  <!-- Now import the target definitions. -->
+  <import file="javadoc.build.xml"/>
+  <import file="pmd.build.xml" />
+  <import file="findbugs.build.xml" />
+  <import file="checkstyle.build.xml" />
+  <import file="junit.build.xml" />
+  <import file="sclc.build.xml" />
+  <import file="emma.build.xml" />
+  <!-- Runs all the useful analysis programs, intended for use while in active development.
+       Note that emma runs junit, so we only call the junit.report target to get reports -->
+  <target name="analyze" 
+    depends="clean, compile, javadoc, checkstyle, pmd, findbugs, sclc, emma, junit.report, junit.sensor" 
+    description="Invoke analyzers, generate reports, DO NOT fail if any errors found.">
+  </target>
+</project>
