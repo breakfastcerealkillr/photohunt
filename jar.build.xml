@@ -11,7 +11,7 @@
     <copy todir="${jar.dir}">
       <fileset dir="${build.dir}/classes"/>
     </copy>
-    <unjar src="${basedir}/webapp/WEB-INF/lib/derby/derby.jar" dest="${jar.dir}"/>
+
     <jar jarfile="${build.dir}/${system.name}.jar" basedir="${jar.dir}/">
       <manifest>
         <attribute name="Built-By" value="${user.name}" />
