@@ -14,7 +14,7 @@
     <copy todir="${build.dir}/war">
       <fileset dir="${basedir}/webapp"/>
     </copy>
-    <copy todir="${build.dir}/war" file="${basedir}/webapp/Footer.jsp" overwrite="yes">
+    <copy todir="${build.dir}/war/pages" file="${basedir}/webapp/pages/Footer.jsp" overwrite="yes">
       <filterset>
         <filter token="version" value="${version}"/>
         <filter token="buildtime" value="${buildtime}"/>
@@ -22,10 +22,6 @@
     </copy> 
       
     <copy todir="${build.dir}/war/WEB-INF" file="${basedir}/webapp/WEB-INF/web.xml" overwrite="yes">
-      <filterset>
-          <filter token="PersistencyMechanism" value="${persistency.mechanism}"/>
-          <filter token="DBLocation" value="${derby.location}"/>
-      </filterset>
     </copy>
       
     <copy todir="${build.dir}/war/WEB-INF/lib" file="${build.dir}/photohunt.jar"/> 
