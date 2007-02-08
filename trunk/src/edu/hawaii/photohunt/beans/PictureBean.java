@@ -1,4 +1,4 @@
-package org.hawaii.edu.photohunt.webapp.beans;
+package edu.hawaii.photohunt.beans;
 
 /**
  * The PictureBean class is the bean that backs the pictures in the webapp.
