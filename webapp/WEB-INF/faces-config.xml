@@ -4,15 +4,5 @@
   "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
 
 <faces-config>
-  <navigation-rule>
-    <from-view-id>/pages/welcome.jsp</from-view-id>
-    <navigation-case>
-      <from-outcome>slideshow</from-outcome>
-      <to-view-id>/pages/slideshow.jsp</to-view-id>
-    </navigation-case>
-    <navigation-case>
-      <from-outcome>login</from-outcome>
-      <to-view-id>/pages/login.jsp</to-view-id>
-    </navigation-case>
-  </navigation-rule>
+
 </faces-config>

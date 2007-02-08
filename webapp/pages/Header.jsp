@@ -12,12 +12,13 @@
     <font face="Arial">
     <h2>Photo Hunt</h2>
 
-    <h:outputLink value="/pages/slideshow.jsp">
+    <h:outputLink value="slideshow.jsf">
       <f:verbatim>Visitors</f:verbatim>
     </h:outputLink>
     
     <f:verbatim>&nbsp</f:verbatim>
-    <h:outputLink value="/pages/login.jsp">
+    
+    <h:outputLink value="login.jsf">
       <f:verbatim>Employees</f:verbatim>
     </h:outputLink>
     
