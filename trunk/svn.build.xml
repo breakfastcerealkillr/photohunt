@@ -10,8 +10,8 @@
   <import file="build.xml"/>
 <!--  <property name="svn.default.userkey" value="unknown"/> -->
   <property name="svn.default.smtpserver" value="mail.hawaii.edu"/>
-  <property name="svn.default.fromemailaddress" value="kiet@hawaii.edu"/>
-  <property name="svn.default.toemailaddress" value="kiet@hawaii.edu"/>
+  <property name="svn.default.fromemailaddress" value="gelee@hawaii.edu"/>
+  <property name="svn.default.toemailaddress" value="gelee@hawaii.edu"/>
 
   <target name="svn.sensor" description="Extracts Commit data from Subversion and sends it to the Hackystat server" >
     <!-- Define the svn extractor taskdef, failing the build if the sensor is not installed. -->
@@ -21,11 +21,11 @@
 
     <hacky-svn 
       repositoryName="GoogleCode" 
-      repositoryUrl="http://traffometer-base-grey.googlecode.com/svn/trunk"
+      repositoryUrl="http://photohunt.googlecode.com/svn/trunk"
       fileNamePrefix="C:\svn-google\traffometer-base-grey"
       verbose="true"
-      fromDate="2006-11-24"
-      toDate="2006-11-27"
+      fromDate="2007-1-26"
+      toDate="2007-2-7"
       fromEmail="${svn.default.fromemailaddress}" 
       toEmail="${svn.default.toemailaddress}" 
       smtpServer="${svn.default.smtpserver}"

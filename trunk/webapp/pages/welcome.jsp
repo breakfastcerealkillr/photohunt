@@ -1,4 +1,4 @@
-<%@ include file="Header.jsp" %>
+<%@ include file="WelcomeHeader.jsp" %>
 
 Welcome to PhotoHunt! <br/>
 
