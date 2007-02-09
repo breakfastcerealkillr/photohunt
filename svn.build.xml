@@ -8,7 +8,6 @@
   </description>
 
   <import file="build.xml"/>
-<!--  <property name="svn.default.userkey" value="unknown"/> -->
   <property name="svn.default.smtpserver" value="mail.hawaii.edu"/>
   <property name="svn.default.fromemailaddress" value="gelee@hawaii.edu"/>
   <property name="svn.default.toemailaddress" value="gelee@hawaii.edu"/>
@@ -22,7 +21,7 @@
     <hacky-svn 
       repositoryName="GoogleCode" 
       repositoryUrl="http://photohunt.googlecode.com/svn/trunk"
-      fileNamePrefix="C:\svn-google\traffometer-base-grey"
+      fileNamePrefix="/Users/George/Documents/eclipse-workspaces/eclipse-main/photohunt/"
       verbose="true"
       fromDate="2007-1-26"
       toDate="2007-2-7"
