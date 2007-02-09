@@ -1,0 +1,21 @@
+#summary The Project's Hackystat data and analysis.
+
+== Contents ==
+
+The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
+
+
+== Data and Analysis ==
+
+  *===2/9/2007===
+    http://photohunt.googlecode.com/svn/trunk/wiki/activetime_2-8-07.png
+    http://photohunt.googlecode.com/svn/trunk/wiki/commits_2-8-07.png
+    http://photohunt.googlecode.com/svn/trunk/wiki/unittest_2-8-07.png
+    http://photohunt.googlecode.com/svn/trunk/wiki/review_2-8-07.png
+
+
+
+
+
+
+
