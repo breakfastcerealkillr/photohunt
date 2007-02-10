@@ -23,8 +23,6 @@
       repositoryUrl="http://photohunt.googlecode.com/svn/trunk"
       fileNamePrefix="/Users/George/Documents/eclipse-workspaces/eclipse-main/photohunt/"
       verbose="true"
-      fromDate="2007-1-26"
-      toDate="2007-2-7"
       fromEmail="${svn.default.fromemailaddress}" 
       toEmail="${svn.default.toemailaddress}" 
       smtpServer="${svn.default.smtpserver}"
