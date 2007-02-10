@@ -8,11 +8,9 @@ The images from the member process report in Hackystat will be posted here.  Ana
 == Data and Analysis ==
 
   *===2/9/2007===
-    http://photohunt.googlecode.com/svn/trunk/wiki/activetime_2-8-07.png
-    http://photohunt.googlecode.com/svn/trunk/wiki/commits_2-8-07.png
-    http://photohunt.googlecode.com/svn/trunk/wiki/unittest_2-8-07.png
-    http://photohunt.googlecode.com/svn/trunk/wiki/review_2-8-07.png
-
+  http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
+  http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
+  http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
 
 
