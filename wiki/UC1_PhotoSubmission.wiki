@@ -1,0 +1,17 @@
+#summary Use case 1: Submitting a picture to Photohunt (work in progress).
+#labels Phase-Requirements
+
+= Primary Actor =
+  * Visitor
+
+= Preconditions =
+  * Visitor has the address of the server and is able to send a picture via email using his/her cell phone.
+  * Visitor has a picture ready to send.
+  * Mail server for Photohunt is up and running.
+
+= Postconditions =
+  * Visitor's picture will be available for the photo review process.
+  * System will send a reply to the visitor confirming their submission.
+
+= Basic Flow = 
+
