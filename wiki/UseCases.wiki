@@ -2,10 +2,10 @@
 #labels Phase-Requirements,Featured
 
 = Visitor Use Cases =
- * [UC1_PictureSubmission]
- * [UC2_PictureViewing]
+ * [UC1_PictureSubmission]: Submitting a picture to Photohunt via email.
+ * [UC2_PictureViewing]: Viewing the approved pictures using the web application.
 
 = Reviewer Use Cases =
- * [UC3_PictureReview]
+ * [UC3_PictureReview]: Reviewing submitted pictures and approving them for display.
 
 
