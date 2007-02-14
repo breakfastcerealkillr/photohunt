@@ -1,0 +1,11 @@
+#summary List of available use cases.
+#labels Phase-Requirements,Featured
+
+= Visitor Use Cases =
+ * [UC1_PictureSubmission]
+ * [UC2_PictureViewing]
+
+= Reviewer Use Cases =
+ * [UC3_PictureReview]
+
+
