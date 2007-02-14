@@ -2,39 +2,41 @@
 #labels Phase-Requirements
 
 = Primary Actor =
-  * Visitor
+ * Visitor
 
 = Preconditions =
-  * Visitor knows the address of the web application.
+ * Visitor knows the address of the web application.
 
 = Postconditions =
-  * Visitor can browse through the approved pictures.
+ * Visitor can browse through the approved pictures.
 
 = Basic Flow =
-  # Visitor uses their web browser to visit the Photohunt web application.
-  # System displays the welcome page.
-  # Visitor clicks on the "Visitor" link.
-  # System displays the available categories.
-  # Visitor selects a picture category.
-  # System displays a picture from the selected category.
-  # Visitor clicks on "next" to view another picture.
-  # System displays another picture from the selected category.
-  # Repeat steps 7-8 until there are no pictures left.
-  # System reports that there are no more pictures to display.
+   # Visitor uses their web browser to visit the Photohunt web application.
+   # System displays the welcome page.
+   # Visitor clicks on the "Visitor" link.
+   # System displays the available categories.
+   # Visitor selects a picture category.
+   # System displays a picture from the selected category.
+   # Visitor clicks on "next" to view another picture.
+   # System displays another picture from the selected category.
+   # Repeat steps 7-8 until there are no pictures left.
+   # System reports that there are no more pictures to display.
 
 = Alternate Flows =
-  * 6a. There are no pictures in the category.
-   # System reports that there are no pictures in the category.
-  * 7a. Visitor chooses to view previous picture by clicking on the "previous" link.
-   # System displays the previously shown picture.
-  * 7b. Visitor selects a different category.
-   # System displays a picture from the new category.
+ * 6a. There are no pictures in the category.
+  # System reports that there are no pictures in the category.
+ * 7a. Visitor chooses to view previous picture by clicking on the "previous" link.
+  # System displays the previously shown picture.
+ * 7b. Visitor selects a different category.
+  # System displays a picture from the new category.
 
 = Special Requirements =
-  * None
+ * None
 
 = Frequency of Occurrence =
-  * Very often.
+ * Very often.
 
 = Open Issues =
-  * Will Javascript be required?
+ * Will Javascript be required?
+
+
