@@ -2,16 +2,16 @@
 #labels Phase-Requirements
 
 = Primary Actor =
-  * Visitor
+ * Visitor
 
 = Preconditions =
-  * Visitor has a picture ready to send.
-  * Visitor has the email address of the Photohunt server.
-  * Mail server for Photohunt is up and running.
+ * Visitor has a picture ready to send.
+ * Visitor has the email address of the Photohunt server.
+ * Mail server for Photohunt is up and running.
 
 = Postconditions =
-  * Visitor's picture will be available for the photo review process.
-  * System will send a reply to the visitor confirming their submission.
+ * Visitor's picture will be available for the photo review process.
+ * System will send a reply to the visitor confirming their submission.
 
 = Basic Flow =
 
@@ -27,10 +27,11 @@
  * 3b. System does not recognize the tag.
   # System sends a response to the visitor describing the error.
 
+= Special Requirements =
+ * None
 
+= Frequency of Occurrence =
+ * Very often.
 
-
-
-
-
-
+= Open Issues =
+ * Will email registration and validation be required?
