@@ -1,0 +1,48 @@
+#summary Use case 3: The picture reviewing process for Photohunt.
+#labels Phase-Requirements
+
+= Primary Actor =
+ * Reviewer
+
+= Preconditions =
+ * Reviewer has a valid username and password to login to the web application.
+ * Pictures have been received by the server and are ready for review.
+
+= Postconditions =
+ * The pictures are approved and ready to be shown on the web application.
+
+= Basic Flow =
+  # Reviewer visits the Photohunt web application using their browser.
+  # System displays the welcome page.
+  # Reviewer clicks on the "Employees" link.
+  # System goes to the login screen.
+  # Reviewer enters their username and password.
+  # System authenticates the user.
+  # System displays a list of picture categories.
+  # Reviewer selects a picture category.
+  # System displays a unapproved picture from the selected category.
+  # Reviewer clicks on approve.
+  # System moves the picture to a list of pictures that were approved.
+  # System displays the next unapproved picture.
+  # Repeat steps 10-13 until no more pictures are available.
+  # System reports that there are no pictures left in the category.
+
+= Alternate Flows =
+ * 6a. System fails to authenticate the user.
+  # The system redirects the browser back to the login page.
+ * 9a. There are no unapproved pictures.
+  # The system reports that there are no pictures in the category.
+ * 10a. The reviewer selects deny.
+  # The system removes the picture from the list of unapproved pictures.
+  # The system displays the next unapproved picture (step 12).
+ * 10b. The reviewer selects skip
+  # The system displays the next unapproved picture (step 12).
+
+= Special Requirements =
+ * None
+
+= Frequency of Occurrence =
+ * Very often.
+
+= Open Issues =
+ * Will Javascript be required?
