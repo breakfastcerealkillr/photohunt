@@ -25,15 +25,8 @@
 
   <target name="emma" depends="emma.report, emma.sensor" description="Runs Emma."/>
 
-  <target name="emma.tool" depends="clean, compile, emma.instrument, emma.junit.server, tomcat.deploy,
-    emma.junit.webapp, emma.dump" 
-    description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
-
-  <target name="emma.tool.webapp" depends="clean, compile, emma.instrument, tomcat.deploy,
-    emma.junit.webapp, emma.dump" 
-    description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
-
-  <target name="emma.tool.server" depends="clean, compile, emma.instrument, emma.junit.server" 
+  <target name="emma.tool" depends="clean, compile, emma.instrument, tomcat.deploy,
+    emma.junit, emma.dump" 
     description="Cleans, compiles, instruments byte codes, runs unit tests, generates Emma report."/>
 
   <target name="emma.instrument" 
@@ -62,61 +55,28 @@
     </copy>
   </target>
 
-  <target name="emma.junit.webapp"
-    description="Runs JUnit with additional Emma jars and properties.">
+  <target name="emma.junit" description="Runs JUnit with additional Emma jars and properties.">
     <mkdir dir="${junit.dir}" />
-    <!-- Copy the current packet store file to another place and replace it with a test store file -->
-    <move file="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}packetStore.txt"
-      tofile="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}backUpStore.txt"/>
-    <copy file="${lib.dir}/test/test-packetstore.csv"
-      tofile="${env.CATALINA_HOME}/webapps/${system.name}${PacketStorePath}packetStore.txt"/>
-    <junit printsummary="withOutAndErr" fork="yes" haltonfailure="${junit.haltonfailure}">
+    <junit printsummary="withOutAndErr" fork="yes">
       <classpath>
-        <path refid="compile.classpath"/>
-        <pathelement location="${env.HTTPUNIT_HOME}/jars/Tidy.jar"/>
-        <pathelement location="${env.HTTPUNIT_HOME}/jars/js.jar"/>
+        <pathelement location="${war.web-inf.classes.dir}" />
+        <path refid="compile.classpath" />
+        <pathelement location="${env.HTTPUNIT_HOME}/jars/Tidy.jar" />
+        <pathelement location="${env.HTTPUNIT_HOME}/jars/js.jar" />
         <path refid="emma.lib.dir" />
         <pathelement location="${java.class.path}" />
       </classpath>
-      <sysproperty key="test.host" value="${test.host}"/>
-      <sysproperty key="photohunt.context.root" value="${system.name}"/>
+      <sysproperty key="test.url" value="${test.host}/${system.name}" />
       <sysproperty key="emma.coverage.out.file" value="${emma.dir}/client.emma" />
       <sysproperty key="emma.coverage.out.merge" value="true" />
       <sysproperty key="emma.rt.control" value="false" />
       <formatter type="xml" />
       <batchtest todir="${junit.dir}">
         <fileset dir="${src.dir}">
-          <!-- Must be changed -->
-          <include name="org/traffometer/traffobase/webapp/**/Test*.java" /> 
-        </fileset>
-      </batchtest>
-    </junit>
-  </target> 
-
-  <target name="emma.junit.server" depends="clean, compile, emma.instrument" 
-    description="Cleans, compiles, instruments byte codes, runs unit tests.">
-    
-    <!-- Run JUnit with the instrumented class files. --> 
-    <mkdir dir="${junit.dir}" />
-    <junit printsummary="withOutAndErr" fork="yes" haltonfailure="${junit.haltonfailure}">
-      <classpath path="${build.dir}/classes;${java.class.path}">
-        <path refid="emma.lib.dir" />
-        <path refid="compile.classpath"/>          
-      </classpath>
-      <sysproperty key="emma.coverage.out.file" value="${build.dir}/emma/coverage.emma" />
-      <sysproperty key="emma.coverage.out.merge" value="true" />
-      <formatter type="xml" />
-      <batchtest todir="${junit.dir}">
-        <fileset dir="${src.dir}">
           <include name="**/Test*.java" />
-          <!-- Must be changed -->
-          <exclude name="org/traffometer/traffobase/webapp/**/Test*.java" />
         </fileset>
       </batchtest>
     </junit>
-
-    <!-- Now delete the instrumented .class files. -->
-    <delete dir="${build.dir}/classes" />
   </target>
 
   <target name="emma.dump"

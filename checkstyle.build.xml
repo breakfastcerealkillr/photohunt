@@ -27,7 +27,7 @@
      <checkstyle config="${lib.dir}/checkstyle/checkstyle.modules.xml"
                  failOnViolation="${checkstyle.failOnViolation}" 
                  classpathref="compile.classpath">
-       <fileset dir="${src.dir}/org/traffometer/traffobase" includes="**/*.java" />
+       <fileset dir="${src.dir}/edu/hawaii/photohunt" includes="**/*.java" />
        <formatter type="plain"/>
        <formatter type="xml" tofile="${checkstyle.dir}/checkstyle.xml"/>
      </checkstyle>

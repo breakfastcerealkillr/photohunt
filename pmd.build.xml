@@ -33,7 +33,7 @@
          failonerror="${pmd.failonerror}"
          failOnRuleViolation="${pmd.failonerror}" >
       <formatter type="xml" toFile="${pmd.dir}/pmd.xml" />
-      <fileset dir="${src.dir}/org/traffometer/traffobase" includes="**/*.java" />
+      <fileset dir="${src.dir}/edu/hawaii/photohunt" includes="**/*.java" />
     </pmd>
     <echo message="PMD found ${pmd.failure.count} problem(s)." />
   </target>
