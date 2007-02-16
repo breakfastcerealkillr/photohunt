@@ -1,16 +1,25 @@
 #summary The Project's Hackystat data and analysis.
 
-== Contents ==
+= Contents =
 
 The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
 
 
-== Data and Analysis ==
+= Data and Analysis =
 
-  *===2/9/2007===
+  *==Week of 2/9 to 2/16==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
+
+  The focus this week was mostly on requirements, so there was not a lot of time spent on development.  After the meeting on Wednesday, George spent time working on programming while Elayne finished up the requirements.
+
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
+
+  George did not commit his code yet, so there are no commits this week.
+  
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
+
+  George ran some tests on his code to make sure they worked.
+
 
 
 
