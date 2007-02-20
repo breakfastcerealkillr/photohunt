@@ -17,7 +17,7 @@
       version="true"
       use="true"
       package="true"
-      overview="${src.dir}/org/traffometer/traffobase/overview.html"
+      overview="${src.dir}/edu/hawaii/photohunt/overview.html"
       windowtitle="${system.name} API"
       doctitle="${system.name} API"
       failonerror="${javadoc.failonerror}"
