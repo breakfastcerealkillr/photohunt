@@ -1,0 +1,6 @@
+#summary The latest releases and information relating to Photo Hunt development.
+#labels Featured
+
+= 2/23/07 =
+  * Version 1.0 of Photo Hunt is here.  You can get it by clicking on the "Downloads" tab or by clicking [http://code.google.com/p/photohunt/downloads/list here].
+
