@@ -3,5 +3,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/jar/activation.jar"/>
+	<classpathentry kind="lib" path="lib/jar/imap.jar"/>
+	<classpathentry kind="lib" path="lib/jar/mail.jar"/>
+	<classpathentry kind="lib" path="lib/jar/mailapi.jar"/>
+	<classpathentry kind="lib" path="lib/jar/pop3.jar"/>
+	<classpathentry kind="lib" path="lib/jar/smtp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
