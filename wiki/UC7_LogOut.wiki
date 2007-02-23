@@ -20,6 +20,8 @@
     #  System removes user data.
     #  System displays Photo Hunt employee login page.
 
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
+
 = Alternate Flows =
 	* None
 
