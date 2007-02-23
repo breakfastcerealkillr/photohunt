@@ -8,12 +8,13 @@ This guide is for new users to the Photo Hunt web application, specifically Bish
 
 = Log In =
 
-# Click on "Photo Hunt" on the main Bishop Museum http://www.bishopmuseum.org website. 
-# Enter in your user name and password.
+  # Click on "Photo Hunt" on the main Bishop Museum http://www.bishopmuseum.org website. 
+  # Enter in your user name and password.
 
+= Functions =
+You will see a summary page like below.
 http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
-You will see a summary page like above.
-* To review pictures, click on "Review Pictures".
-* To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
-* To edit account settings, click on "Edit Account Settings".
-* To log out from Photo Hunt, click on "Log Out".
+  * To review pictures, click on "Review Pictures".
+  * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
+  * To edit account settings, click on "Edit Account Settings".
+  * To log out from Photo Hunt, click on "Log Out".
