@@ -1,4 +1,4 @@
-#summary Use case 5: The ability to add, remove and change an existing Photo Hunt game. A "game" is defined as a scavenger list of items to search for.
+#summary Use case 5: The ability to add, remove and change an existing Photo Hunt game. A 'game' is defined as a scavenger list of items to search for.
 
 = Primary Actor =
     * Reviewer
@@ -50,4 +50,3 @@
 
 = Open Issues =
     * May be best to use something like AJAX for this simple form data?
-
