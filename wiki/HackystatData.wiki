@@ -7,7 +7,7 @@ The images from the member process report in Hackystat will be posted here.  Ana
 
 = Data and Analysis =
 
-  *==Week of 2/9 to 2/16==
+  *==Week of 2/17 to 2/23==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime2.png
 
   A lot more programming went on this week in order to get version 1.0 out in time by this Friday.
@@ -33,7 +33,6 @@ The images from the member process report in Hackystat will be posted here.  Ana
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
   George ran some tests on his code to make sure they worked.
-
 
 
 
