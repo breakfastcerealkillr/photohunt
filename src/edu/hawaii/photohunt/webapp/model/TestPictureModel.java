@@ -32,7 +32,7 @@ public class TestPictureModel extends TestCase {
     }
 
     //Test that the two picture arrays are the same length and that they contain the same file.
-    for (String testName : testModel.approvedPictures) {
+    for (String testName : PictureModel.approvedPictures) {
       assertTrue("Testing approval of all pictures.", testModel.getApproved().contains(testName));
     }
   }

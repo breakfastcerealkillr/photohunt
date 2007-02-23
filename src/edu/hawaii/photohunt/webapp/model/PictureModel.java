@@ -20,7 +20,7 @@ public class PictureModel {
   protected List<String> newPictures = new ArrayList<String>();
 
   /** List of the approved pictures. */
-  protected List<String> approvedPictures = new ArrayList<String>();
+  protected static final List<String> approvedPictures = new ArrayList<String>();
 
   /**
    * Create a new PictureModel instance.  Places jpg and gif files into the folder.
@@ -45,7 +45,7 @@ public class PictureModel {
    * @param filename The file path of the picture to be approved.
    */
   public void approvePicture(String filename) {
-    this.approvedPictures.add(filename);
+    PictureModel.approvedPictures.add(filename);
   }
 
   /**
@@ -63,7 +63,7 @@ public class PictureModel {
    * @return The file names of the approved pictures.
    */
   public List<String> getApproved() {
-    return this.approvedPictures;
+    return PictureModel.approvedPictures;
   }
 
   /**
