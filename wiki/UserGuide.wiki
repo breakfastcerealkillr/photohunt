@@ -13,6 +13,7 @@ This guide is for new users to the Photo Hunt web application, specifically Bish
 
 = Functions =
 You will see a summary page like below.
+
 http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
   * To review pictures, click on "Review Pictures".
   * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
