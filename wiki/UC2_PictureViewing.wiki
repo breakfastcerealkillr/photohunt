@@ -14,8 +14,11 @@
    # Visitor uses their web browser to visit the Photohunt web application.
    # System displays the welcome page.
    # Visitor clicks on the "Visitor" link.
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC2_PictureViewing_img1.jpg
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC2_PictureViewing_img2.jpg
    # System displays the available categories.
    # Visitor selects a picture category.
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC2_PictureViewing_img3.jpg
    # System displays a picture from the selected category.
    # Visitor clicks on "next" to view another picture.
    # System displays another picture from the selected category.
