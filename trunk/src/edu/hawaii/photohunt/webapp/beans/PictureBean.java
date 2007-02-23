@@ -1,8 +1,8 @@
 package edu.hawaii.photohunt.webapp.beans;
 
+import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
-
-import edu.hawaii.photohunt.webapp.model.PictureModel;
 
 /**
  * The PictureBean class is the bean that backs the display of approved pictures in the webapp.
@@ -11,17 +11,22 @@ import edu.hawaii.photohunt.webapp.model.PictureModel;
  * 
  */
 public class PictureBean {
-  /** Default location of the picture files. */
-  public static final String DEFAULT_LOCATION = "pictures/";
-
-  /** The current picture being displayed on the webapp. */
-  String currentPicture;
 
   /** The picture model controlling the currently displayed pictures. */
-  private final PictureModel model = new PictureModel(DEFAULT_LOCATION);
+  protected String[] directory = new File(ApprovalBean.DEFAULT_APPROVED).list();
+  
+  /** The current picture being displayed on the webapp. */
+  String currentPicture = "approved/samplepic5.jpg";
 
   /** The list of approved pictures. */
-  private final List<String> approvedPictures = model.getApproved();
+  private final List<String> approvedPictures = new LinkedList<String>();
+
+  /**
+   * Constructor for PictureBean class.
+   */
+  public PictureBean() {
+    //May need to leave empty.
+  }
 
   /**
    * Get the current approved picture.
@@ -41,12 +46,12 @@ public class PictureBean {
     // Determine if there are any more pictures to show.
     if (this.approvedPictures.iterator().hasNext()) {
       this.currentPicture = approvedPictures.iterator().next();
-      return "success";
+      return null;
     }
 
     else {
       // To be implemented.
-      return null;
+      return "end";
     }
   }
 }

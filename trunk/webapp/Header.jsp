@@ -8,19 +8,10 @@
     <title>Photo Hunt</title>
   </head>
   <body>
-    <f:view>
     <font face="Arial">
     <h2>Photo Hunt</h2>
 
-    <h:outputLink value="slideshow.jsf">
-      <f:verbatim>Visitors</f:verbatim>
-    </h:outputLink>
-    
-    <f:verbatim>&nbsp</f:verbatim>
-    
-    <h:outputLink value="login.jsf">
-      <f:verbatim>Employees</f:verbatim>
-    </h:outputLink>
+    <a href="slideshow.jsf">Visitors</a><br />
+    <a href="approval.jsf">Employees</a><br />
     
     <hr>
-    </f:view>
