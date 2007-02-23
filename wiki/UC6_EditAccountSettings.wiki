@@ -17,15 +17,14 @@
     #  System goes to the login screen.
     #  Reviewer enters their username and password.
     #  System authenticates the user.
-http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
-    #  Reviewer clicks on "Account Settings".
+    #  http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg Reviewer clicks on "Account Settings".
     #  System displays account settings.
     #  Reviewer enters existing password.
-   #  Reviewer enters new password.
-   #  Reviewer enters new password for confirmation.
-   #  Reviewer saves new account settings.
-   #  System saves the new account settings.
-   #  System returns to the main staff page.
+    #  Reviewer enters new password.
+    #  Reviewer enters new password for confirmation.
+    #  Reviewer saves new account settings.
+    #  System saves the new account settings.
+    #  System returns to the main staff page.
 
 = Alternate Flows =
     * 6a. System fails to authenticate the user.
