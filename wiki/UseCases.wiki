@@ -2,10 +2,12 @@
 #labels Phase-Requirements,Featured
 
 = Visitor Use Cases =
- * [UC1_PictureSubmission]: Submitting a picture to Photohunt via email.
+ * [UC1_PictureSubmission]: Submitting a picture to Photo Hunt via email.
  * [UC2_PictureViewing]: Viewing the approved pictures using the web application.
 
 = Reviewer Use Cases =
  * [UC3_PictureReview]: Reviewing submitted pictures and approving them for display.
-
-
+ * [UC4_CreateGame]: Creating a new Photo Hunt scavenger hunt game
+ * [UC5_EditGame]: Edit or delete an existing Photo Hunt scavenger hunt game
+ * [UC6_EditAccountSettings]: Changing account settings such as the account password.
+ * [UC7_LogOut]: Log out of an active session
