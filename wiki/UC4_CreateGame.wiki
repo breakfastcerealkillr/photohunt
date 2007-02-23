@@ -1,4 +1,4 @@
-#summary Use case 4: The ability to create a new Photo Hunt game. A "game" is defined as a scavenger list of items to search for.
+#summary Use case 4: The ability to create a new Photo Hunt game. A 'game' is defined as a scavenger list of items to search for.
 
 = Primary Actor =
     * Reviewer
@@ -32,7 +32,7 @@
           # The system redirects the browser back to the login page. 
     * 14a. System reports null game name data.
 	  # The system displays a warning to not leave the game name blank.
-    * 14b. system reports empty game keywork data.
+    * 14b. System reports empty game keyword data.
 	  # The system displays a warning to not leave the game keyword blank.
     * 14c. System reports null game description data.
 	  # The system displays a warning to not leave the game description blank.
