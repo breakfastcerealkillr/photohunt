@@ -1,0 +1,46 @@
+
+#summary Use case 6: Edit account settings pertaining to passwords, email addresses, and other settings.
+
+= Primary Actor =
+    * Reviewer
+
+= Preconditions =
+    * Reviewer has a valid username and password to login to the web application.
+
+= Postconditions =
+    * Reviewer's account settings have been changed.
+
+= Basic Flow =
+
+    #  Reviewer visits the Photo Hunt web application using their browser.
+    #  System displays the welcome page.
+    #  Reviewer clicks on the "Employees" link.
+    #  System goes to the login screen.
+    #  Reviewer enters their username and password.
+    #  System authenticates the user.
+    #  Reviewer clicks on "Account Settings".
+    #  System displays account settings.
+    #  Reviewer enters existing password.
+   #  Reviewer enters new password.
+   #  Reviewer enters new password for confirmation.
+   #  Reviewer saves new account settings.
+   #  System saves the new account settings.
+   #  System returns to the main staff page.
+
+= Alternate Flows =
+    * 6a. System fails to authenticate the user.
+          #  The system redirects the browser back to the login page. 
+    * 9a. Reviewer entered the wrong existing password.
+	  #  The system displays a warning.
+    * 9b. Reviewer's new password differs from confirmation password.
+	  #  The system displays a warning.
+
+= Special Requirements =
+    * None 
+
+= Frequency of Occurrence =
+    * Depending on company policy of password frequency
+
+= Open Issues =
+    * May be best to use something like AJAX for this simple form data?
+  
