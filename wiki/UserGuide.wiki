@@ -1,14 +1,19 @@
-#summary A new user's guide to Photohunt (work in progress).
+#summary A new user's guide to Photo Hunt.
 #labels Phase-Support
 
 = Introduction =
 
-Add your content here.
+This guide is for new users to the Photo Hunt web application, specifically Bishop Museum staff members.
 
 
-= Details =
+= Log In =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+# Click on "Photo Hunt" on the main Bishop Museum http://www.bishopmuseum.org website. 
+# Enter in your user name and password.
+
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
+You will see a summary page like above.
+* To review pictures, click on "Review Pictures".
+* To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
+* To edit account settings, click on "Edit Account Settings".
+* To log out from Photo Hunt, click on "Log Out".
