@@ -29,9 +29,9 @@ public class Receiver {
   *   @param popUser      The username of the POP3 user
   *   @param popPassword  The password of the POP3 user
   */
-  private static String popServer = "pop.gmail.com";
-  private static String popUser = "bishopmuseum@gmail.com";
-  private static String popPassword = "museum2007";
+  private static String popServer = "pop3.1net.gr";
+  private static String popUser = "bishopmuseum";
+  private static String popPassword = "bishop";
   
   /*
    * Execute method to receive messages from the mail server.
