@@ -1,55 +1,47 @@
-Use case 4: The ability to create a new Photo Hunt game. A "game" is defined as a scavenger list of items to search for.
+#summary Use case 4: The ability to create a new Photo Hunt game. A "game" is defined as a scavenger list of items to search for.
 
-Primary Actor
-
+= Primary Actor =
     * Reviewer
 
-Preconditions
-
+= Preconditions =
     * Reviewer has a valid username and password to login to the web application.
 
-Postconditions
-
+=Postconditions =
     * A new Photo Hunt game has been created.
 
-Basic Flow
+=Basic Flow=
+   # Reviewer visits the Photo Hunt web application using their browser.
+   # System displays the welcome page.
+   # Reviewer clicks on the "Employees" link.
+   # System goes to the login screen.
+   # Reviewer enters their username and password.
+   # System authenticates the user.
+   # Reviewer clicks on "Manage Photo Hunt games"
+   # System displays a listing of current Photo Hunt games available
+   # Reviewer clicks on "Create new Photo Hunt game"
+   # System displays a form to enter in new game information.
+   # Reviewer enters in the name for the new Photo Hunt game.
+   # Reviewer enters in a description and keyword for a game item.
+   # Repeat steps 11-12 until all game items have been entered.
+   # Reviewer clicks on "Save game".
+   # System saves the game.
+   # System returns to the "Manage Photo Hunt games" page.
 
-   1. Reviewer visits the Photo Hunt web application using their browser.
-   2. System displays the welcome page.
-   3. Reviewer clicks on the "Employees" link.
-   4. System goes to the login screen.
-   5. Reviewer enters their username and password.
-   6. System authenticates the user.
-   7. Reviewer clicks on "Manage Photo Hunt games"
-   8. System displays a listing of current Photo Hunt games available
-   9. Reviewer clicks on "Create new Photo Hunt game"
-  10. System displays a form to enter in new game information.
-  11. Reviewer enters in the name for the new Photo Hunt game.
-  12. Reviewer enters in a description and keyword for a game item.
-  13. Repeat steps 11-12 until all game items have been entered.
-  14. Reviewer clicks on "Save game".
-  15. System saves the game.
-  16. System returns to the "Manage Photo Hunt games" page.
-
-Alternate Flows
-
+=Alternate Flows=
     * 6a. System fails to authenticate the user.
-         1. The system redirects the browser back to the login page. 
+          # The system redirects the browser back to the login page. 
     * 14a. System reports null game name data.
-	 1. The system displays a warning to not leave the game name blank.
+	  # The system displays a warning to not leave the game name blank.
     * 14b. system reports empty game keywork data.
-	 1. The system displays a warning to not leave the game keyword blank.
+	  # The system displays a warning to not leave the game keyword blank.
     * 14c. System reports null game description data.
-	 1. The system displays a warning to not leave the game description blank.
+	  # The system displays a warning to not leave the game description blank.
 
-Special Requirements
-
+=Special Requirements =
     * None 
 
-Frequency of Occurrence
-
+=Frequency of Occurrence=
     * When a new exhibit goes on display 
 
-Open Issues
-
+=Open Issues=
     * May be best to use something like AJAX for this simple form data?
