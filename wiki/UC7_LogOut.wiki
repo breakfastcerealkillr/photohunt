@@ -1,0 +1,34 @@
+#summary Use case 7: To successfully log out of review system.
+
+= Primary Actor =
+    * Reviewer
+
+= Preconditions =
+    * Reviewer has a valid username and password to login to the web application.
+
+= Postconditions =
+    * Reviewer successfully logs out of the review system.
+
+= Basic Flow =
+    #  Reviewer visits the Photo Hunt web application using their browser.
+    #  System displays the welcome page.
+    #  Reviewer clicks on the "Employees" link.
+    #  System goes to the login screen.
+    #  Reviewer enters their username and password.
+    #  System authenticates the user.
+    #  Reviewer clicks on "Log Out".
+    #  System removes user data.
+    #  System displays Photo Hunt employee login page.
+
+= Alternate Flows =
+	* None
+
+= Special Requirements =
+    * None 
+
+= Frequency of Occurrence =
+    * Very frequent, done at every log-in session.
+
+= Open Issues =
+    * None
+  
