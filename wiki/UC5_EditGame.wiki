@@ -28,15 +28,19 @@
 
 = Alternate Flows =
     * 6a. System fails to authenticate the user.
-          #  The system redirects the browser back to the login page. 
+         #The system redirects the browser back to the login page. 
+
     * 11a. Reviewer edits the keyword of a game item.
-	  #  The system changes the keyword data successfully.
+	 #The system changes the keyword data successfully.
+
     * 11b. Reviewer edits the description of a game item.
-	  #  The system changes the description data successfully.
+	 #The system changes the description data successfully.
+
     * 11c. Reviewer adds a game item keyword and description.
-	  #  The system adds the new game item successfully.
+	 #The system adds the new game item successfully.
+
     * 11d. Reviewer removes a game item.
-	  #  The system removes the game item successfully.
+	 #The system removes the game item successfully.
 
 = Special Requirements =
     * None 
