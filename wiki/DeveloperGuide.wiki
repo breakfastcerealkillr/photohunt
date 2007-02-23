@@ -35,15 +35,6 @@ These instructions assume that you have unzipped the zip file containing this sy
 To perform a basic compilation, invoke "ant":
 
 C:\photohunt>ant
-Buildfile: build.xml
-
-compile:
-    [mkdir] Created dir: C:\photohunt\build\war\WEB-INF\classes
-    [javac] Compiling 12 source files to C:\photohunt\build\war\WEB-INF\classes
-
-BUILD SUCCESSFUL
-Total time: 5 seconds
-C:\photohunt>
 
 # Basic Web Deployment
 
@@ -52,41 +43,6 @@ To deploy this web application, first invoke "startup" to bring up Tomcat.
 Once Tomcat is running, invoke "ant -f tomcat.build.xml".  The results should look as follows:
 
 C:\photohunt>ant -f tomcat.build.xml
-Buildfile: tomcat.build.xml
-
-tomcat.check:
-      [get] Getting: http://localhost:8080//manager/list
-      [get] To: C:\photohunt\list-results.tmp
-   [delete] Deleting: C:\photohunt\list-results.tmp
-     [echo] Tomcat and its management interface contacted successfully.
-
-tomcat.undeploy:
-      [get] Getting: http://localhost:8080//manager/undeploy?path=/photohunt
-      [get] To: C:\photohunt\remove-results.tmp
-     [echo] OK - Undeployed application at context path /photohunt
-   [delete] Deleting: C:\photohunt\remove-results.tmp
-
-compile:
-
-tomcat.install:
-     [copy] Copying 8 files to C:\photohunt\build\war
-     [copy] Copying 1 file to C:\photohunt\build\war
-     [copy] Copying 1 file to C:\photohunt\build\war\WEB-INF\lib
-
-tomcat.deploy:
-     [echo] Starting hot deployment to photohunt
-      [get] Getting: http://localhost:8080/manager/deploy?path=/photohunt&war=C:\photohunt\build/war
-      [get] To: C:\photohunt\install-results.tmp
-     [echo] Install results: OK - Deployed application at context path /photohunt
-   [delete] Deleting: C:\photohunt\install-results.tmp
-
-BUILD SUCCESSFUL
-Total time: 2 seconds
-C:\photohunt>
-
-As you can see, this task checks that Tomcat is running and that the Ant-based manager can login, then undeploys any existing photohunt application (this could fail if no photohunt is currently deployed, but that's not an error), then compiles the system, builds the war directory containing the web application files, and finally deploys it to Tomcat. 
-
-If the deployment was successful, then the fourth line of the tomcat.deploy output will indicate "OK". 
 
 # The web interface
 The web interface is quite simple.  Go to http://localhost:8080/photohunt/ to play around with it once you have successfully deployed the system. 
@@ -96,29 +52,6 @@ The web interface is quite simple.  Go to http://localhost:8080/photohunt/ to pl
 To run the JUnit tests over the system, invoke 'ant -f junit.build.xml'. The results should look as follows:
 
 C:\photohunt>ant -f junit.build.xml
-Buildfile: junit.build.xml
-
-compile:
-
-junit.tool:
-    [mkdir] Created dir: C:\photohunt\build\junit
-    [junit] Running edu.hawaii.photohunt.mail.TestReceiver
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 2.20 sec
-
-junit.report:
-[junitreport] Processing C:\photohunt\build\junit\TESTS-TestSuites.xml to C:\DOCUME~1\johnson\LOCALS~1\Temp\null1281158788
-[junitreport] Loading stylesheet jar:file:/C:/apache-ant-1.7.0Beta1/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-[junitreport] Transform time: 1031ms
-[junitreport] Deleting: C:\DOCUME~1\johnson\LOCALS~1\Temp\null1281158788
-
-junit.sensor:
-[hacky-junit] Hackystat data on 4 JUnit tests sent to http://hackystat.ics.hawaii.edu/ (0 secs.)
-
-junit:
-
-BUILD SUCCESSFUL
-Total time: 6 seconds
-
 
 = Developer documentation =
 This distribution includes Eclipse project definition files. In addition, it includes the following developer build files and targets. For the external tools (Checkstyle, PMD, FindBugs, JUnit, SCLC), you must download them from their home pages, unzip them, and then set an environment variable (CHECKSTYLE_HOME, PMD_HOME, etc.) to point to this directory. 
