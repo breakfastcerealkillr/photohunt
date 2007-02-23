@@ -16,6 +16,7 @@
    # System goes to the login screen.
    # Reviewer enters their username and password.
    # System authenticates the user.
+http://photohunt.googlecode.com/svn/trunk/use-cases/UC3_PictureReview_img1.jpg
    # Reviewer clicks on "Manage Photo Hunt games"
    # System displays a listing of current Photo Hunt games available
    # Reviewer clicks on "Create new Photo Hunt game"
