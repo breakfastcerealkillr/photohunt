@@ -8,6 +8,20 @@ The images from the member process report in Hackystat will be posted here.  Ana
 = Data and Analysis =
 
   *==Week of 2/9 to 2/16==
+  http://photohunt.googlecode.com/svn/trunk/wiki/activetime2.png
+
+  A lot more programming went on this week in order to get version 1.0 out in time by this Friday.
+
+  http://photohunt.googlecode.com/svn/trunk/wiki/commits2.png
+
+  This week there were only a couple of files that needed to be committed among the both of us for version 1.0.
+  
+  http://photohunt.googlecode.com/svn/trunk/wiki/unittest2.png
+
+  Everyone wrote JUnit tests for their code, so there are now more JUnit testing data for the both of us.
+
+
+  *==Week of 2/9 to 2/16==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
   The focus this week was mostly on requirements, so there was not a lot of time spent on development.  After the meeting on Wednesday, George spent time working on programming while Elayne finished up the requirements.
@@ -19,7 +33,6 @@ The images from the member process report in Hackystat will be posted here.  Ana
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
   George ran some tests on his code to make sure they worked.
-
 
 
 
