@@ -1,4 +1,3 @@
-
 #summary Use case 6: Edit account settings pertaining to passwords, email addresses, and other settings.
 
 = Primary Actor =
@@ -30,10 +29,12 @@
 = Alternate Flows =
     * 6a. System fails to authenticate the user.
           #  The system redirects the browser back to the login page. 
+
     * 9a. Reviewer entered the wrong existing password.
-	  #  The system displays a warning.
+          #  The system displays a warning.
+
     * 9b. Reviewer's new password differs from confirmation password.
-	  #  The system displays a warning.
+          #  The system displays a warning.
 
 = Special Requirements =
     * None 
