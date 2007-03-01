@@ -1,4 +1,4 @@
-#summary Use case 1: Submitting a picture to Photohunt (work in progress).
+#summary Use case 1: Submitting a picture to Photohunt.
 #labels Phase-Requirements
 
 = Primary Actor =
