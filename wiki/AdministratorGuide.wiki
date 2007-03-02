@@ -9,10 +9,8 @@ This guide details the steps needed to install Photo Hunt.
 = Web Application =
   # Download and install the Java Runtime Environment (JRE 6) from [http://java.sun.com/javase/downloads/index.jsp Sun's website].  Preferably, this will be installed on your root directory (i.e. C:\Java) instead of inside the Program Files folder.
     * If you need help installing, visit [http://java.sun.com/javase/6/webnotes/install/index.html this] web page.  Select your operating system from the list.
-
   # Download Tomcat 5.5.20
     * Download the core installation of Apache Tomcat 5.5.20 (apache-tomcat-5.5.20.zip) from [http://tomcat.apache.org/download-55.cgi here]. DO NOT download the "windows installer .exe" version, download the zip version instead.
-
   # Install Tomcat 5.5.20
     * Unzip the file to a directory, preferably the same directory as your Java installation.
     * Set the CATALINA_HOME environment variable to point to your Tomcat installation.
