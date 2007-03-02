@@ -3,11 +3,20 @@
 
 = Introduction =
 
-This guide will detail the steps needed to deploy Photo Hunt onto a web server.
+This guide details the steps needed to install Photo Hunt.
 
 
-= Details =
+= Web Application =
+  # Download and install the Java Runtime Environment (JRE 6) from [http://java.sun.com/javase/downloads/index.jsp Sun's website].  Preferably, this will be installed on your root directory (i.e. C:\Java) instead of inside the Program Files folder.
+    * If you need help installing, visit [http://java.sun.com/javase/6/webnotes/install/index.html this] web page.  Select your operating system from the list.
 
-  * Download the latest version from [http://code.google.com/p/photohunt/downloads/list/ Google Code].
-  * Download and install [http://tomcat.apache.org/download-55.cgi Apache Tomcat 5.5.20].
-  * Using the Tomcat Manager, deploy the Photo Hunt war file.
+  # Download Tomcat 5.5.20
+    * Download the core installation of Apache Tomcat 5.5.20 (apache-tomcat-5.5.20.zip) from [http://tomcat.apache.org/download-55.cgi here]. DO NOT download the "windows installer .exe" version, download the zip version instead.
+
+  # Install Tomcat 5.5.20
+    * Unzip the file to a directory, preferably the same directory as your Java installation.
+    * Set the CATALINA_HOME environment variable to point to your Tomcat installation.
+      * In Windows, go to Control Panel -> System.  Click on the advanced tab and then click on the "Environment Variables" button.  Under User Variables, click on "New".  The name of the variable will be "CATALINA_HOME".  The value of the variable will be the directory of your Tomcat installation (i.e. C:\Java\apache-tomcat).
+    * Add CATALINA_HOME/bin to your PATH variable.
+      * In Windows, follow the above steps to get to the Environment Variables window.  Below the User Variables section is another section called "System Variables".  Click on the classpath variable in the list and then push the Edit button.  In the value field, go to the end and input ";CATALINA_HOME/bin" (the semicolon indicates a new entry) and then click okay.  Do not overwrite the value field.
+
