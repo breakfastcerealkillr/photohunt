@@ -2,6 +2,7 @@ package edu.hawaii.photohunt.webapp.model;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,64 +15,53 @@ import java.util.List;
 public class PictureModel {
 
   /** Default path to the pictures directory. */
-  public static final String DEFAULT_PATH = "pictures/";
+  public static final String DEFAULT_PATH = "approved/";
 
   /** List of the filenames for the pictures. */
-  protected List<String> newPictures = new ArrayList<String>();
+  protected List<File> pictures = new ArrayList<File>();
 
-  /** List of the approved pictures. */
-  protected static final List<String> approvedPictures = new ArrayList<String>();
-
+  /**
+   * Create a new PictureModel instance. Places jpg and gif files into the folder. Uses the default
+   * file path.
+   */
+  public PictureModel() {
+    File directory = new File(DEFAULT_PATH);
+    //Assume default directory is correct.
+    
+    this.pictures = Arrays.asList(directory.listFiles(new PictureFileFilter()));
+  }
+  
   /**
    * Create a new PictureModel instance.  Places jpg and gif files into the folder.
    * 
    * @param pathname The file path of the directory containing the pictures.
+   * @throws PictureFileException if there is an error opening the directory.
    */
-  public PictureModel(String pathname) {
+  public PictureModel(String pathname) throws PictureFileException {
     File directory = new File(pathname);
-    String[] pictures = directory.list();
-    for (int i = 0; i < pictures.length; i++) {
-      //Take only jpg and gif files.
-      if (pictures[i].contains(".jpg") || pictures[i].contains(".gif")) {
-        this.newPictures.add(pictures[i]);
-      }
+    if (!directory.isDirectory()) {
+      throw new PictureFileException("The path does not point to a directory.");
     }
-
+    
+    this.pictures = Arrays.asList(directory.listFiles(new PictureFileFilter()));
   }
 
   /**
-   * Add picture to the list of approved pictures.
+   * Get the list of available pictures.
    * 
-   * @param filename The file path of the picture to be approved.
+   * @return The list of pictures.
    */
-  public void approvePicture(String filename) {
-    PictureModel.approvedPictures.add(filename);
+  public List<File> getPictureList() {
+    return this.pictures;
   }
-
+  
   /**
-   * Deny picture and remove it from the list of available pictures and delete it from the disk.
+   * Gets the picture at the specified index.
    * 
-   * @param filename The file path of the picture to remove.
+   * @param index The index of the picture to be retrieved.
+   * @return The file path to the picture.
    */
-  public void denyPicture(String filename) {
-    //To be implemented later.
-  }
-
-  /**
-   * Get the list of approved pictures.
-   * 
-   * @return The file names of the approved pictures.
-   */
-  public List<String> getApproved() {
-    return PictureModel.approvedPictures;
-  }
-
-  /**
-   * Get the list of new pictures.
-   * 
-   * @return The file names of the new pictures.
-   */
-  public List<String> getNew() {
-    return this.newPictures;
+  public File getPicture(int index) {
+    return this.pictures.get(index);
   }
 }
