@@ -1,103 +1,93 @@
 package edu.hawaii.photohunt.webapp.beans;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
+import edu.hawaii.photohunt.webapp.model.ApprovalModel;
+
 /**
- * The ApprovalBean class is the backing bean that manages the picture review process.
+ * The ApprovalBean class is a bean that backs the approval pages in Photo Hunt. It uses
+ * ApprovalModel to manipulate the pictures.
  * 
  * @author George Lee
+ * 
  */
 public class ApprovalBean {
-  /** Default location of the picture files pending approval. */
-  public static final String DEFAULT_PENDING = "pictures/";
 
-  /** Default location of the approved pictures. */
-  public static final String DEFAULT_APPROVED = "approved/";
+  /** The model supporting the ApprovalBean. */
+  private final ApprovalModel model = new ApprovalModel();
 
-  /** The file directory containing the pictures pending approval. */
-  private final File pendingDirectory = new File(DEFAULT_PENDING);
+  /** Track the current picture in the list. */
+  private int counter = 0;
 
-  /** The pictures awaiting approval. */
-  protected List<String> pendingList = Arrays.asList(this.pendingDirectory.list());
+  /** List of the pending pictures. */
+  private final List<File> pendingPictures = this.model.getPending();
 
-  /** The current picture being displayed on the webapp. */
-  String currentPicture = "approved/samplepic1.jpg";
+  /** The file name of the currently displayed picture. */
+  private String currentPicture = this.model.getPendingDirectory()
+      + this.pendingPictures.get(0).getName();
 
   /**
-   * Default constructor for the ApprovalBean class.
-   *
-   */  
+   * Constructor for the ApprovalBean.
+   */
   public ApprovalBean() {
-    super();
-    //May need to leave empty.
+    // JavaBeans need an empty constructor.
   }
-  
+
   /**
-   * Retrieve the current picture.
+   * Get the current picture.
    * 
-   * @return The file name of the current picture.
+   * @return The current picture to be displayed.
    */
   public String getCurrentPicture() {
-    return currentPicture;
+    return this.currentPicture;
   }
 
   /**
-   * Displays the next picture in the pendingList.
+   * Set the current picture.
    * 
-   * @return Returns null if there are pictures to display (forces JSF to redisplay page). Returns
-   *         end if there are no pictures left.
+   * @return null if there is another picture, "end" otherwise.
    */
   public String setCurrentPicture() {
-    // Determine if there are more pictures to display.
-    if (this.pendingList.iterator().hasNext()) {
-      currentPicture = this.pendingList.iterator().next();
-      return null;
+    this.counter++;
+    this.currentPicture = this.model.getPendingDirectory()
+        + this.pendingPictures.get(this.counter).getName();
+    return null;
+  }
+
+  /**
+   * Approve the current picture.
+   * 
+   * @return null if there are more pictures (refreshes current page). Returns end if there are no
+   *         pictures left.
+   */
+  public String approvePicture() {
+    this.model.approvePicture(this.pendingPictures.get(this.counter));
+    try {
+      return this.setCurrentPicture();
     }
 
-    else {
-      // Needs to be redone.
+    //If an index out of bounds error occurs, there are no pictures left to display.
+    catch (IndexOutOfBoundsException e) {
       return "end";
     }
   }
 
   /**
-   * Approve the current picture and move to the next picture.
+   * Deny the current picture.
    * 
-   * @return Success if there are pictures available for display. Returns null if there are none.
-   */
-  public String approvePicture() {
-    // Approve the current picture by moving it to the approved directory.
-    File approved = new File(this.currentPicture);
-    File destination = new File(DEFAULT_APPROVED);
-
-    // Move file to new directory
-    boolean success = approved.renameTo(new File(destination, approved.getName()));
-    if (!success) {
-      // Move operation was unsuccessful.
-      return "error";
-    }
-
-    // Display the next picture.
-    return this.setCurrentPicture();
-  }
-
-  /**
-   * Deny the current picture and move to the next picture.
-   * 
-   * @return Success if there are pictures available for display. Returns null if there are none.
+   * @return null if there are more pictures (refreshes current page). Returns end if there are no
+   *         pictures left.
    */
   public String denyPicture() {
-    // Deny the picture by removing the file.
-    File denied = new File(this.currentPicture);
-    boolean success = denied.delete();
-    if (!success) {
-      // Deletion operation was unsuccessful.
-      return "error";
+    this.model.denyPicture(this.pendingPictures.get(this.counter));
+    try {
+      return this.setCurrentPicture();
     }
 
-    // Display the next picture.
-    return this.getCurrentPicture();
+    //If an index out of bounds error occurs, there are no pictures left to display.
+    catch (IndexOutOfBoundsException e) {
+      return "end";
+    }
   }
 }

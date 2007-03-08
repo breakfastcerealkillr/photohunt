@@ -1,5 +1,9 @@
 package edu.hawaii.photohunt.webapp.model;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
 import junit.framework.TestCase;
@@ -14,28 +18,19 @@ public class TestPictureModel extends TestCase {
 
   /**Path name for the sample picture files.*/
   private static final String testPath = "sample-pictures/";
-
-  /**Tests the construction of the PictureModel class.*/
-  @Test
-  public void testStartup() {
-    PictureModel testModel = new PictureModel(testPath);
-
-    assertEquals("Testing correct number of files.", testModel.getNew().size(), 6);
-  }
-
-  /**Tests that pictures are approved.*/
-  @Test
-  public void testApproval() {
-    PictureModel testModel = new PictureModel(testPath);
-    for (String filename : testModel.newPictures) {
-      testModel.approvePicture(filename);
-    }
-
-    //Test that the two picture arrays are the same length and that they contain the same file.
-    for (String testName : PictureModel.approvedPictures) {
-      assertTrue("Testing approval of all pictures.", testModel.getApproved().contains(testName));
-    }
-  }
   
-  
+  /**List used for testing.*/
+  private List<File> pictureList = new ArrayList<File>();
+
+  /**Tests the construction of the PictureModel class.
+   * 
+   * @throws PictureFileException if there is an error while opening the directory.
+   */
+  @Test
+  public void testStartup() throws PictureFileException {
+    PictureModel testModel = new PictureModel(testPath);
+    
+    this.pictureList = testModel.getPictureList();
+    assertEquals("Testing correct number of files.", this.pictureList.size(), 6);
+  }
 }

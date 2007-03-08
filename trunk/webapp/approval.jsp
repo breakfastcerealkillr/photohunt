@@ -1,7 +1,7 @@
 <%@ include file="Header.jsp" %>
 
 <f:view>
-  <h:graphicImage url="pictures/samplepic1.jpg"/>
+  <h:graphicImage url="#{approvalBean.currentPicture}"/>
   <h:form>
   <h:commandLink id="approve" action="#{approvalBean.approvePicture}">
     <h:outputText value="Approve"/>

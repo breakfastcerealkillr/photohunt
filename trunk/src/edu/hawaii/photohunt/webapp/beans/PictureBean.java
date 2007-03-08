@@ -13,7 +13,7 @@ import java.util.List;
 public class PictureBean {
 
   /** The picture model controlling the currently displayed pictures. */
-  protected String[] directory = new File(ApprovalBean.DEFAULT_APPROVED).list();
+  protected String[] directory = new File(TempApprovalBean.DEFAULT_APPROVED).list();
   
   /** The current picture being displayed on the webapp. */
   String currentPicture = "approved/samplepic5.jpg";

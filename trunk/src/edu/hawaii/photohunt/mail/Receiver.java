@@ -151,6 +151,8 @@ public class Receiver {
           System.out.println(thisLine);
           thisLine = reader.readLine();
         }
+        //Close reader.
+        reader.close();
       }
       System.out.println("-----------------------------");
       
