@@ -4,18 +4,18 @@
 
 The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
 
-  *==Week of 2/28 to 3/2==
+  *==Week of 3/2 to 3/9==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
-  This week has been relatively slow after the rush to 1.0.
+  A moderate amount of work was done this week.
 
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
 
-  Few commits this week as well, as nobody committed anything that they worked on.
+  George committed the things he was working on all at the same time.
   
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
-  Very little development going on today as well.
+  New unit tests were created to test some of the new classes.
 
 
 
