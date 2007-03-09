@@ -1,6 +1,9 @@
 #summary The latest releases and information relating to Photo Hunt development.
 #labels Featured
 
+= 3/9/07 =
+  * A newer version of 1.0 with more complete functionality is now available for download.  There are two distributions, the binary and the source code.  Get them [http://code.google.com/p/photohunt/downloads/list here].
+
 = 2/23/07 =
   * Version 1.0 of Photo Hunt is here.  You can get it by clicking on the "Downloads" tab or by clicking [http://code.google.com/p/photohunt/downloads/list here].
 
