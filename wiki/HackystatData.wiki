@@ -7,7 +7,7 @@ The images from the member process report in Hackystat will be posted here.  Ana
   *==Week of 3/9 to 3/16==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
-  A moderate amount of work was done this week.
+  A steady amount of work was done. Starting to work on the project a little more consistently now that 2.0 is almost due.
 
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
 
@@ -15,8 +15,7 @@ The images from the member process report in Hackystat will be posted here.  Ana
   
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
-  
-
+  Some unit tests were run.  George has started working on the layout of the web app, so there's not a lot of Java code being written.
 
 
 
