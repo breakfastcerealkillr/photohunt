@@ -42,7 +42,7 @@
 
   <!-- Basic properties for this system. --> 
   <property name="system.name" value="photohunt" />
-  <property name="majorVersionNumber" value="1" />
+  <property name="majorVersionNumber" value="2" />
   <property name="minorVersionNumber" value="0" />
   <tstamp>
      <format property="TSTAMP" pattern="HH:mm:ss"/>
@@ -64,6 +64,7 @@
   <property name="src.dir" location="${basedir}/src" />
   <property name="lib.dir" location="${basedir}/lib" />
   <property name="build.dir" location="${basedir}/build" />
+  <property name="pictures.dir" location="${build.dir}/war/pictures" />
   
   <!-- Needed for compilation, junit, and tomcat deploy/undeploy. -->
   <property name="war.web-inf.classes.dir" location="${build.dir}/war/WEB-INF/classes"/>

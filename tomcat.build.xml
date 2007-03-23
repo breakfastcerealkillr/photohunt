@@ -25,9 +25,10 @@
     </copy>
       
     <copy todir="${build.dir}/war/WEB-INF/lib" file="${build.dir}/photohunt.jar"/>
-    
-    <copy todir="${build.dir}/war/sample-pictures/">
-      <fileset dir="${basedir}/sample-pictures"/>
+  
+    <!--Upload sample picture set. -->
+    <copy todir="${pictures.dir}">
+      <fileset dir="${basedir}/pictures/"/>
     </copy>
   
   </target>

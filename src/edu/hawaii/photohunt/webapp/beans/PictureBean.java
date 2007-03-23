@@ -1,7 +1,7 @@
 package edu.hawaii.photohunt.webapp.beans;
 
 import java.io.File;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ public class PictureBean {
   String currentPicture = "approved/samplepic5.jpg";
 
   /** The list of approved pictures. */
-  private final List<String> approvedPictures = new LinkedList<String>();
+  private final List<String> approvedPictures = new ArrayList<String>();
 
   /**
    * Constructor for PictureBean class.
