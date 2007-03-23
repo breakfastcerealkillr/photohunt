@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class ApprovalModel {
   /**Default directory for pictures pending approval.*/
-  public static final String DEFAULT_PENDING = "sample-pictures/";
+  public static final String DEFAULT_PENDING = "pictures/pending/sample-pictures/";
 
   /**Default directory for approved pictures.*/
-  public static final String DEFAULT_APPROVED = "sample-pictures/approved/";
+  public static final String DEFAULT_APPROVED = "pictures/sample-pictures/approved/";
 
   /**Directory of the pictures pending approval.*/
   private final String pendingDirectory;
@@ -26,30 +26,25 @@ public class ApprovalModel {
   private final String approvedDirectory;
 
   /** List of the filenames for the pictures. */
-  protected ArrayList<File> pendingPictures;
-
-  /** List of the approved pictures. */
-  protected ArrayList<File> approvedPictures;
+  protected ArrayList<PictureFile> pendingPictures = new ArrayList<PictureFile>();
 
   /**
    * Create a new ApprovalModel instance. Retrieves the files from the pictures folder and the
    * approved folder and puts them into a list.  Uses the default values.
-   * @throws PictureFileException 
    */
   public ApprovalModel() {
     this.pendingDirectory = DEFAULT_PENDING;
     this.approvedDirectory = DEFAULT_APPROVED;
 
     File pendingDir = new File(this.pendingDirectory);
-    File approvedDir = new File(this.approvedDirectory);
 
     //Assume that default directories work correctly.
 
     //Insert the file names into the lists.
     PictureFileFilter pictureFilter = new PictureFileFilter();
-    this.pendingPictures = new ArrayList<File>(Arrays.asList(pendingDir.listFiles(pictureFilter)));
-    this.approvedPictures = 
-      new ArrayList<File>(Arrays.asList(approvedDir.listFiles(pictureFilter)));
+    for (File inFile : Arrays.asList(pendingDir.listFiles(pictureFilter))) {
+      this.pendingPictures.add(new PictureFile(this.pendingDirectory, inFile));
+    }
   }
 
   /**
@@ -75,18 +70,9 @@ public class ApprovalModel {
 
     //Insert the file names into the lists.
     PictureFileFilter pictureFilter = new PictureFileFilter();
-    this.pendingPictures = new ArrayList<File>(Arrays.asList(pendingDir.listFiles(pictureFilter)));
-    this.approvedPictures = 
-      new ArrayList<File>(Arrays.asList(approvedDir.listFiles(pictureFilter)));
-  }
-
-  /**
-   * Get the list of approved pictures.
-   * 
-   * @return The approved picture files.
-   */
-  public List<File> getApproved() {
-    return this.approvedPictures;
+    for (File inFile : Arrays.asList(pendingDir.listFiles(pictureFilter))) {
+      this.pendingPictures.add(new PictureFile(this.pendingDirectory, inFile));
+    }
   }
 
   /**
@@ -94,7 +80,7 @@ public class ApprovalModel {
    * 
    * @return The pending picture files.
    */
-  public List<File> getPending() {
+  public List<PictureFile> getPending() {
     return this.pendingPictures;
   }
 
@@ -114,24 +100,5 @@ public class ApprovalModel {
    */
   public String getPendingDirectory() {
     return this.pendingDirectory;
-  }
-
-  /**
-   * Add picture to the list of approved pictures.
-   * 
-   * @param filename The file path of the picture to be approved.
-   */
-  public void approvePicture(File filename) {
-    //Files need to be moved.
-    this.approvedPictures.add(filename);
-  }
-
-  /**
-   * Deny picture and remove it from the list of available pictures and delete it from the disk.
-   * 
-   * @param filename The file path of the picture to remove.
-   */
-  public void denyPicture(File filename) {
-    //To be implemented later.
   }
 }

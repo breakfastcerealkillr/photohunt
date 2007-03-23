@@ -1,17 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
-<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
-
-<html>
-  <style type="text/css">
-  </style>
-  <head>
-    <title>Photo Hunt</title>
-  </head>
-  <body>
-    <font face="Arial">
-    <h2>Photo Hunt</h2>
-
-    <a href="slideshow.jsf">Visitors</a><br />
-    <a href="approval.jsf">Employees</a><br />
-    
+    <div class="navbar" style="float: top; background-color: navy; padding: 10px">
+      <h2 style="color: white; margin-top: 0px">Photo Hunt</h2>
+      <a href="slideshow.jsf" style="text-decoration: none; font-weight: bold; color: white; margin-right: 10px">Visitors</a>
+      <a href="staff.jsf" style="text-decoration: none; font-weight: bold; color: white">Employees</a>
+    </div>
     <hr>

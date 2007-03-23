@@ -16,25 +16,21 @@
   <navigation-rule>
     <from-view-id>/approval.jsp</from-view-id>
     <navigation-case>
-      <from-action>#{approvalBean.approvePicture}</from-action>
-      <from-outcome>end</from-outcome>
-      <to-view-id>/end.jsp</to-view-id>
-    </navigation-case>
-    <navigation-case>
-      <from-action>#{approvalBean.denyPicture}</from-action>
-      <from-outcome>end</from-outcome>
-      <to-view-id>/end.jsp</to-view-id>
+      <from-action>#{approvalBean.sortPictures}</from-action>
+      <from-outcome>confirm</from-outcome>
+      <to-view-id>/approval-confirm.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
   
   <navigation-rule>
-    <from-view-id>*</from-view-id>
+    <from-view-id>/approval-confirm.jsp</from-view-id>
     <navigation-case>
-      <from-outcome>slideshow</from-outcome>
-      <to-view-id>/slideshow.jsp</to-view-id>
+      <from-action>#{approvalBean.approvePictures}</from-action>
+      <from-outcome>approved</from-outcome>
+      <to-view-id>/approval.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
-      <from-outcome>approval</from-outcome>
+      <from-outcome>return</from-outcome>
       <to-view-id>/approval.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>

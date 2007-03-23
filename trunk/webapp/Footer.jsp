@@ -4,6 +4,3 @@
         <td align="right">Version: @version@</td>
     </tr>
     </table>
-    </font>
-  </body>
-</html>

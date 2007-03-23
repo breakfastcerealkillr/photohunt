@@ -1,9 +1,11 @@
 package edu.hawaii.photohunt.webapp.beans;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.hawaii.photohunt.webapp.model.ApprovalModel;
+import edu.hawaii.photohunt.webapp.model.PictureFile;
 
 /**
  * The ApprovalBean class is a bean that backs the approval pages in Photo Hunt. It uses
@@ -15,17 +17,19 @@ import edu.hawaii.photohunt.webapp.model.ApprovalModel;
 public class ApprovalBean {
 
   /** The model supporting the ApprovalBean. */
-  private final ApprovalModel model = new ApprovalModel();
-
-  /** Track the current picture in the list. */
-  private int counter = 0;
+  private ApprovalModel model = new ApprovalModel();
 
   /** List of the pending pictures. */
-  private final List<File> pendingPictures = this.model.getPending();
-
-  /** The file name of the currently displayed picture. */
-  private String currentPicture = this.model.getPendingDirectory()
-      + this.pendingPictures.get(0).getName();
+  private List<PictureFile> pendingPictures = this.model.getPending();
+  
+  /** The directory containing the approved pictures. */
+  private final String approvedDirectory = this.model.getApprovedDirectory();
+  
+  /** List of the selected items. */
+  private List<PictureFile> approvedPictures;
+  
+  /** List of the unselected items. */
+  private List<PictureFile> deniedPictures;
 
   /**
    * Constructor for the ApprovalBean.
@@ -33,61 +37,86 @@ public class ApprovalBean {
   public ApprovalBean() {
     // JavaBeans need an empty constructor.
   }
-
+  
   /**
-   * Get the current picture.
+   * Get the pictures pending approval.
    * 
-   * @return The current picture to be displayed.
+   * @return The list of the pending pictures.
    */
-  public String getCurrentPicture() {
-    return this.currentPicture;
+  public List<PictureFile> getPendingPictures() {
+    return this.pendingPictures;
   }
-
+  
   /**
-   * Set the current picture.
+   * Get the approved pictures.
    * 
-   * @return null if there is another picture, "end" otherwise.
+   * @return The list of the approved pictures.
    */
-  public String setCurrentPicture() {
-    this.counter++;
-    this.currentPicture = this.model.getPendingDirectory()
-        + this.pendingPictures.get(this.counter).getName();
-    return null;
+  public List<PictureFile> getApprovedPictures() {
+    return this.approvedPictures;
   }
-
+  
   /**
-   * Approve the current picture.
+   * get the denied pictures.
    * 
-   * @return null if there are more pictures (refreshes current page). Returns end if there are no
-   *         pictures left.
+   * @return The list of the denied pictures.
    */
-  public String approvePicture() {
-    this.model.approvePicture(this.pendingPictures.get(this.counter));
-    try {
-      return this.setCurrentPicture();
-    }
-
-    //If an index out of bounds error occurs, there are no pictures left to display.
-    catch (IndexOutOfBoundsException e) {
-      return "end";
-    }
+  public List<PictureFile> getDeniedPictures() {
+    return this.deniedPictures;
   }
-
+  
   /**
-   * Deny the current picture.
+   * Sort the list into selected and unselected pictures.
    * 
-   * @return null if there are more pictures (refreshes current page). Returns end if there are no
-   *         pictures left.
+   * @return Returns "confirm" to continue to the confirmation page.
    */
-  public String denyPicture() {
-    this.model.denyPicture(this.pendingPictures.get(this.counter));
-    try {
-      return this.setCurrentPicture();
+  public String sortPictures() {
+    this.approvedPictures = new ArrayList<PictureFile>();
+    this.deniedPictures = new ArrayList<PictureFile>();
+    
+    for (PictureFile pendingFile : this.pendingPictures) {
+      if (pendingFile.isApproved()) {
+        this.approvedPictures.add(pendingFile);
+      }
+      
+      else {
+        this.deniedPictures.add(pendingFile);
+      }
     }
-
-    //If an index out of bounds error occurs, there are no pictures left to display.
-    catch (IndexOutOfBoundsException e) {
-      return "end";
-    }
+    
+    //Navigation case.  Go to confirmation page.
+    return "confirm";
   }
+  
+  /**
+   * Approve and deny the pictures in Photo Hunt. This should occur after the confirmation page, so
+   * the pictures are sorted into the approved list and the denied list. Updates the list after
+   * moving the files.
+   * 
+   * @return Returns "approved" to return to the approval page.
+   */
+  public String approvePictures() {
+    //Move the approved pictures to the approved directory.
+    for (PictureFile approved : this.approvedPictures) {
+      File approvedFile = new File(approved.getPath());
+      
+      //Move the file.
+      approvedFile.renameTo(new File(this.approvedDirectory, approved.getPath()));
+      
+      //Delete original file.
+      approvedFile.delete();
+    }
+    
+    //Delete the unapproved pictures.
+    for (PictureFile denied : this.deniedPictures) {
+      new File(denied.getPath()).delete();
+    }
+    
+    //Update the ApprovalModel.
+    this.model = new ApprovalModel();
+    this.pendingPictures = this.model.getPending();
+    
+    return "approved";
+  }
+  
 }
