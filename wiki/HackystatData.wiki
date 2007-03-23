@@ -4,19 +4,18 @@
 
 The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
 
-  *==Week of 3/9 to 3/16==
+  *==Week of 3/16 to 3/23==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
-  A steady amount of work was done. Starting to work on the project a little more consistently now that 2.0 is almost due.
+  Again, a moderate amount of work was done.  
 
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
 
-  No commits were made this week.
+  No commits were made this week.  George did commit something on Thursday night, but this graph hasn't been updated yet.
   
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
-  Some unit tests were run.  George has started working on the layout of the web app, so there's not a lot of Java code being written.
-
+  Unit tests were run again before George commit his code.
 
 
 
