@@ -9,5 +9,7 @@
 	<classpathentry kind="lib" path="lib/jar/mailapi.jar"/>
 	<classpathentry kind="lib" path="lib/jar/pop3.jar"/>
 	<classpathentry kind="lib" path="lib/jar/smtp.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/servlet-2_5-api.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jsf-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

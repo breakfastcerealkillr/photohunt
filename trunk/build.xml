@@ -91,6 +91,8 @@
     <fileset file="${lib.dir}/jar/mailapi.jar" />
     <fileset file="${lib.dir}/jar/pop3.jar" />
     <fileset file="${lib.dir}/jar/smtp.jar" />
+    <fileset file="${basedir}/webapp/WEB-INF/lib/jsf-api.jar" />
+    <fileset file="${basedir}/webapp/WEB-INF/lib/servlet-2_5-api.jar" />
     
   	<!-- Not needed yet
     <fileset file="${basedir}/webapp/WEB-INF/lib/derby/derby.jar"/>

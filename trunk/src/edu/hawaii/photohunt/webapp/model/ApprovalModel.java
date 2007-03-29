@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+
 /**
  * The PictureModel class performs the operations needed for the picture review process in Photo
  * Hunt.  Supports only .jpg and .gif file types for now.
@@ -13,11 +16,16 @@ import java.util.List;
  * 
  */
 public class ApprovalModel {
-  /**Default directory for pictures pending approval.*/
+  
+  /** The context of the web application. */
+  private final ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance()
+      .getExternalContext().getContext();
+  
+  /**Relative directory for pictures pending approval.*/
   public static final String DEFAULT_PENDING = "pictures/pending/sample-pictures/";
 
-  /**Default directory for approved pictures.*/
-  public static final String DEFAULT_APPROVED = "pictures/sample-pictures/approved/";
+  /**Relative directory for approved pictures.*/
+  public static final String DEFAULT_APPROVED = "pictures/approved/sample-pictures/";
 
   /**Directory of the pictures pending approval.*/
   private final String pendingDirectory;
@@ -29,14 +37,14 @@ public class ApprovalModel {
   protected ArrayList<PictureFile> pendingPictures = new ArrayList<PictureFile>();
 
   /**
-   * Create a new ApprovalModel instance. Retrieves the files from the pictures folder and the
-   * approved folder and puts them into a list.  Uses the default values.
+   * Create a new ApprovalModel instance. Retrieves the files from the pictures folder and puts them
+   * into a list. Uses the default values.
    */
   public ApprovalModel() {
     this.pendingDirectory = DEFAULT_PENDING;
     this.approvedDirectory = DEFAULT_APPROVED;
 
-    File pendingDir = new File(this.pendingDirectory);
+    File pendingDir = new File(servletContext.getRealPath(this.pendingDirectory));
 
     //Assume that default directories work correctly.
 

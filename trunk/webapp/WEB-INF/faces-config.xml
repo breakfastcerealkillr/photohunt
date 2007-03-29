@@ -50,5 +50,13 @@
     </managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>pictureBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.PictureBean
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 
 </faces-config>
