@@ -10,7 +10,7 @@ import java.io.File;
  * 
  */
 public class PictureFile {
-  /**The directory name for this picture.*/
+  /**The local directory name for this picture.*/
   private final String directory;
   
   /**The path name for this picture.*/
@@ -69,4 +69,5 @@ public class PictureFile {
   public boolean isApproved() {
     return this.approved;
   }
+  
 }

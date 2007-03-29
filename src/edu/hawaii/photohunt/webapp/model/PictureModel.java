@@ -4,64 +4,77 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.servlet.ServletContext;
+import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 
 /**
  * The PictureModel class performs the operations needed for the picture review process in Photo
- * Hunt.  Supports only .jpg and .gif file types for now.
+ * Hunt. Supports only .jpg and .gif file types for now.
  * 
  * @author George Lee
  * 
  */
 public class PictureModel {
 
-  /** Default path to the pictures directory. */
-  public static final String DEFAULT_PATH = "approved/";
+  /** The context of the web application. */
+  private final ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance()
+      .getExternalContext().getContext();
+  
+  /** The relative directory location of the approved pictures. */
+  private final String approvedDirectory;
 
-  /** List of the filenames for the pictures. */
-  protected List<File> pictures = new ArrayList<File>();
+  /** The list of pictures to be viewed. */
+  protected List<PictureFile> pictures = new ArrayList<PictureFile>();
 
+  /** The list of tags currently available in Photo Hunt. */
+  private final List<SelectItem> tagList = new ArrayList<SelectItem>();
+   
   /**
-   * Create a new PictureModel instance. Places jpg and gif files into the folder. Uses the default
-   * file path.
+   * Create a new PictureModel instance. Takes the pictures from the approved directory and places
+   * them into a list. Uses the default values.
    */
   public PictureModel() {
-    File directory = new File(DEFAULT_PATH);
-    //Assume default directory is correct.
-    
-    this.pictures = Arrays.asList(directory.listFiles(new PictureFileFilter()));
-  }
-  
-  /**
-   * Create a new PictureModel instance.  Places jpg and gif files into the folder.
-   * 
-   * @param pathname The file path of the directory containing the pictures.
-   * @throws PictureFileException if there is an error opening the directory.
-   */
-  public PictureModel(String pathname) throws PictureFileException {
-    File directory = new File(pathname);
-    if (!directory.isDirectory()) {
-      throw new PictureFileException("The path does not point to a directory.");
+    this.approvedDirectory = ApprovalModel.DEFAULT_APPROVED;
+
+    File pendingDir = new File(servletContext.getRealPath(this.approvedDirectory));
+
+    // Assume that default directories work correctly.
+
+    // Insert the file names into the lists.
+    PictureFileFilter pictureFilter = new PictureFileFilter();
+    for (File inFile : Arrays.asList(pendingDir.listFiles(pictureFilter))) {
+      this.pictures.add(new PictureFile(this.approvedDirectory, inFile));
     }
     
-    this.pictures = Arrays.asList(directory.listFiles(new PictureFileFilter()));
+    //Populate the tag list.
+    tagList.add(new SelectItem("sample-pictures", "Sample Pictures"));
   }
 
   /**
-   * Get the list of available pictures.
+   * Gets the list of pictures to be viewed.
    * 
-   * @return The list of pictures.
+   * @return The list of pictures to view.
    */
-  public List<File> getPictureList() {
+  public List<PictureFile> getPictures() {
     return this.pictures;
+  }
+
+  /**
+   * Gets the directory of the pictures.
+   * 
+   * @return The path to the directory containing the pictures.
+   */
+  public String getApprovedDirectory() {
+    return this.approvedDirectory;
   }
   
   /**
-   * Gets the picture at the specified index.
+   * Get the list of available tags.
    * 
-   * @param index The index of the picture to be retrieved.
-   * @return The file path to the picture.
+   * @return The list of tags available.
    */
-  public File getPicture(int index) {
-    return this.pictures.get(index);
+  public List<SelectItem> getTagList() {
+    return this.tagList;
   }
 }
