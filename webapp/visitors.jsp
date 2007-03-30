@@ -9,17 +9,26 @@
     <font face="Arial">
       <%@ include file="Header.jsp" %>
         <f:view>
-          <h:selectOneMenu id="selectTag" value="#{pictureBean.currentTag}" style="float: left; margin-top: 10px">
-            <f:selectItems value="#{pictureBean.tagList}" />
-		  </h:selectOneMenu>
-      <h:outputText value="Currently Browsing: #{pictureBean.currentTag}" />
-      <h:dataTable value="#{pictureBean.approvedPictures}" var="picture" style="padding: 10px; margin-top: 5px; margin-left: 145px">
+          <div class="sidebar" style="float:left; margin-top: 10px" />
+          <h:form>
+            <h:selectOneMenu id="selectTag" value="#{pictureBean.tag}" required="true">
+              <f:selectItem itemValue="pictures/approved/sample-pictures/" itemLabel="Sample Pictures" />
+		    </h:selectOneMenu>
+		    <p><h:commandButton action="#{pictureBean.update}" value="Go" />
+		  </h:form>
+		  </div>
+	  <div class="content" style="padding: 10px; margin-top: 5px; margin-left: 145px">
+      <h:dataTable value="#{pictureBean.approvedPictures}" var="picture">
         <h:column>
+          <f:facet name="header">
+            <h:outputText value="Current Tag: #{pictureBean.tag}" style="text-decoration: none"/>
+          </f:facet>
           <h:outputLink value="#{picture.path}">
             <h:graphicImage url="#{picture.path}" height="180" width="240"/>
           </h:outputLink>
         </h:column>
       </h:dataTable>
+      </div>
     </f:view>
     </font>
   </body>

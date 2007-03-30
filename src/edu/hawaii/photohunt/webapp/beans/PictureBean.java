@@ -1,10 +1,15 @@
 package edu.hawaii.photohunt.webapp.beans;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.faces.model.SelectItem;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+
 import edu.hawaii.photohunt.webapp.model.PictureFile;
-import edu.hawaii.photohunt.webapp.model.PictureModel;
+import edu.hawaii.photohunt.webapp.model.PictureFileFilter;
 
 /**
  * The PictureBean class is the bean that backs the display of approved pictures in the webapp.
@@ -14,36 +19,21 @@ import edu.hawaii.photohunt.webapp.model.PictureModel;
  */
 public class PictureBean {
 
-  // /** The context of the web application. */
-  // private final ServletContext servletContext = (ServletContext)
-  //   FacesContext.getCurrentInstance().getExternalContext().getContext();
-
-  ///** The path to the approved pictures directory. */
-  //private String directoryPath = "pictures/approved/";
+   /** The context of the web application. */
+   private final ServletContext servletContext = (ServletContext)
+     FacesContext.getCurrentInstance().getExternalContext().getContext();
 
   /** The current tag directory being browsed. */
-  private String currentTag = "";
-
-  /** The model supporting this backing bean. */
-  private final PictureModel model = new PictureModel();
+  private String tag = "";
 
   /** The list of approved pictures. */
-  private final List<PictureFile> pictures = this.model.getPictures();
+  private final List<PictureFile> pictures = new ArrayList<PictureFile>();
 
   /**
    * Constructor for PictureBean class.
    */
   public PictureBean() {
     //Needs to be left empty.
-  }
-
-  /**
-   * Get the list of available tags.
-   * 
-   * @return The list of tags available.
-   */
-  public List<SelectItem> getTagList() {
-    return this.model.getTagList();
   }
 
   /**
@@ -56,25 +46,12 @@ public class PictureBean {
   }
 
   /**
-   * Change the current tag directory.
-   * 
-   * @param directory The tag directory to view.
-   * @return Returns null to refresh the current page.
-   */
-  public String changeTag(String directory) {
-    this.currentTag = directory;
-
-    //Forces refresh of current page.
-    return null;
-  }
-
-  /**
    * Get the current tag.
    * 
    * @return The tag currently being browsed.
    */
-  public String getCurrentTag() {
-    return this.currentTag;
+  public String getTag() {
+    return this.tag;
   }
 
   /**
@@ -82,7 +59,25 @@ public class PictureBean {
    * 
    * @param tag The tag to view.
    */
-  public void setCurrentTag(String tag) {
-    this.currentTag = tag;
+  public void setTag(String tag) {
+    this.tag = tag;
+  }
+  
+  /**
+   * Update the set of pictures.
+   * 
+   * @return Returns "refresh" to refresh the current page.
+   */
+  public String update() {
+    //Updated by the dropdown menu
+    File pendingDir = new File(servletContext.getRealPath(this.tag));
+
+    // Insert the file names into the lists.
+    PictureFileFilter pictureFilter = new PictureFileFilter();
+    for (File inFile : Arrays.asList(pendingDir.listFiles(pictureFilter))) {
+      this.pictures.add(new PictureFile(this.tag, inFile));
+    }
+    
+    return "refresh";
   }
 }

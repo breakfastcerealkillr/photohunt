@@ -5,11 +5,12 @@
 
 <faces-config>
   
-  <navigation-rule>
-    <from-view-id>/slideshow.jsp</from-view-id>
+    <navigation-rule>
+    <from-view-id>/visitors.jsp</from-view-id>
     <navigation-case>
-      <from-outcome>end</from-outcome>
-      <to-view-id>/end.jsp</to-view-id>
+      <from-action>#{pictureBean.update}</from-action>
+      <from-outcome>refresh</from-outcome>
+      <to-view-id>/visitors.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
   
@@ -56,7 +57,7 @@
     <managed-bean-class>
       edu.hawaii.photohunt.webapp.beans.PictureBean
     </managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
+    <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
 </faces-config>
