@@ -1,0 +1,6 @@
+.sidebar {float:left; padding: 5px}
+.content {padding: 10px; margin-top: 5px; margin-left: 155px}
+.approved {background-color: #bedfc4; padding: 10px margin-top: 5px; margin-left: 155px; margin-right: 20px}
+.navbar {float: top; background-color: #2D73B9; padding: 10px}
+.navbar a {text-decoration: none; font-weight: bold; color: white}
+#pictureList {margin-top: 10px}
