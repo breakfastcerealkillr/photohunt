@@ -4,14 +4,17 @@
 <html>
   <head>
     <title>Photo Hunt - Staff</title>
+    <style>
+      @import "stylesheet.css";
+    </style>
   </head>
   <body>
     <font face="Arial">
       <%@ include file="Header.jsp" %>
-      <div class="sidebars" style="float: left">
+      <div class="sidebar">
       <%@ include file="staff-navbar.jsp" %>
       </div>
-      <div class="content" style="padding: 10px; margin-top: 5px; position: absolute; left: 145px">
+      <div class="content">
         <h2 style="margin-top: 0">Welcome!</h2>
 	    Please make a selection from the left.
 	  </div>

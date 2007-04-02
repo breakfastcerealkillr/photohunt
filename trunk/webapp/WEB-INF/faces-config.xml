@@ -5,7 +5,7 @@
 
 <faces-config>
   
-    <navigation-rule>
+  <navigation-rule>
     <from-view-id>/visitors.jsp</from-view-id>
     <navigation-case>
       <from-action>#{pictureBean.update}</from-action>
@@ -20,6 +20,11 @@
       <from-action>#{approvalBean.sortPictures}</from-action>
       <from-outcome>confirm</from-outcome>
       <to-view-id>/approval-confirm.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-action>#{approvalBean.changeTag}</from-action>
+      <from-outcome>refresh</from-outcome>
+      <to-view-id>/approval.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
   
