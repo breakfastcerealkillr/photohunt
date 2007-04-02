@@ -4,20 +4,29 @@
 <html>
   <head>
     <title>Photo Hunt - Approval</title>
+    <style>
+      @import "stylesheet.css";
+    </style>
   </head>
   <body>
     <font face="Arial">
       <%@ include file="Header.jsp" %>
-      <div class="sidebars" style="float: left">
-      <%@ include file="staff-navbar.jsp" %>
-      <div class="tag-sidebar" style="margin-top: 10px">
-        Tag Browser:
+      <f:view>
+      <div class="sidebar">
+        <%@ include file="staff-navbar.jsp" %>
+        <h:form style="margin-top: 30px; padding: 5px; background-color: #FEF886">
+          <h:outputText value="Select a tag."/>
+          <p><h:selectOneMenu id="selectTag" value="#{approvalBean.tag}" required="true">
+            <f:selectItems value="#{approvalBean.tagList}" />
+		  </h:selectOneMenu></p>
+		  <p><h:commandButton action="#{approvalBean.changeTag}" value="Go" />
+		</h:form>
       </div>
-    </div>
-    <div class="content" style="padding: 10px; margin-top: 5px; margin-left: 145px">
-    <f:view>
+    <div class="content">
+     <h:outputText value="Current tag: #{approvalBean.tag}" />
      <h:form>
-        <h:dataTable value="#{approvalBean.pendingPictures}" var="picture">
+        <h:dataTable value="#{approvalBean.pendingPictures}" var="picture"
+          rendered="#{!empty approvalBean.pendingPictures}" id="pictureList">
           <h:column>
             <f:facet name="header">
               <h:outputText value="Approve" />
@@ -34,7 +43,8 @@
           </h:column>
         </h:dataTable>
         
-        <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" />
+        <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" 
+         rendered="#{!empty approvalBean.pendingPictures}" />
       </h:form>
     </f:view>
     </div>

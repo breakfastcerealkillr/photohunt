@@ -4,21 +4,19 @@
 <html>
   <head>
     <title>Photo Hunt - Approval</title>
+    <style>
+      @import "stylesheet.css";
+    </style>
   </head>
   <body>
     <font face="Arial">
       <%@ include file="Header.jsp" %>
-      <div class="sidebars" style="float: left">
-      <%@ include file="staff-navbar.jsp" %>
-      <div class="tag-sidebar" style="margin-top: 10px">
-        Tag Browser:
+      <div class="sidebar">
+        <%@ include file="staff-navbar.jsp" %>
       </div>
-    </div>
-    <div class="content" style="padding: 10px; margin-top: 5px; margin-left: 145px">
-      <div class="approved" >
+    <div class="approved">
       <f:view>
-        <h:dataTable value="#{approvalBean.approvedPictures}" var="picture"
-          style="background-color: #bedfc4; margin-left: 10px; margin-right: auto; border: 1px">
+        <h:dataTable value="#{approvalBean.approvedPictures}" var="picture">
           <f:facet name="header">
             <h:outputText value="The following pictures will be available for public viewing." />
           </f:facet>
@@ -35,7 +33,6 @@
           <h:commandButton action="return" value="Go back" />
         </h:form>
       </f:view>
-      </div>
     </div>
 
     </font>
