@@ -28,7 +28,7 @@ public class ApprovalBean {
   protected static final String APPROVED_DIRECTORY = "pictures/approved/";
 
   /** Array containing the valid tags. */
-  protected static final SelectItem[] TAG_ARRAY = { 
+  static final SelectItem[] TAG_ARRAY = { 
     new SelectItem("sample-pictures/","Sample Pictures"), 
     new SelectItem("antique-pictures/", "Antiques"),
     new SelectItem("hawaii-exhibit/", "Hawaiian Exhibit")};
@@ -44,13 +44,13 @@ public class ApprovalBean {
   private String tag = "";
 
   /** List of the pending pictures. */
-  private List<PictureFile> pendingPictures = new ArrayList<PictureFile>();
+  private final List<PictureFile> pendingPictures = new ArrayList<PictureFile>();
 
   /** List of the selected items. */
-  private List<PictureFile> approvedPictures = new ArrayList<PictureFile>();
+  private final List<PictureFile> approvedPictures = new ArrayList<PictureFile>();
 
   /** List of the unselected items. */
-  private List<PictureFile> deniedPictures = new ArrayList<PictureFile>();
+  private final List<PictureFile> deniedPictures = new ArrayList<PictureFile>();
 
   /**
    * Constructor for the ApprovalBean.
