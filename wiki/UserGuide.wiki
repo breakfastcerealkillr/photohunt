@@ -16,6 +16,7 @@ You will see a summary page like below.
 
 http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
   * To review pictures, click on "Review Photos".
+  * To manage or delete approved pictures, click on "Manage Pictures".
   * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
   * To edit account settings, click on "Preferences".
   * To log out from Photo Hunt, click on "Log Out".
@@ -26,3 +27,9 @@ http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
   * A list of pictures will appear.  You can approve pictures by clicking on the check boxes next to the picture.  When you are finished, click on submit to go to the confirmation page.
   * The confirmation page shows the pictures that have been approved and a warning that the pictures will be available for public viewing.  Click on the continue button at the bottom of the page to approve the pictures or click on the "Go back" button to make changes.
   * The approved pictures will be displayed in the visitor's section of Photo Hunt.
+
+= Managing pictures in Photo Hunt =
+  * Click on "Manage Photos" on the left side of the page.
+  * Select a tag to display.
+  * Again, a list of the approved pictures will be displayed with check boxes next to them.  This time, you may select pictures to delete by clicking on the box.  When you are finished, click on submit at the bottom of the page.
+  * A confirmation page will display the pictures marked for deletion.  Click on the continue button to permanently delete the pictures or click on "Go Back" to return to the previous page.
