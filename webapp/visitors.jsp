@@ -22,7 +22,7 @@
 		</h:form>
 	  </div>
 	  <div class="content">
-	  <h:outputText value="Current Tag: #{pictureBean.tag}" />
+	  <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}" />
       <h:dataTable value="#{pictureBean.pictures}" var="picture" id="pictureList">
         <h:column>
           <h:outputLink value="#{picture.path}">

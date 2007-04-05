@@ -23,7 +23,7 @@
       </div>
     <div class="content">
      <h3>Photo Management</h3>
-     <h:outputText value="Current tag: #{pictureBean.tag}" />
+     <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}"/>
      <h:form>
         <h:dataTable value="#{pictureBean.pictures}" var="picture"
           style="margin-top: 10px" cellpadding="10px"
