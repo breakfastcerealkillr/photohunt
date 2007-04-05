@@ -29,6 +29,12 @@ public class PictureBean {
 
   /** The current tag directory being browsed. */
   private String tag = "";
+  
+  /** The status message displayed on the web page. */
+  private String status = "Please select a tag.";
+  
+  /** The style of the status message displayed on the web page. */
+  private String statusStyle = "";
 
   /** The list of approved pictures. */
   private final List<PictureFile> pictures = new ArrayList<PictureFile>();
@@ -87,6 +93,24 @@ public class PictureBean {
   public void setTag(String tag) {
     this.tag = tag;
   }
+  
+  /**
+   * Get the current status of the page.
+   * 
+   * @return The status of the web page.
+   */
+  public String getStatus() {
+    return this.status;
+  }
+  
+  /**
+   * Get the current style of the status message.
+   * 
+   * @return The CSS style for the status message.
+   */
+  public String getStatusStyle() {
+    return this.statusStyle;
+  }
 
   /**
    * Update the set of pictures.
@@ -106,6 +130,17 @@ public class PictureBean {
     for (File inFile : Arrays.asList(approvedDir.listFiles(pictureFilter))) {
       this.pictures.add(new PictureFile(ApprovalBean.APPROVED_DIRECTORY + this.tag, inFile));
     }
+    
+    //Change the status message.
+    if (this.pictures.size() == 0) {
+      this.status = "There are no pictures for the tag " + this.tag + ", please select another.";
+      this.statusStyle = "color: darkred";
+    }
+    
+    else {
+      this.status = "Current tag: " + this.tag;
+      this.statusStyle = "";
+    }
 
     return "refresh";
   }
@@ -124,6 +159,13 @@ public class PictureBean {
       }
     }
 
+    //If no pictures have been selected, return to the currently displayed page.
+    if (this.deletedPictures.size() == 0) {
+      this.status = "No pictures have been selected for deletion.";
+      this.statusStyle = "color: darkred";
+      return null;
+    }
+    
     //Navigation case.  Go to confirmation page.
     return "confirm";
   }
@@ -150,6 +192,10 @@ public class PictureBean {
     for (File inFile : Arrays.asList(approvedDir.listFiles(pictureFilter))) {
       this.pictures.add(new PictureFile(ApprovalBean.APPROVED_DIRECTORY + this.tag, inFile));
     }
+    
+    //Display the result of the operation.
+    this.status = "The pictures have been deleted.";
+    this.statusStyle = "";
     
     return "deleted";
   }
