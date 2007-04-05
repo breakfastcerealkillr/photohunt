@@ -1,13 +1,24 @@
-<%@ include file="Header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 
-This is the login page.  It has not been implemented yet.
-<p>
-<f:view>
-  <h:form id="to-approval">
-    <h:commandLink id="approve" action="#{approvalBean.setCurrentPicture}">
-      <h:outputText value="Continue to approval process."/>
-    </h:commandLink>
-  </h:form>
-</f:view>
-
-<%@ include file="Footer.jsp" %>
+<html>
+  <head>
+    <title>Photo Hunt - Staff Login</title>
+    <style>
+      @import "stylesheet.css";
+    </style>
+  </head>
+  <body>
+    <f:view>
+      <%@ include file="Header.jsp" %>
+      <h:form>
+	    <h3>Please enter your name and password.</h3>
+	    <p><h:outputText value="Name: " />
+	    <h:inputText value="#{loginBean.name}" /></p>
+		<p><h:outputText value="Password: "/>
+		<h:inputSecret value="#{loginBean.password}" /></p>
+	    <p><h:commandButton value="Login" action="#{loginBean.login}" /></p>
+	  </h:form>
+	</f:view>
+  </body>
+</html>

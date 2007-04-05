@@ -12,16 +12,19 @@ import java.io.File;
 public class PictureFile {
   /**The local directory name for this picture.*/
   private final String directory;
-  
+
   /**The path name for this picture.*/
   private final String path;
-  
+
   /**
-   * The status of this picture. TRUE if the picture is to be approved. False if it is to be
-   * deleted.
+   * The status of this picture. True if the picture is to be approved. False if it is to be
+   * denied.
    */
   private boolean approved;
-  
+
+  /** Marks the picture for deletion.  Set to true to delete the picture, false otherwise.*/
+  private boolean delete;
+
   /**
    * Constructor for the PictureFile class.  The approval status defaults to false.
    * 
@@ -33,7 +36,7 @@ public class PictureFile {
     this.path = this.directory + file.getName();
     this.approved = false;
   }
-  
+
   /**
    * Get the directory of the files.
    * 
@@ -42,7 +45,7 @@ public class PictureFile {
   public String getDirectory() {
     return this.directory;
   }
-  
+
   /**
    * Get the path of this picture.
    * 
@@ -51,7 +54,7 @@ public class PictureFile {
   public String getPath() {
     return this.path;
   }
-  
+
   /**
    * Set the approval status of this picture.
    * 
@@ -60,7 +63,7 @@ public class PictureFile {
   public void setApproved(boolean status) {
     this.approved = status;
   }
-  
+
   /**
    * Get the approval status of this picture.
    * 
@@ -69,5 +72,23 @@ public class PictureFile {
   public boolean isApproved() {
     return this.approved;
   }
-  
+
+  /**
+   * Mark the picture for deletion.
+   * 
+   * @param delete True if the picture is to be deleted, false otherwise.
+   */
+  public void setDelete(boolean delete) {
+    this.delete = delete;
+  }
+
+  /**
+   * Get the deletion status of the picture.
+   * 
+   * @return True if the picture is marked for deletion, false otherwise.
+   */
+  public boolean isDelete() {
+    return this.delete;
+  }
+
 }

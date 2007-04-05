@@ -15,9 +15,9 @@
         <%@ include file="staff-navbar.jsp" %>
     </div>
     <div class="content">
-      <h:dataTable value="#{approvalBean.approvedPictures}" var="picture" id="approvedTable">
+      <h:dataTable value="#{pictureBean.deletedPictures}" var="picture" id="deletedTable">
         <f:facet name="header">
-          <h:outputText value="The following pictures will be available for public viewing." />
+          <h:outputText value="The following pictures will be permanently deleted." />
         </f:facet>
         <h:column>
           <h:outputLink value="#{picture.path}">
@@ -25,11 +25,9 @@
           </h:outputLink>
         </h:column>
       </h:dataTable>
-      <h:selectBooleanCheckbox value="#{approvalBean.removeDenied}" />
-      <h:outputText value="Delete unapproved pictures permanently." /><br>
       <h:outputText value="Are you sure you want to continue?" /><br>
       <h:form>
-        <h:commandButton action="#{approvalBean.approvePictures}" value="Continue" />
+        <h:commandButton action="#{pictureBean.deletePictures}" value="Continue" />
         <h:commandButton action="return" value="Go back" />
       </h:form>
     </div>

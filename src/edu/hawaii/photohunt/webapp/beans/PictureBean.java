@@ -33,6 +33,9 @@ public class PictureBean {
   /** The list of approved pictures. */
   private final List<PictureFile> pictures = new ArrayList<PictureFile>();
 
+  /** The list of pictures to be deleted (used by photo-management.jsp).*/
+  private final List<PictureFile> deletedPictures = new ArrayList<PictureFile>();
+
   /**
    * Constructor for PictureBean class.
    */
@@ -47,6 +50,15 @@ public class PictureBean {
    */
   public List<PictureFile> getPictures() {
     return this.pictures;
+  }
+
+  /**
+   * Get the list of pictures to be deleted.
+   * 
+   * @return The list of pictures to be deleted.
+   */
+  public List<PictureFile> getDeletedPictures() {
+    return this.deletedPictures;
   }
 
   /**
@@ -84,7 +96,7 @@ public class PictureBean {
   public String update() {
     //Clear the list of pictures.
     this.pictures.clear();
-    
+
     //Updated by the dropdown menu
     File approvedDir = new File(servletContext.getRealPath(ApprovalBean.APPROVED_DIRECTORY
         + this.tag));
@@ -96,5 +108,49 @@ public class PictureBean {
     }
 
     return "refresh";
+  }
+
+  /**
+   * Move the pictures marked for deletion into the deleted pictures list.
+   * 
+   * @return Returns "confirm" to continue to the confirmation page.
+   */
+  public String sortPictures() {
+    this.deletedPictures.clear();
+
+    for (PictureFile pendingFile : this.pictures) {
+      if (pendingFile.isDelete()) {
+        this.deletedPictures.add(pendingFile);
+      }
+    }
+
+    //Navigation case.  Go to confirmation page.
+    return "confirm";
+  }
+
+  /**
+   * Delete the pictures in the deleted pictures list.
+   * 
+   * @return Returns "deleted" when the process is complete.
+   */
+  public String deletePictures() {
+    for (PictureFile toDelete : this.deletedPictures) {
+      new File(toDelete.getPath()).delete();
+    }
+    
+    //Update the pictures in the picture list.
+    //Clear the list of pictures.
+    this.pictures.clear();
+
+    File approvedDir = new File(servletContext.getRealPath(ApprovalBean.APPROVED_DIRECTORY
+        + this.tag));
+
+    // Insert the file names into the lists.
+    PictureFileFilter pictureFilter = new PictureFileFilter();
+    for (File inFile : Arrays.asList(approvedDir.listFiles(pictureFilter))) {
+      this.pictures.add(new PictureFile(ApprovalBean.APPROVED_DIRECTORY + this.tag, inFile));
+    }
+    
+    return "deleted";
   }
 }

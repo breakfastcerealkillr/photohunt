@@ -9,7 +9,7 @@
     </style>
   </head>
   <body>
-    <font face="Arial">
+    <f:view>
       <%@ include file="Header.jsp" %>
       Welcome to Photo Hunt!<br/>
       <ui>
@@ -17,6 +17,6 @@
         <li>If you are an employee or administrator, please click on the employee link to log in.</li>
       </ui>
       <%@ include file="Footer.jsp" %>
-    </font>
+    </f:view>
   </body>
 </html>
