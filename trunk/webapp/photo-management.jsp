@@ -3,7 +3,7 @@
 
 <html>
   <head>
-    <title>Photo Hunt - Approval</title>
+    <title>Photo Hunt - Photo Management</title>
     <style>
       @import "stylesheet.css";
     </style>
@@ -15,24 +15,24 @@
         <%@ include file="staff-navbar.jsp" %>
         <h:form id="tagbrowser">
           <h:outputText value="Select a tag."/>
-          <p><h:selectOneMenu id="selectTag" value="#{approvalBean.tag}" required="true">
-            <f:selectItems value="#{approvalBean.tagList}" />
+          <p><h:selectOneMenu id="selectTag" value="#{pictureBean.tag}" required="true">
+            <f:selectItems value="#{pictureBean.tagList}" />
 		  </h:selectOneMenu></p>
-		  <p><h:commandButton action="#{approvalBean.changeTag}" value="Go" />
+		  <p><h:commandButton action="#{pictureBean.update}" value="Go" />
 		</h:form>
       </div>
     <div class="content">
-     <h3>Picture Approval</h3>
-     <h:outputText value="Current tag: #{approvalBean.tag}" />
+     <h3>Photo Management</h3>
+     <h:outputText value="Current tag: #{pictureBean.tag}" />
      <h:form>
-        <h:dataTable value="#{approvalBean.pendingPictures}" var="picture"
+        <h:dataTable value="#{pictureBean.pictures}" var="picture"
           style="margin-top: 10px" cellpadding="10px"
-          rendered="#{!empty approvalBean.pendingPictures}">
+          rendered="#{!empty pictureBean.pictures}">
           <h:column>
             <f:facet name="header">
-              <h:outputText value="Approve" />
+              <h:outputText value="Delete" />
             </f:facet>
-            <h:selectBooleanCheckbox value="#{picture.approved}" />
+            <h:selectBooleanCheckbox value="#{picture.delete}" />
           </h:column>
           <h:column>
             <f:facet name="header">
@@ -43,7 +43,7 @@
             </h:outputLink>
           </h:column>
           <f:facet name="footer">
-            <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" />
+            <h:commandButton action="#{pictureBean.sortPictures}" value="Submit" />
           </f:facet>
         </h:dataTable>
       </h:form>

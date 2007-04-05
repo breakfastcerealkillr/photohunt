@@ -6,6 +6,15 @@
 <faces-config>
   
   <navigation-rule>
+    <from-view-id>/login.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{loginBean.login}</from-action>
+      <from-outcome>continue</from-outcome>
+      <to-view-id>/staff.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
     <from-view-id>/visitors.jsp</from-view-id>
     <navigation-case>
       <from-action>#{pictureBean.update}</from-action>
@@ -41,6 +50,33 @@
     </navigation-case>
   </navigation-rule>
   
+  <navigation-rule>
+    <from-view-id>/photo-management.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{pictureBean.sortPictures}</from-action>
+      <from-outcome>confirm</from-outcome>
+      <to-view-id>/photo-confirm.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-action>#{pictureBean.update}</from-action>
+      <from-outcome>refresh</from-outcome>
+      <to-view-id>/photo-management.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/photo-confirm.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{pictureBean.deletePictures}</from-action>
+      <from-outcome>deleted</from-outcome>
+      <to-view-id>/photo-management.jsp.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>return</from-outcome>
+      <to-view-id>/photo-management.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
   <managed-bean>
     <managed-bean-name>pictureBean</managed-bean-name>
     <managed-bean-class>
@@ -63,6 +99,14 @@
       edu.hawaii.photohunt.webapp.beans.PictureBean
     </managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>loginBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.LoginBean
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 
 </faces-config>

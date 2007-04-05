@@ -6,7 +6,6 @@
     <title>Photo Hunt</title>
   </head>
   <body>
-    <font face="Arial">
       <%@ include file="Header.jsp" %>
       <div class="sidebars" style="float: left">
       <%@ include file="staff-navbar.jsp" %>
@@ -15,6 +14,5 @@
       </div>
       </div>
       There are no pictures to be displayed.
-    </font>
   </body>
 </html>

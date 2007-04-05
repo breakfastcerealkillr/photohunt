@@ -28,11 +28,10 @@ public class ApprovalBean {
   protected static final String APPROVED_DIRECTORY = "pictures/approved/";
 
   /** Array containing the valid tags. */
-  static final SelectItem[] TAG_ARRAY = { 
-    new SelectItem("sample-pictures/","Sample Pictures"), 
-    new SelectItem("antique-pictures/", "Antiques"),
-    new SelectItem("hawaii-exhibit/", "Hawaiian Exhibit")};
-  
+  static final SelectItem[] TAG_ARRAY = { new SelectItem("sample-pictures/", "Sample Pictures"),
+      new SelectItem("antique-pictures/", "Antiques"),
+      new SelectItem("hawaii-exhibit/", "Hawaiian Exhibit") };
+
   /** The list of available tags.*/
   private final List<SelectItem> tagList = Arrays.asList(TAG_ARRAY);
 
@@ -42,6 +41,9 @@ public class ApprovalBean {
 
   /** The current tag being displayed. */
   private String tag = "";
+
+  /** Marks unapproved pictures for deletion. */
+  private boolean removeDenied = false;
 
   /** List of the pending pictures. */
   private final List<PictureFile> pendingPictures = new ArrayList<PictureFile>();
@@ -58,7 +60,7 @@ public class ApprovalBean {
   public ApprovalBean() {
     // JavaBeans need an empty constructor.
   }
-  
+
   /**
    * Get the list of tags.
    * 
@@ -84,6 +86,24 @@ public class ApprovalBean {
    */
   public void setTag(String tag) {
     this.tag = tag;
+  }
+
+  /**
+   * Mark the unapproved pictures for deletion.
+   * 
+   * @param delete Set to true to delete the unapproved pictures.
+   */
+  public void setRemoveDenied(boolean delete) {
+    this.removeDenied = delete;
+  }
+
+  /**
+   * Get the deletion status for the unapproved pictures.
+   * 
+   * @return Returns true if the pictures are to be deleted.  False otherwise.
+   */
+  public boolean getRemoveDenied() {
+    return this.removeDenied;
   }
 
   /**
@@ -131,7 +151,7 @@ public class ApprovalBean {
   private void update() {
     //Clear the list of pending pictures.
     this.pendingPictures.clear();
-    
+
     //Updated by the dropdown menu
     File pendingDir = new File(servletContext.getRealPath(PENDING_DIRECTORY + this.tag));
 
@@ -182,10 +202,15 @@ public class ApprovalBean {
           approvedFile.getName()));
     }
 
-    //Delete the unapproved pictures.
-    //for (PictureFile denied : this.deniedPictures) {
-    //  new File(denied.getPath()).delete();
-    //}
+    if (this.removeDenied) {
+      // Delete the unapproved pictures.
+      for (PictureFile denied : this.deniedPictures) {
+        new File(denied.getPath()).delete();
+      }
+
+      //Reset removeDenied.
+      setRemoveDenied(false);
+    }
 
     //Refresh the list.
     this.update();

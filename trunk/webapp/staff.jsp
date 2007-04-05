@@ -9,7 +9,7 @@
     </style>
   </head>
   <body>
-    <font face="Arial">
+    <f:view>
       <%@ include file="Header.jsp" %>
       <div class="sidebar">
       <%@ include file="staff-navbar.jsp" %>
@@ -18,7 +18,7 @@
         <h2 style="margin-top: 0">Welcome!</h2>
 	    Please make a selection from the left.
 	  </div>
-    </font>
+	</f:view>
   </body>
 </html>
     
