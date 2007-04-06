@@ -2,7 +2,7 @@ package edu.hawaii.photohunt.db;
 
 import edu.hawaii.photohunt.db.util.HibernateUtil;
 
-import javax.servlet.http.*;
+import javax.servlet.http.*; 
 import javax.servlet.ServletException;
 import java.io.*;
 import java.util.*;
