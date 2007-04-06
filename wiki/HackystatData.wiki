@@ -15,7 +15,7 @@ The images from the member process report in Hackystat will be posted here.  Ana
   Commits:
   Most commits made by George since he practices better, continuous committing habits, while Elayne commits at the end when code reaches an acceptable level. Commits mainly consisted of Webapp, its Beans, Support class, and Persistence-related classes and libraries.
 
-
+  http://photohunt.googlecode.com/svn/trunk/wiki/unittest2.png
   Unit tests:
   George continuously tests his code with JUnits test. Elayne finally wrote and used her JUnit tests for the Mail package around April 1st.
 
