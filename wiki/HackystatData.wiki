@@ -16,6 +16,8 @@ The images from the member process report in Hackystat will be posted here.  Ana
   Commits:
   Not sure why Elayne's commit data isn't showing up, but she should be showing some sort of incline at the end of the chart. Most commits were made by George since he practices better, continuous committing habits, while Elayne commits at the end when code reaches an acceptable level. Commits mainly consisted of Webapp, its Beans, Support class, and Persistence-related classes and libraries.
 
+  Note: Reran svn.build.xml. Commit data should be accurately recorded for the past week.
+
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest2.png
 
   Unit tests:
