@@ -180,6 +180,10 @@ public class PictureBean {
       new File(toDelete.getPath()).delete();
     }
     
+    //Display the result of the operation.
+    this.status = this.deletedPictures.size() + " pictures have been deleted.";
+    this.statusStyle = "";
+    
     //Update the pictures in the picture list.
     //Clear the list of pictures.
     this.pictures.clear();
@@ -192,10 +196,6 @@ public class PictureBean {
     for (File inFile : Arrays.asList(approvedDir.listFiles(pictureFilter))) {
       this.pictures.add(new PictureFile(ApprovalBean.APPROVED_DIRECTORY + this.tag, inFile));
     }
-    
-    //Display the result of the operation.
-    this.status = "The pictures have been deleted.";
-    this.statusStyle = "";
     
     return "deleted";
   }

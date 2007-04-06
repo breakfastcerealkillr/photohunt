@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+<%@ taglib uri="http://richfaces.ajax4jsf.org/rich" prefix="rich" %>
 
 <html>
   <head>
@@ -25,27 +26,39 @@
      <h3>Photo Management</h3>
      <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}"/>
      <h:form>
-        <h:dataTable value="#{pictureBean.pictures}" var="picture"
-          style="margin-top: 10px" cellpadding="10px"
+        <rich:dataTable id="pictureList" value="#{pictureBean.pictures}" var="picture"
+          cellpadding="10px" columnClasses="col" rows="5"
           rendered="#{!empty pictureBean.pictures}">
+          <f:facet name="header">
+            <rich:columnGroup>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Delete" />
+              </h:column>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Picture" />
+              </h:column>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Submitted By" />
+              </h:column>
+            </rich:columnGroup>
+          </f:facet>
+          
           <h:column>
-            <f:facet name="header">
-              <h:outputText value="Delete" />
-            </f:facet>
-            <h:selectBooleanCheckbox value="#{picture.delete}" />
+            <h:selectBooleanCheckbox value="#{picture.delete}">
+              <a4j:support event="onclick" />
+            </h:selectBooleanCheckbox>
           </h:column>
           <h:column>
-            <f:facet name="header">
-              <h:outputText value="Picture" />
-            </f:facet>
             <h:outputLink value="#{picture.path}">
-              <h:graphicImage url="#{picture.path}" height="180" width="240"/>
+              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
             </h:outputLink>
           </h:column>
-          <f:facet name="footer">
-            <h:commandButton action="#{pictureBean.sortPictures}" value="Submit" />
-          </f:facet>
-        </h:dataTable>
+        </rich:dataTable>
+        
+        <rich:datascroller for="pictureList" rendered="#{!empty pictureBean.pictures}"/>
+        <rich:spacer height="10" />
+        <h:commandButton action="#{pictureBean.sortPictures}" value="Submit" 
+          rendered="#{!empty pictureBean.pictures}"/>
       </h:form>
     </div>
     </f:view>
