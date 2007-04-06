@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+<%@ taglib uri="https://ajax4jsf.dev.java.net/ajax" prefix="a4j"%>
+<%@ taglib uri="http://richfaces.ajax4jsf.org/rich" prefix="rich" %>
 
 <html>
   <head>
@@ -23,29 +25,38 @@
       </div>
     <div class="content">
      <h3>Picture Approval</h3>
-     <h:outputText value="Current tag: #{approvalBean.tag}" />
+     <h:outputText value="#{approvalBean.status}" />
      <h:form>
-        <h:dataTable value="#{approvalBean.pendingPictures}" var="picture"
-          style="margin-top: 10px" cellpadding="10px"
+        <rich:dataTable id="pictureList" value="#{approvalBean.pendingPictures}" var="picture"
+          cellpadding="10px" columnClasses="col" rows="5"
           rendered="#{!empty approvalBean.pendingPictures}">
+          <f:facet name="header">
+            <rich:columnGroup>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Approve" />
+              </h:column>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Picture" />
+              </h:column>
+            </rich:columnGroup>
+          </f:facet>
+          
           <h:column>
-            <f:facet name="header">
-              <h:outputText value="Approve" />
-            </f:facet>
-            <h:selectBooleanCheckbox value="#{picture.approved}" />
+            <h:selectBooleanCheckbox value="#{picture.approved}">
+              <a4j:support event="onclick" />
+            </h:selectBooleanCheckbox>
           </h:column>
           <h:column>
-            <f:facet name="header">
-              <h:outputText value="Picture" />
-            </f:facet>
             <h:outputLink value="#{picture.path}">
-              <h:graphicImage url="#{picture.path}" height="180" width="240"/>
+              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
             </h:outputLink>
           </h:column>
-          <f:facet name="footer">
-            <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" />
-          </f:facet>
-        </h:dataTable>
+        </rich:dataTable>
+        
+        <rich:datascroller for="pictureList" rendered="#{!empty approvalBean.pendingPictures}"/>
+        <rich:spacer height="20" />
+        <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" 
+          rendered="#{!empty approvalBean.pendingPictures}"/>
       </h:form>
     </div>
     </f:view>

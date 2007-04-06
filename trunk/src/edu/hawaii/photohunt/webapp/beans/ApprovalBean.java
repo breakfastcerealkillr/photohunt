@@ -42,6 +42,9 @@ public class ApprovalBean {
   /** The current tag being displayed. */
   private String tag = "";
 
+  /** The status of the approval bean. */
+  private String status = "Please select a tag:";
+
   /** Marks unapproved pictures for deletion. */
   private boolean removeDenied = false;
 
@@ -86,6 +89,15 @@ public class ApprovalBean {
    */
   public void setTag(String tag) {
     this.tag = tag;
+  }
+
+  /**
+   * Get the status of the ApprovalBean.
+   * 
+   * @return The current status message.
+   */
+  public String getStatus() {
+    return this.status;
   }
 
   /**
@@ -141,6 +153,15 @@ public class ApprovalBean {
   public String changeTag() {
     //Update the list of pictures.
     this.update();
+
+    if (this.pendingPictures.size() == 0) {
+      this.status = "The tag " + this.tag
+          + "does not have any pictures.  Please choose another tag.";
+    }
+
+    else {
+      this.status = "Current tag: " + this.tag;
+    }
 
     return "refresh";
   }
@@ -211,6 +232,9 @@ public class ApprovalBean {
       //Reset removeDenied.
       setRemoveDenied(false);
     }
+
+    //Update status.
+    this.status = this.approvedPictures.size() + " pictures have been approved.";
 
     //Refresh the list.
     this.update();

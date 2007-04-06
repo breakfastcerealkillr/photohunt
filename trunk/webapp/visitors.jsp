@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+<%@ taglib uri="http://richfaces.ajax4jsf.org/rich" prefix="rich" %>
 
 <html>
   <head>
@@ -23,13 +24,30 @@
 	  </div>
 	  <div class="content">
 	  <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}" />
-      <h:dataTable value="#{pictureBean.pictures}" var="picture" id="pictureList">
-        <h:column>
-          <h:outputLink value="#{picture.path}">
-            <h:graphicImage url="#{picture.path}" height="180" width="240"/>
-          </h:outputLink>
-        </h:column>
-      </h:dataTable>
+	  <rich:spacer height="10"/>
+	  <h:form>
+        <rich:dataTable value="#{pictureBean.pictures}" var="picture" id="pictureList"
+          columnClasses="col" rows="5" rendered="#{!empty pictureBean.pictures}">
+          <f:facet name="header">
+            <rich:columnGroup>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Picture" />
+              </h:column>
+              <h:column>
+                <h:outputText styleClass="headerText" value="Submitted By" />
+              </h:column>
+            </rich:columnGroup>
+          </f:facet>
+        
+          <h:column>
+            <h:outputLink value="#{picture.path}">
+              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
+            </h:outputLink>
+          </h:column>
+        
+        </rich:dataTable>
+      <rich:datascroller for="pictureList" rendered="#{!empty pictureBean.pictures}"/>
+      </h:form>
       </div>
     </f:view>
   </body>
