@@ -7,6 +7,7 @@
    * Clicking on the employee's link takes you to the staff welcome page.  The login page exists but it may or may not be used in the released version.  If it is, check this page for the username and password.
    * On the staff welcome page, the "Review Photos" and "Manage Photos" links work, but the rest of them don't for now.
    * It is possible that this list could change, but the remaining focus is more on making the web application more usable and presentable.
+   * Persistence mechanism works, but will need to be tied in together with existing pictures
 
 = 3/9/07 =
   * A newer version of 1.0 with more complete functionality is now available for download.  There are two distributions, the binary and the source code.  Get them [http://code.google.com/p/photohunt/downloads/list here].
