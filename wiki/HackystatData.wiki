@@ -8,6 +8,7 @@ The images from the member process report in Hackystat will be posted here.  Ana
   *==Week of 3/23 to 4/06==
   (I'll update this with pictures when the Hackystat data is updated at 6AM.)
   
+  http://photohunt.googlecode.com/svn/trunk/wiki/activetime2.png
   Development Time:  
   30 hours combined Development Time since March 23th. This equates to ~2 hours spent each day since March 23rd to April 6th. A lot more work was put into Version 2 with new added features such as Approval, Persistence, Login pages and miscellaneous maintenance.
 
