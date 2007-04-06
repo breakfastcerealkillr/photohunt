@@ -1,7 +1,7 @@
 package edu.hawaii.photohunt.mail;
 
 import org.junit.Test;
-import junit.framework.TestCase;
+import junit.framework.TestCase; 
 
 /**
  * JUnit testing for Receiver class.
