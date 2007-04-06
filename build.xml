@@ -91,6 +91,9 @@
     <fileset file="${lib.dir}/jar/mailapi.jar" />
     <fileset file="${lib.dir}/jar/pop3.jar" />
     <fileset file="${lib.dir}/jar/smtp.jar" />
+    <fileset file="${lib.dir}/hibernate3.jar" />
+    <fileset file="${lib.dir}/hsqldb.jar" />
+    <fileset file="${lib.dir}/log4j-1.2.11.jar" />  
     <fileset file="${basedir}/webapp/WEB-INF/lib/jsf-api.jar" />
     <fileset file="${basedir}/webapp/WEB-INF/lib/servlet-2_5-api.jar" />
     
@@ -133,6 +136,8 @@
     <record name="${javac.output}" action="stop" />
    
   </target>
+  
+
   
   <target name="clean" description="Delete build/ directory.">
     <delete dir="${build.dir}" />
