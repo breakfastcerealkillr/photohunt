@@ -11,7 +11,6 @@ public class Person {
 
     public Person() {}
 
-
     public Long getId() {
         return id;
     }
