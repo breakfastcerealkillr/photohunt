@@ -2,7 +2,7 @@ package edu.hawaii.photohunt.db;
 
 import java.util.*;
 
-public class Event {
+public class Event { 
     private Long id;
 
     private String title;

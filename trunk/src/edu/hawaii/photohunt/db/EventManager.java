@@ -2,7 +2,7 @@ package edu.hawaii.photohunt.db;
 import org.hibernate.*;
 import org.hibernate.criterion.Expression;
 
-import java.util.*;
+import java.util.*; 
 
 import edu.hawaii.photohunt.db.util.HibernateUtil;
 
