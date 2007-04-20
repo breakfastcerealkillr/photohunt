@@ -4,37 +4,15 @@
 
 The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
 
-
-  *==Week of 3/23 to 4/06==
-  http://photohunt.googlecode.com/svn/trunk/wiki/activetime2.png
-
-  Development Time:
-  30 hours combined Development Time since March 23th. This equates to ~2 hours spent each day since March 23rd to April 6th. A lot more work was put into Version 2 with new added features such as Approval, Persistence, Login pages and miscellaneous maintenance.
-
-  http://photohunt.googlecode.com/svn/trunk/wiki/commits2.png
-
-  Commits:
-  Not sure why Elayne's commit data isn't showing up, but she should be showing some sort of incline at the end of the chart. Most commits were made by George since he practices better, continuous committing habits, while Elayne commits at the end when code reaches an acceptable level. Commits mainly consisted of Webapp, its Beans, Support class, and Persistence-related classes and libraries.
-
-  Note: Reran svn.build.xml. Commit data should be accurately recorded for the past week.
-
-  http://photohunt.googlecode.com/svn/trunk/wiki/unittest2.png
-
-  Unit tests:
-  George continuously tests his code with JUnits test. Elayne finally wrote and used her JUnit tests for the Mail package around April 1st.
-
-  
-
-
-  *==Week of 3/16 to 3/23==
+  ==Week of 4/13 to 4/20==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
-  Again, a moderate amount of work was done.  
+  Very little work was done this past week, but it is slowly picking back up.  A lot of time was spent researching various technologies like [http://www.hibernate.org Hibernate], J2EE security, and [http://labs.jboss.com/portal/jbossrichfaces RichFaces]. 
 
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
 
-  No commits were made this week.  George did commit something on Thursday night, but this graph hasn't been updated yet.
+  Since very little work was done this week, there were no commits.
   
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
-  Unit tests were run again before George commit his code.
+  Again, since little work was done, there were no unit tests run.  What work was done by George was mostly web design work.
