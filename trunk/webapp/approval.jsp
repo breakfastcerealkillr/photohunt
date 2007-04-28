@@ -11,54 +11,72 @@
     </style>
   </head>
   <body>
-      <f:view>
+    <f:view>
       <%@ include file="Header.jsp" %>
       <div class="sidebar">
         <%@ include file="staff-navbar.jsp" %>
-        <h:form id="tagbrowser">
-          <h:outputText value="Select a tag."/>
-          <p><h:selectOneMenu id="selectTag" value="#{approvalBean.tag}" required="true">
-            <f:selectItems value="#{approvalBean.tagList}" />
-		  </h:selectOneMenu></p>
-		  <p><h:commandButton action="#{approvalBean.changeTag}" value="Go" />
-		</h:form>
       </div>
-    <div class="content">
-     <h3>Picture Approval</h3>
-     <h:outputText value="#{approvalBean.status}" />
-     <h:form>
-        <rich:dataTable id="pictureList" value="#{approvalBean.pendingPictures}" var="picture"
-          cellpadding="10px" columnClasses="col" rows="5"
-          rendered="#{!empty approvalBean.pendingPictures}">
+      <div class="content">
+        <h3>Picture Approval</h3>
+
+        <rich:panel id="instructions">
           <f:facet name="header">
-            <rich:columnGroup>
-              <h:column>
-                <h:outputText styleClass="headerText" value="Approve" />
-              </h:column>
-              <h:column>
-                <h:outputText styleClass="headerText" value="Picture" />
-              </h:column>
-            </rich:columnGroup>
+            <h:outputText value="Instructions for approving pictures." />
           </f:facet>
-          
-          <h:column>
-            <h:selectBooleanCheckbox value="#{picture.approved}">
-              <a4j:support event="onclick" />
-            </h:selectBooleanCheckbox>
-          </h:column>
-          <h:column>
-            <h:outputLink value="#{picture.path}">
-              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
-            </h:outputLink>
-          </h:column>
-        </rich:dataTable>
+          <h:outputText value="To approve pictures, drag a picture into the approved 
+            pictures section.  To submit the pictures, click on the approve button."/>
+          <f:verbatim><br></f:verbatim>
+          <h:outputText value="To delete a picture, move it into the trash on the right.  
+            Click on the empty button to empty the list of pictures." />
+        </rich:panel>
         
-        <rich:datascroller for="pictureList" rendered="#{!empty approvalBean.pendingPictures}"/>
-        <rich:spacer height="20" />
-        <h:commandButton action="#{approvalBean.sortPictures}" value="Submit" 
-          rendered="#{!empty approvalBean.pendingPictures}"/>
-      </h:form>
-    </div>
+        <rich:spacer height="10"/>
+        
+        <rich:dragIndicator id="indicator"/>
+        <h:form>
+        <rich:panel id="pending">
+          <f:facet name="header">
+            <h:outputText value="Pending Pictures" />
+          </f:facet>
+          <rich:dropSupport acceptedTypes="pic" reRender="approved, pending" dropValue="pending"
+            dropListener="#{eventBean.processDrop}" id="pendingDrop">
+          </rich:dropSupport>
+          <rich:dataGrid value="#{approvalBean.pendingPictures}" var="picture" id="pendingGrid"
+            columns="6" rendered="#{!empty approvalBean.pendingPictures}">
+            <a4j:outputPanel>
+              <rich:dragSupport dragIndicator=":indicator" dragType="pic" dragValue="#{picture}"/>
+              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
+              <h:outputText value="#{picture.tag}" style="display:block"/>
+            </a4j:outputPanel>
+          </rich:dataGrid>
+        </rich:panel>
+        
+        <rich:spacer height="10" />
+        
+        <rich:panel id="approved">
+          <f:facet name="header">
+            <h:outputText value="Approved Pictures"/>
+          </f:facet>
+          <rich:dropSupport acceptedTypes="pic" reRender="approved, pending, status" dropValue="approve"
+            dropListener="#{eventBean.processDrop}" id="approveDrop">
+          </rich:dropSupport>
+          <rich:dataGrid value="#{approvalBean.approvedPictures}" var="picture" id="approvedGrid"
+            columns="6" rendered="#{!empty approvalBean.approvedPictures}">
+            <f:facet name="footer">
+              <h:form>
+                <h:commandButton action="#{approvalBean.approve}" value="Approve" />
+              </h:form>
+            </f:facet>
+            <a4j:outputPanel>
+              <rich:dragSupport dragIndicator=":indicator" dragType="pic" dragValue="#{picture}"/>
+              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
+              <h:outputText value="#{picture.tag}" style="display:block"/>
+            </a4j:outputPanel>
+          </rich:dataGrid>
+        </rich:panel>
+        </h:form>
+        
+      </div>
     </f:view>
   </body>
 </html>

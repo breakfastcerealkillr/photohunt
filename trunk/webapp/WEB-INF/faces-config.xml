@@ -26,26 +26,8 @@
   <navigation-rule>
     <from-view-id>/approval.jsp</from-view-id>
     <navigation-case>
-      <from-action>#{approvalBean.sortPictures}</from-action>
-      <from-outcome>confirm</from-outcome>
-      <to-view-id>/approval-confirm.jsp</to-view-id>
-    </navigation-case>
-    <navigation-case>
-      <from-action>#{approvalBean.changeTag}</from-action>
-      <from-outcome>refresh</from-outcome>
-      <to-view-id>/approval.jsp</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-  
-  <navigation-rule>
-    <from-view-id>/approval-confirm.jsp</from-view-id>
-    <navigation-case>
-      <from-action>#{approvalBean.approvePictures}</from-action>
-      <from-outcome>approved</from-outcome>
-      <to-view-id>/approval.jsp</to-view-id>
-    </navigation-case>
-    <navigation-case>
-      <from-outcome>return</from-outcome>
+      <from-action>#{approvalBean.approve}</from-action>
+      <from-outcome>success</from-outcome>
       <to-view-id>/approval.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
@@ -94,11 +76,16 @@
   </managed-bean>
   
   <managed-bean>
-    <managed-bean-name>pictureBean</managed-bean-name>
+    <managed-bean-name>eventBean</managed-bean-name>
     <managed-bean-class>
-      edu.hawaii.photohunt.webapp.beans.PictureBean
+      edu.hawaii.photohunt.webapp.beans.EventBean
     </managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>approvalBean</property-name>
+      <property-class>edu.hawaii.photohunt.webapp.beans.ApprovalBean</property-class>
+      <value>#{approvalBean}</value>
+    </managed-property>
   </managed-bean>
   
   <managed-bean>

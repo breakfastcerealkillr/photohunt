@@ -95,7 +95,8 @@
     <fileset file="${lib.dir}/hsqldb.jar" />
     <fileset file="${lib.dir}/log4j-1.2.11.jar" />  
     <fileset file="${basedir}/webapp/WEB-INF/lib/jsf-api.jar" />
-    <fileset file="${basedir}/webapp/WEB-INF/lib/servlet-2_5-api.jar" />
+    <fileset file="${lib.dir}/servlet-api.jar" />
+    <fileset file="${basedir}/webapp/WEB-INF/lib/ajax4jsf-1.1.1-20070427.000947-56.jar" />
     
   	<!-- Not needed yet
     <fileset file="${basedir}/webapp/WEB-INF/lib/derby/derby.jar"/>
@@ -128,7 +129,7 @@
     </javac>
     
     <!-- Now compile the code into build/war/WEB-INF/classes -->
-    <mkdir dir="${war.web-inf.classes.dir}"/>    
+    <mkdir dir="${war.web-inf.classes.dir}"/>
     <javac srcdir="${src.dir}" destdir="${war.web-inf.classes.dir}" source="1.5" debug="on" includeAntRuntime="no">
       <classpath refid="compile.classpath" />
       <compilerarg value="-Xlint" />

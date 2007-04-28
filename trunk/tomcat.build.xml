@@ -25,6 +25,7 @@
     </copy>
       
     <copy todir="${build.dir}/war/WEB-INF/lib" file="${build.dir}/photohunt.jar"/>
+    <copy todir="${build.dir}/war/WEB-INF/classes" file="${basedir}/webapp/WEB-INF/classes/log4j.properties"/>
   
     <!--Upload sample picture set. -->
     <copy todir="${pictures.dir}">
