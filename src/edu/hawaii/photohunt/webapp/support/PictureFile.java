@@ -15,6 +15,9 @@ public class PictureFile {
 
   /**The path name for this picture.*/
   private final String path;
+  
+  /**The tag description of this picture.*/
+  private final String tag;
 
   /**
    * The status of this picture. True if the picture is to be approved. False if it is to be
@@ -29,9 +32,24 @@ public class PictureFile {
    * Constructor for the PictureFile class.  The approval status defaults to false.
    * 
    * @param directory The file directory for this picture.
-   * @param file The file to be added to the list.
+   * @param file The file representing the picture.
    */
   public PictureFile(String directory, File file) {
+    this.directory = directory;
+    this.tag = directory;
+    this.path = this.directory + file.getName();
+    this.approved = false;
+  }
+  
+  /**
+   * Constructor for the PictureFile class.  The approval status defaults to false.
+   * 
+   * @param tag The tag for this picture.
+   * @param directory The file directory for this picture.
+   * @param file The file representing the picture.
+   */
+  public PictureFile(String tag, String directory, File file) {
+    this.tag = tag;
     this.directory = directory;
     this.path = this.directory + file.getName();
     this.approved = false;
@@ -53,6 +71,15 @@ public class PictureFile {
    */
   public String getPath() {
     return this.path;
+  }
+  
+  /**
+   * Get the tag of the picture.
+   * 
+   * @return The tag description for this picture.
+   */
+  public String getTag() {
+    return this.tag;
   }
 
   /**

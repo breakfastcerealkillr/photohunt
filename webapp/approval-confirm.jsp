@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@ taglib uri="http://richfaces.ajax4jsf.org/rich" prefix="rich" %>
+<%@ taglib uri="https://ajax4jsf.dev.java.net/ajax" prefix="a4j"%>
 
 <html>
   <head>
@@ -27,7 +28,9 @@
         </h:outputLink>
       </rich:dataGrid>
       <rich:spacer height="10" />
-      <h:selectBooleanCheckbox value="#{approvalBean.removeDenied}" />
+      <h:selectBooleanCheckbox value="#{approvalBean.removeDenied}">
+        <a4j:support event="onclick" reRender="warning" />
+      </h:selectBooleanCheckbox>
       <h:outputText value="Delete unapproved pictures permanently." /><br>
       <h:outputText value="Are you sure you want to continue?" /><br>
       <h:form>
