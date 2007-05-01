@@ -23,10 +23,11 @@ http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
 
 = Approving pictures in Photo Hunt =
   * Click on "Review Photos" on the left side of the page.
-  * Select a tag to display.
-  * A list of pictures will appear.  You can approve pictures by clicking on the check boxes next to the picture.  When you are finished, click on submit to go to the confirmation page.
-  * The confirmation page shows the pictures that have been approved and a warning that the pictures will be available for public viewing.  Click on the continue button at the bottom of the page to approve the pictures or click on the "Go back" button to make changes.
-  * The approved pictures will be displayed in the visitor's section of Photo Hunt.
+  * You should see a page similar to this:
+  * To approve a picture, click and drag the picture to the approved pictures panel.
+  * Click on the "Approve" button in the approved panel to submit the pictures.
+  * To delete a picture, click and drag the picture to the deleted pictures panel.
+  * Click on the "Delete" button in the deleted pictures panel to erase the pictures permanently.
 
 = Managing pictures in Photo Hunt =
   * Click on "Manage Photos" on the left side of the page.
