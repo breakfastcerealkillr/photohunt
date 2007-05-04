@@ -4,15 +4,15 @@
 
 The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
 
-  ==Week of 4/13 to 4/20==
+  ==Week of 4/29 to 5/5==
   http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png
 
-  Very little work was done this past week, but it is slowly picking back up.  A lot of time was spent researching various technologies like [http://www.hibernate.org Hibernate], J2EE security, and [http://labs.jboss.com/portal/jbossrichfaces RichFaces]. 
+  George did a steady amount of work this week in preparation for 3.0.  Elayne put in quite a few hours this week in preparation for 3.0.
 
   http://photohunt.googlecode.com/svn/trunk/wiki/commits.png
 
-  Since very little work was done this week, there were no commits.
+  The commit sensor hasn't been working for us lately.  We have committed items over the past few days, but they have not been recorded.
   
   http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png
 
-  Again, since little work was done, there were no unit tests run.  What work was done by George was mostly web design work.
+  Some unit tests were run, mostly by George.  The web application does not have any unit tests at the moment.  Tests were run mostly to pass verification.
