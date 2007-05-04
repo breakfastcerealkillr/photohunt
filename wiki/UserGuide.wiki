@@ -15,16 +15,16 @@ This guide is for new users to the Photo Hunt web application, specifically Bish
 = Functions =
 You will see a summary page like below.
 
-http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
-  * To review pictures, click on "Review Photos".
-  * To manage or delete approved pictures, click on "Manage Pictures".
-  * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
-  * To edit account settings, click on "Preferences".
-  * To log out from Photo Hunt, click on "Log Out".
+ http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
+ * To review pictures, click on "Review Photos".
+ * To manage or delete approved pictures, click on "Manage Pictures".
+ * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
+ * To edit account settings, click on "Preferences".
+ * To log out from Photo Hunt, click on "Log Out".
 
  = Approving pictures in Photo Hunt =
 
-http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png
+ http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png
   * Click on "Review Photos" on the left side of the page.
   * To approve a picture, click and drag the picture to the approved pictures panel.
   * Click on the "Approve" button in the approved panel to submit the pictures.
