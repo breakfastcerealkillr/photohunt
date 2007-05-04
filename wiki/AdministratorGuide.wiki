@@ -18,17 +18,20 @@ This guide details the steps needed to install Photo Hunt.
  # Start up Tomcat by invoking the start up command.
   * Windows users: Go to Start -> Run.  Type "cmd" and press enter.  At the prompt, type "startup".
  # Download the latest build of Photo Hunt.
+http://photohunt.googlecode.com/svn/trunk/screenshots/photohunt-downloads.png
   * Go to the [http://code.google.com/p/photohunt/ Photo Hunt] web page.
   * Click on the "Downloads" tab.
   * Download the latest Photo Hunt binary by clicking on the line.  You may download the source code if you intend to build it using Ant.
   * Unzip the downloaded file.
  # Deploy the war file to Tomcat.
+http://photohunt.googlecode.com/svn/trunk/screenshots/tomcat-manager.png
   * Visit http://localhost:8080 and click on the Manager link in the top left corner.
   * Input the user name and password found in tomcat-users.xml.
-  * Look for the section labeled "Deploy directory or WAR file located on server".
+  * Look for the section labeled "Deploy directory or WAR file located on server". 
   * For the XML configuration file, click on browse and navigate to <Photo Hunt>/war/WEB-INF/web.xml, where <Photo Hunt> is the location of the unzipped binary download.
   * For the War or directory URL, click on browse and select <Photo Hunt>/war.
   * Click on "Deploy". 
+
 
 
 
