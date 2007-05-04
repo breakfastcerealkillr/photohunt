@@ -10,24 +10,27 @@ package edu.hawaii.photohunt.webapp.beans;
 public class LoginBean {
   /** The valid username. */
   private static final String validName = "photohunt";
-  
+
   /** The valid password. */
   private static final String validPassword = "uhmics414";
-  
+
   /** The username retrieved from the user. */
-  private String name;
-  
+  private String name = "";
+
   /** The password retrieved from the user. */
-  private String password;
-  
+  private String password = "";
+
   /** The login status of the user. */
   private boolean loggedIn = false;
-  
+
+  /** Error message for the LoginBean.*/
+  private String error = "";
+
   /** Default constructor. */
   public LoginBean() {
     //Needs to be left empty.
   }
-  
+
   /**
    * Get the username.
    * 
@@ -36,7 +39,7 @@ public class LoginBean {
   public String getName() {
     return this.name;
   }
-  
+
   /**
    * Set the username to the inputted value.
    * 
@@ -45,7 +48,7 @@ public class LoginBean {
   public void setName(String name) {
     this.name = name;
   }
-  
+
   /**
    * Get the password.
    * 
@@ -54,7 +57,7 @@ public class LoginBean {
   public String getPassword() {
     return this.password;
   }
-  
+
   /**
    * Set the password to the inputted value.
    * 
@@ -63,7 +66,7 @@ public class LoginBean {
   public void setPassword(String password) {
     this.password = password;
   }
-  
+
   /**
    * Get the login status of the LoginBean.
    * 
@@ -72,7 +75,16 @@ public class LoginBean {
   public boolean getLoggedIn() {
     return this.loggedIn;
   }
-  
+
+  /**
+   * Get the error messages of the LoginBean.
+   * 
+   * @return The error messages displayed by the LoginBean.
+   */
+  public String getError() {
+    return this.error;
+  }
+
   /**
    * Log in using the provided username and password.
    * 
@@ -81,13 +93,15 @@ public class LoginBean {
    */
   public String login() {
     if (this.name.equals(validName) && this.password.equals(validPassword)) {
+      this.error = "";
       this.loggedIn = true;
       return "continue";
     }
-    
+
+    this.error = "Invalid username/password.";
     return null;
   }
-  
+
   /**
    * Log out the user.
    * 

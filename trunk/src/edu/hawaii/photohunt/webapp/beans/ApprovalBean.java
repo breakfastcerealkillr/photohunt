@@ -14,8 +14,8 @@ import edu.hawaii.photohunt.webapp.support.PictureFileFilter;
 
 /**
  * The ApprovalBean class is a bean that backs the approval pages in Photo Hunt. The approved
- * pictures are added to a list before being submitted. The trash also uses a list to keep
- * track of what pictures need to be deleted.
+ * pictures are added to a list before being submitted. A similar list is used to keep track of the
+ * pictures that have been deleted.
  * 
  * @author George Lee
  * 
@@ -94,7 +94,7 @@ public class ApprovalBean {
   }
 
   /**
-   * Listener for pictures being added to the approved list.
+   * Moves pictures from one list to another.
    * 
    * @param file The picture file to be moved.
    * @param target The destination list for the picture file.

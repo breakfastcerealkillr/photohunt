@@ -21,16 +21,14 @@
       <div class="content">
         <h3>Picture Approval</h3>
 
-        <rich:panel id="instructions">
-          <f:facet name="header">
-            <h:outputText value="Instructions for approving pictures." />
-          </f:facet>
+        <rich:simpleTogglePanel id="instructions" switchType="AJAX" 
+          label="Instructions for approving pictures.">
           <h:outputText value="To approve pictures, drag a picture into the approved 
             pictures section.  To submit the pictures, click on the approve button."/>
           <f:verbatim><br></f:verbatim>
           <h:outputText value="To delete a picture, move it into the trash on the right.  
             Click on the empty button to empty the list of pictures." />
-        </rich:panel>
+        </rich:simpleTogglePanel>
         
         <rich:spacer height="10"/>
         
