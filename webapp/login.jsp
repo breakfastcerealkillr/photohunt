@@ -13,6 +13,7 @@
       <%@ include file="Header.jsp" %>
       <h:form>
 	    <h3>Please enter your name and password.</h3>
+	    <h:outputText value="#{loginBean.error}" style="color: darkred"/>
 	    <p><h:outputText value="Name: " />
 	    <h:inputText value="#{loginBean.name}" /></p>
 		<p><h:outputText value="Password: "/>
