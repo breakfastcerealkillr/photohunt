@@ -1,6 +1,12 @@
 #summary The latest releases and information relating to Photo Hunt development.
 #labels Featured
 
+= 5/3/07 =
+  Version 3.0 of Photo Hunt will be out sometime on Friday.  Here's a small list of changes.
+  * A SecurityFilter was added.  Navigating to staff.jsp or approval.jsp will redirect you to a login page if you're not logged in.  Current username and password are both hard coded.  The username is "photohunt" and the password is "uhmics414".  Clicking on "Log Out" in the sidebar will log you out and redirect you to the front page.
+  * Drag and drop functionality was added to the approval page. Now to approve pictures, you simply drag the pictures to the approve panel and then click on the approve button. Similarly, to delete pictures, you simply drag the pictures to the delete panel and then click on the delete button.
+  * Various changes to the wiki pages.  Added some screenshots.
+
 = 4/4/07 =
   * Version 2.0 of Photo Hunt will be out sometime on Friday.  Here's what currently works and what doesn't work.
    * Clicking on the visitor's link takes you straight to the photo viewer.  The upload pictures link does not work.
