@@ -7,23 +7,24 @@ This guide details the steps needed to install Photo Hunt.
 
 
 = Web Application =
- # Download and install the Java Runtime Environment (JRE 6) from [http://java.sun.com/javase/downloads/index.jsp Sun's website].
+ ==Java setup==
+  * Download and install the Java Runtime Environment (JRE 6) from [http://java.sun.com/javase/downloads/index.jsp Sun's website].
   * Set the JAVA_HOME environment variable to point to your Java installation (for example, c:\java\jdk1.5.0_08).
   * Add JAVA_HOME/bin to your PATH variable. 
- # Download and install Apache Tomcat 5.5.20
+ ==Download and install Apache Tomcat 5.5.20==
   * Download the core installation of Apache Tomcat 5.5.20 (apache-tomcat-5.5.20.zip) from [http://tomcat.apache.org/download-55.cgi here]. DO NOT download the "windows installer .exe" version, download the zip version instead.
   * Unzip the file to a directory, preferably the same directory as your Java installation.
   * Set the CATALINA_HOME environment variable to point to your Tomcat installation (why "Catalina"?  Beats me. But that's what it should be named).
   * Add CATALINA_HOME/bin to your PATH variable. 
- # Start up Tomcat by invoking the start up command.
+ ==Start up Tomcat by invoking the start up command.==
   * Windows users: Go to Start -> Run.  Type "cmd" and press enter.  At the prompt, type "startup".
- # Download the latest build of Photo Hunt.
+ ==Download the latest build of Photo Hunt.==
 http://photohunt.googlecode.com/svn/trunk/screenshots/photohunt-downloads.png
   * Go to the [http://code.google.com/p/photohunt/ Photo Hunt] web page.
   * Click on the "Downloads" tab.
   * Download the latest Photo Hunt binary by clicking on the line.  You may download the source code if you intend to build it using Ant.
   * Unzip the downloaded file.
- # Deploy the war file to Tomcat.
+ ==Deploy the war file to Tomcat.==
 http://photohunt.googlecode.com/svn/trunk/screenshots/tomcat-manager.png
   * Visit http://localhost:8080 and click on the Manager link in the top left corner.
   * Input the user name and password found in tomcat-users.xml.
