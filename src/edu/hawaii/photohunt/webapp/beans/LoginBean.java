@@ -21,7 +21,7 @@ public class LoginBean {
   private String password;
   
   /** The login status of the user. */
-  private boolean status = false;
+  private boolean loggedIn = false;
   
   /** Default constructor. */
   public LoginBean() {
@@ -69,8 +69,8 @@ public class LoginBean {
    * 
    * @return True if the user is still logged in, false otherwise.
    */
-  public boolean getStatus() {
-    return this.status;
+  public boolean getLoggedIn() {
+    return this.loggedIn;
   }
   
   /**
@@ -81,10 +81,20 @@ public class LoginBean {
    */
   public String login() {
     if (this.name.equals(validName) && this.password.equals(validPassword)) {
-      this.status = true;
+      this.loggedIn = true;
       return "continue";
     }
     
     return null;
+  }
+  
+  /**
+   * Log out the user.
+   * 
+   * @return Returns logout to return to the front page.
+   */
+  public String logout() {
+    this.loggedIn = false;
+    return "logout";
   }
 }

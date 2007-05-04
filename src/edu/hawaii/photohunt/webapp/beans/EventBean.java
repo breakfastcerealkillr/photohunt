@@ -13,6 +13,8 @@ import edu.hawaii.photohunt.webapp.support.PictureFile;
  *
  */
 public class EventBean implements DropListener {
+  
+  /**The ApprovalBean for this class.*/
   protected ApprovalBean approvalBean;
 
   /**

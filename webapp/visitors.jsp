@@ -23,31 +23,23 @@
 		</h:form>
 	  </div>
 	  <div class="content">
-	  <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}" />
-	  <rich:spacer height="10"/>
-	  <h:form>
-        <rich:dataTable value="#{pictureBean.pictures}" var="picture" id="pictureList"
-          columnClasses="col" rows="5" rendered="#{!empty pictureBean.pictures}">
-          <f:facet name="header">
-            <rich:columnGroup>
-              <h:column>
-                <h:outputText styleClass="headerText" value="Picture" />
-              </h:column>
-              <h:column>
-                <h:outputText styleClass="headerText" value="Submitted By" />
-              </h:column>
-            </rich:columnGroup>
-          </f:facet>
-        
-          <h:column>
+	  <rich:panel>
+	    <f:facet name="header">
+	      <h:outputText value="#{pictureBean.status}" style="#{pictureBean.statusStyle}" />
+	    </f:facet>
+	    <h:form>
+          <rich:dataGrid value="#{pictureBean.pictures}" var="picture" id="pictureList"
+            columns="6" rendered="#{!empty pictureBean.pictures}">
+          
             <h:outputLink value="#{picture.path}">
               <h:graphicImage url="#{picture.path}" height="75" width="100"/>
             </h:outputLink>
-          </h:column>
-        
-        </rich:dataTable>
-      <rich:datascroller for="pictureList" rendered="#{!empty pictureBean.pictures}"/>
-      </h:form>
+            <f:facet name="footer">
+              <rich:datascroller for="pictureList"/>
+            </f:facet>
+          </rich:dataGrid>
+        </h:form>
+      </rich:panel>
       </div>
     </f:view>
   </body>

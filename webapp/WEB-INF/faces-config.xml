@@ -15,6 +15,15 @@
   </navigation-rule>
   
   <navigation-rule>
+    <from-view-id>/*</from-view-id>
+    <navigation-case>
+      <from-action>#{loginBean.logout}</from-action>
+      <from-outcome>logout</from-outcome>
+      <to-view-id>/welcome.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
     <from-view-id>/visitors.jsp</from-view-id>
     <navigation-case>
       <from-action>#{pictureBean.update}</from-action>
@@ -93,7 +102,7 @@
     <managed-bean-class>
       edu.hawaii.photohunt.webapp.beans.LoginBean
     </managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
+    <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
 </faces-config>
