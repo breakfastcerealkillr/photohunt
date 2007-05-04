@@ -22,8 +22,9 @@ http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
   * To log out from Photo Hunt, click on "Log Out".
 
 = Approving pictures in Photo Hunt =
+
+http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png
   * Click on "Review Photos" on the left side of the page.
-  * You should see a page similar to this:
   * To approve a picture, click and drag the picture to the approved pictures panel.
   * Click on the "Approve" button in the approved panel to submit the pictures.
   * To delete a picture, click and drag the picture to the deleted pictures panel.
