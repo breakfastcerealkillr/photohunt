@@ -35,31 +35,25 @@
         <rich:dragIndicator id="indicator"/>
         <h:form>
         <div class="deleted">
-          <rich:panel id="deleted">
-       	    <f:facet name="header">
-		      <h:outputText value="Deleted pictures" />
-		    </f:facet>
+          <rich:simpleTogglePanel id="deleted" switchType="AJAX" label="Deleted Pictures">
 		    <rich:dropSupport acceptedTypes="pic" reRender="approved, pending, deleted" dropValue="delete"
               dropListener="#{eventBean.processDrop}" id="deleteDrop"/>
-          <rich:dataGrid value="#{approvalBean.deletedPictures}" var="picture" id="deletedGrid"
-            columns="2" rendered="#{!empty approvalBean.deletedPictures}">
-            <f:facet name="footer">
+           <rich:dataGrid value="#{approvalBean.deletedPictures}" var="picture" id="deletedGrid"
+              columns="2" rendered="#{!empty approvalBean.deletedPictures}">
+              <f:facet name="footer">
                 <a4j:commandButton reRender="deleted" action="#{approvalBean.delete}" value="Delete" />
-            </f:facet>
-            <a4j:outputPanel>
-              <rich:dragSupport dragIndicator=":indicator" dragType="pic" dragValue="#{picture}"/>
-              <h:graphicImage url="#{picture.path}" height="75" width="100"/>
-              <h:outputText value="#{picture.tagLabel}" style="display:block"/>
-            </a4j:outputPanel>
-          </rich:dataGrid>
-		  </rich:panel>
+              </f:facet>
+              <a4j:outputPanel>
+                <rich:dragSupport dragIndicator=":indicator" dragType="pic" dragValue="#{picture}"/>
+                <h:graphicImage url="#{picture.path}" height="75" width="100"/>
+                <h:outputText value="#{picture.tagLabel}" style="display:block"/>
+              </a4j:outputPanel>
+            </rich:dataGrid>
+		  </rich:simpleTogglePanel>
         </div>
         
         <div class="pending-approved">
-        <rich:panel id="pending">
-          <f:facet name="header">
-            <h:outputText value="Pending Pictures" />
-          </f:facet>
+        <rich:simpleTogglePanel id="pending" switchType="AJAX" label="Pending Pictures">
           <rich:dropSupport acceptedTypes="pic" reRender="approved, pending, deleted" dropValue="pending"
             dropListener="#{eventBean.processDrop}" id="pendingDrop">
           </rich:dropSupport>
@@ -74,14 +68,11 @@
               <rich:datascroller for="pendingGrid" reRender="pending"/>
             </f:facet>
           </rich:dataGrid>
-        </rich:panel>
+        </rich:simpleTogglePanel>
         
         <rich:spacer height="10" />
         
-        <rich:panel id="approved">
-          <f:facet name="header">
-            <h:outputText value="Approved Pictures"/>
-          </f:facet>
+        <rich:simpleTogglePanel id="approved" switchType="AJAX" label="Approved Pictures">
           <rich:dropSupport acceptedTypes="pic" reRender="approved, pending, deleted" dropValue="approve"
             dropListener="#{eventBean.processDrop}" id="approveDrop">
           </rich:dropSupport>
@@ -96,7 +87,7 @@
               <h:outputText value="#{picture.tagLabel}" style="display:block"/>
             </a4j:outputPanel>
           </rich:dataGrid>
-        </rich:panel>
+        </rich:simpleTogglePanel>
         </div>
         </h:form>
         
