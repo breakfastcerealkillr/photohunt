@@ -9,7 +9,8 @@ This guide is for new users to the Photo Hunt web application, specifically Bish
 = Log In =
 
   # Click on "Photo Hunt" on the main Bishop Museum http://www.bishopmuseum.org website. 
-  # Enter in your user name and password.
+  # Click on the employee's link at the top.
+  # Enter your username and password.
 
 = Functions =
 You will see a summary page like below.
@@ -21,7 +22,7 @@ http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png
   * To edit account settings, click on "Preferences".
   * To log out from Photo Hunt, click on "Log Out".
 
-= Approving pictures in Photo Hunt =
+ = Approving pictures in Photo Hunt =
 
 http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png
   * Click on "Review Photos" on the left side of the page.
@@ -30,7 +31,7 @@ http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png
   * To delete a picture, click and drag the picture to the deleted pictures panel.
   * Click on the "Delete" button in the deleted pictures panel to erase the pictures permanently.
 
-= Managing pictures in Photo Hunt =
+ = Managing pictures in Photo Hunt =
   * Click on "Manage Photos" on the left side of the page.
   * Select a tag to display.
   * Again, a list of the approved pictures will be displayed with check boxes next to them.  This time, you may select pictures to delete by clicking on the box.  When you are finished, click on submit at the bottom of the page.
