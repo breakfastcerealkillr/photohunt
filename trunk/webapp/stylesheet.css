@@ -1,10 +1,10 @@
 .sidebar {float:left; padding: 5px}
 .content {padding: 10px; margin-top: 5px; margin-left: 155px}
 .content h3 {margin-top: 0}
-.approved {background-color: #bedfc4; padding: 10px margin-top: 5px; margin-left: 155px; margin-right: 20px}
+.deleted {float:right; width: 25%; margin-left: 5px}
+.pending-approved {width: 75%}
 .navbar {float: top; background-color: #2D73B9; padding: 10px}
 .navbar a {text-decoration: none; font-weight: bold; color: white}
 #side-navbar a {display: block; padding: 5px; text-decoration: none}
 #tagbrowser {margin-top: 30px; padding: 5px; background-color: #FEF886}
-#deletedTable {background-color: #f9c8d8; padding: 10px; margin-right: 20px}
 body {font-family: arial}

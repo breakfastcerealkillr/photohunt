@@ -2,6 +2,8 @@ package edu.hawaii.photohunt.webapp.support;
 
 import java.io.File;
 
+import javax.faces.model.SelectItem;
+
 /**
  * The PictureFile class contains the information needed to display a picture in Photo Hunt. This
  * includes the pathname as well as the approval status.
@@ -17,16 +19,10 @@ public class PictureFile {
   private final String path;
   
   /**The tag description of this picture.*/
-  private final String tag;
-
-  /**
-   * The status of this picture. True if the picture is to be approved. False if it is to be
-   * denied.
-   */
-  private boolean approved;
-
-  /** Marks the picture for deletion.  Set to true to delete the picture, false otherwise.*/
-  private boolean delete;
+  private final String tagLabel;
+  
+  /**The tag value of this picture.*/
+  private final String tagValue;
 
   /**
    * Constructor for the PictureFile class.  The approval status defaults to false.
@@ -35,10 +31,10 @@ public class PictureFile {
    * @param file The file representing the picture.
    */
   public PictureFile(String directory, File file) {
+    this.tagValue = directory;
     this.directory = directory;
-    this.tag = directory;
+    this.tagLabel = directory;
     this.path = this.directory + file.getName();
-    this.approved = false;
   }
   
   /**
@@ -48,11 +44,11 @@ public class PictureFile {
    * @param directory The file directory for this picture.
    * @param file The file representing the picture.
    */
-  public PictureFile(String tag, String directory, File file) {
-    this.tag = tag;
+  public PictureFile(SelectItem tag, String directory, File file) {
+    this.tagValue = tag.getValue().toString();
+    this.tagLabel = tag.getLabel();
     this.directory = directory;
     this.path = this.directory + file.getName();
-    this.approved = false;
   }
 
   /**
@@ -78,44 +74,16 @@ public class PictureFile {
    * 
    * @return The tag description for this picture.
    */
-  public String getTag() {
-    return this.tag;
+  public String getTagLabel() {
+    return this.tagLabel;
   }
 
   /**
-   * Set the approval status of this picture.
+   * Get the tag value of the picture.
    * 
-   * @param status The boolean value to set the status to.
+   * @return The tag value for this picture.
    */
-  public void setApproved(boolean status) {
-    this.approved = status;
+  public String getTagValue() {
+    return this.tagValue;
   }
-
-  /**
-   * Get the approval status of this picture.
-   * 
-   * @return The current approval status of this picture.
-   */
-  public boolean isApproved() {
-    return this.approved;
-  }
-
-  /**
-   * Mark the picture for deletion.
-   * 
-   * @param delete True if the picture is to be deleted, false otherwise.
-   */
-  public void setDelete(boolean delete) {
-    this.delete = delete;
-  }
-
-  /**
-   * Get the deletion status of the picture.
-   * 
-   * @return True if the picture is marked for deletion, false otherwise.
-   */
-  public boolean isDelete() {
-    return this.delete;
-  }
-
 }

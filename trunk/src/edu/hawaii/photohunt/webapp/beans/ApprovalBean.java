@@ -14,7 +14,7 @@ import edu.hawaii.photohunt.webapp.support.PictureFileFilter;
 
 /**
  * The ApprovalBean class is a bean that backs the approval pages in Photo Hunt. The approved
- * pictures are placed onto a stack before being submitted. The trash also uses a stack to keep
+ * pictures are added to a list before being submitted. The trash also uses a list to keep
  * track of what pictures need to be deleted.
  * 
  * @author George Lee
@@ -28,7 +28,7 @@ public class ApprovalBean {
   protected static final String APPROVED_DIRECTORY = "pictures/approved/";
 
   /** Array containing the valid tags. */
-  protected static final SelectItem[] TAG_ARRAY = {
+  static final SelectItem[] TAG_ARRAY = {
       new SelectItem("sample-pictures/", "Sample Pictures"),
       new SelectItem("antique-pictures/", "Antiques"),
       new SelectItem("hawaii-exhibit/", "Hawaiian Exhibit") };
@@ -60,7 +60,7 @@ public class ApprovalBean {
       // Find the picture files and add them to the list.
       PictureFileFilter pictureFilter = new PictureFileFilter();
       for (File inFile : Arrays.asList(pendingDir.listFiles(pictureFilter))) {
-        this.pendingPictures.add(new PictureFile(tag.getLabel(),
+        this.pendingPictures.add(new PictureFile(tag,
             PENDING_DIRECTORY + tag.getValue(), inFile));
       }
     }
@@ -131,7 +131,7 @@ public class ApprovalBean {
       }
 
       //Move the file from the origin to the destination.
-      if (origin != null) {
+      if ((origin != null) && !(origin.equals(destination))) {
         PictureFile picture = origin.get(origin.indexOf(file));
         destination.add(picture);
         origin.remove(picture);
@@ -144,17 +144,15 @@ public class ApprovalBean {
 
   /**
    * Approve the pictures in the approved pictures list and refresh the current page.
-   * 
-   * @return Returns "refresh" to refresh the current page.
    */
-  public String approve() {
+  public void approve() {
     for (PictureFile file : this.approvedPictures) {
       // Get the tag the file belongs to and find the path to that directory.
       File approvedFile = new File(this.servletContext.getRealPath(file.getPath()));
       
       // Destination directory.
       File destDir = new File(this.servletContext.getRealPath(APPROVED_DIRECTORY
-          + file.getDirectory()));
+          + file.getTagValue()));
 
       // Move the file.
       approvedFile.renameTo(new File(destDir, approvedFile.getName()));
@@ -162,8 +160,20 @@ public class ApprovalBean {
 
     //Clear the approved list.
     this.approvedPictures.clear();
-    
-    return "refresh";
   }
 
+  /**
+   * Delete the pictures in the deleted pictures list and refresh the current page.
+   */
+  public void delete() {
+    for (PictureFile file : this.deletedPictures) {
+      File deletedFile = new File(this.servletContext.getRealPath(file.getPath()));
+      
+      //Delete this file.
+      deletedFile.delete();
+    }
+    
+    //Clear the deleted pictures list.
+    this.deletedPictures.clear();
+  }
 }
