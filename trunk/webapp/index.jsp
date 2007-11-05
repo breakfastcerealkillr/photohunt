@@ -1,5 +1,0 @@
-<html>
- <body>
-  <jsp:forward page="welcome.jsf" />
- </body>
-</html>
