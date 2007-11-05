@@ -1,0 +1,28 @@
+<project name="dist-bin" default="dist-bin">
+  <description>
+  Provides the target for building a binary distribution for Photo Hunt.
+  </description>
+
+  <import file="tomcat.build.xml"/>
+
+  <target name="dist-bin" depends="tomcat.install" description="Create a distribution package.">
+    <!-- Define the directories and distribution name -->
+    <property name="dist.dir" location="${build.dir}/dist" />
+    <property name="tmp.dir" location="${basedir}/tmp" />
+    <property name="dist.name" value="${system.name}-${version}-bin" />
+
+    <!-- Copy distribution files to the tmp dir. -->
+    <mkdir dir="${tmp.dir}/${dist.name}" />
+    <copy todir="${tmp.dir}/${dist.name}" file="${build.dir}/${system.name}.jar" />
+    <copy todir="${tmp.dir}/${dist.name}/war">
+      <fileset dir="${build.dir}/war" excludes="**/.svn/*, **/*~, tmp/**"/>
+    </copy>
+
+    <!-- Create the zip distribution of this system, and then delete the tmp dir. -->
+    <mkdir dir="${dist.dir}" />
+    <zip zipfile="${dist.dir}/${dist.name}.zip" basedir="${tmp.dir}" />
+    <delete dir="${tmp.dir}" />
+  </target>
+
+</project>
+

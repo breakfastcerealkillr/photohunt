@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+  
+  <navigation-rule>
+    <from-view-id>/login.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{loginBean.login}</from-action>
+      <from-outcome>continue</from-outcome>
+      <to-view-id>/staff.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/*</from-view-id>
+    <navigation-case>
+      <from-action>#{loginBean.logout}</from-action>
+      <from-outcome>logout</from-outcome>
+      <to-view-id>/welcome.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/visitors.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{pictureBean.update}</from-action>
+      <from-outcome>refresh</from-outcome>
+      <to-view-id>/visitors.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/approval.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{approvalBean.approve}</from-action>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/approval.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/photo-management.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{pictureBean.sortPictures}</from-action>
+      <from-outcome>confirm</from-outcome>
+      <to-view-id>/photo-confirm.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-action>#{pictureBean.update}</from-action>
+      <from-outcome>refresh</from-outcome>
+      <to-view-id>/photo-management.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>/photo-confirm.jsp</from-view-id>
+    <navigation-case>
+      <from-action>#{pictureBean.deletePictures}</from-action>
+      <from-outcome>deleted</from-outcome>
+      <to-view-id>/photo-management.jsp.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>return</from-outcome>
+      <to-view-id>/photo-management.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <managed-bean>
+    <managed-bean-name>pictureBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.PictureBean
+    </managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>approvalBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.ApprovalBean
+    </managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>eventBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.EventBean
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>approvalBean</property-name>
+      <property-class>edu.hawaii.photohunt.webapp.beans.ApprovalBean</property-class>
+      <value>#{approvalBean}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>loginBean</managed-bean-name>
+    <managed-bean-class>
+      edu.hawaii.photohunt.webapp.beans.LoginBean
+    </managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+</faces-config>

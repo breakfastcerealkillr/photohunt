@@ -1,0 +1,5 @@
+to start up the HSQLDB, run:
+  java -classpath hsqldb.jar org.hsqldb.Server
+
+and then to run Hibernate, run:
+  ant -f hibernate.build.xml run -Daction=store

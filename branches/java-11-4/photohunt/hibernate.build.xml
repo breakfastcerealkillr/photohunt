@@ -1,0 +1,60 @@
+<project name="hibernate-tutorial" default="compile">
+
+    <property name="sourcedir" value="${basedir}/src"/>
+    <property name="targetdir" value="${basedir}/bin"/>
+    <property name="librarydir" value="${basedir}/lib"/>
+
+  <property environment="env"/> 
+  
+  <available file="${env.JUNIT_HOME}" type="dir" property="junit.available"/>
+  <fail message="This package requires JUnit to be installed and JUNIT_HOME defined" unless="junit.available"/>
+
+
+  <path id="libraries">
+    <fileset file="${env.JUNIT_HOME}/junit*.jar"/>
+     <fileset file="${librarydir}/*.jar"/>
+    <fileset file="${librarydir}/jar/activation.jar"/>
+    <fileset file="${librarydir}/jar/imap.jar" />
+    <fileset file="${librarydir}/jar/mail.jar" />
+    <fileset file="${librarydir}/jar/mailapi.jar" />
+    <fileset file="${librarydir}/jar/pop3.jar" />
+    <fileset file="${librarydir}/jar/smtp.jar" />
+    <fileset file="${librarydir}/hibernate3.jar" />
+    <fileset file="${librarydir}/hsqldb.jar" />
+    <fileset file="${librarydir}/log4j-1.2.11.jar" />    
+    <fileset file="${basedir}/webapp/WEB-INF/lib/jsf-api.jar" />
+    <fileset file="${basedir}/webapp/WEB-INF/lib/servlet-2_5-api.jar" />
+   </path> 
+
+    <target name="clean">
+        <delete dir="${targetdir}"/>
+        <mkdir dir="${targetdir}"/>
+    </target>
+
+    <target name="compile" depends="clean, copy-resources">
+      <javac srcdir="${sourcedir}"
+             destdir="${targetdir}"
+             classpathref="libraries"/>
+    </target>
+
+    <target name="copy-resources">
+        <copy todir="${targetdir}">
+            <fileset dir="${sourcedir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+  
+  <target name="run" depends="compile">
+      <java fork="true" classname="edu.hawaii.photohunt.db.EventManager" classpathref="libraries">
+          <classpath path="${targetdir}"/>
+          <arg value="${action}"/>
+      </java>
+  </target>
+  
+
+  <target name="convertLineEndings" description="Makes line endings compatible with host platform.">
+    <fixcrlf srcdir="${basedir}" includes="*.build.xml"/>
+  </target>
+
+</project>
