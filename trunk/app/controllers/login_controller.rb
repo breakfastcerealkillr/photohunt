@@ -1,5 +1,9 @@
 class LoginController < ApplicationController
 
+  def index
+    redirect_to(:action => "login")
+  end
+  
   def add_user
     @user = User.new(params[:user])
     if request.post? and @user.save
@@ -17,7 +21,7 @@ class LoginController < ApplicationController
         session[:user_id] = user.id
         uri = session[:original_uri]
         session[:original_uri] = nil
-        redirect_to(uri || { :action => "index" })
+        redirect_to(uri || { :action => "login" })
       else
         flash[:notice] = "Invalid user/password combination"
       end

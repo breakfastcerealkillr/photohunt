@@ -1,0 +1,10 @@
+<% form_for(:picture,
+ 	:url => {:action => 'save'},
+	:html => {:multipart => true}) do |form| %>
+		Tag: <%= form.text_field("tag") %><br/>
+		Date: <%= form.text_field("date")%><br/>
+		Description: <%=form.text_field("description") %><br/>
+		User name: <%= form.text_field("user")%><br/>
+		Picture: <%= form.file_field("uploaded_picture") %><br/>
+	<%= submit_tag("Upload picture")%>
+<% end %>
