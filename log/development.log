@@ -1,0 +1,1105 @@
+
+
+Processing LoginController#index (for 127.0.0.1 at 2007-11-05 13:26:29) [GET]
+  Session ID: d441908021823bdb15024e59d360fde5
+  Parameters: {"action"=>"index", "controller"=>"login"}
+Redirected to http://localhost:3002/login/login
+Completed in 0.00320 (312 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-11-05 13:26:30) [GET]
+  Session ID: d441908021823bdb15024e59d360fde5
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering login/login
+Completed in 0.00870 (114 reqs/sec) | Rendering: 0.00710 (81%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#add_user (for 127.0.0.1 at 2007-11-05 13:26:41) [GET]
+  Session ID: d441908021823bdb15024e59d360fde5
+  Parameters: {"action"=>"add_user", "controller"=>"login"}
+  [4;36;1mUser Columns (0.052151)[0m   [0;1mSHOW FIELDS FROM users[0m
+Rendering login/add_user
+Completed in 0.12052 (8 reqs/sec) | Rendering: 0.00857 (7%) | DB: 0.05215 (43%) | 200 OK [http://localhost/login/add_user]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-11-05 13:26:56) [GET]
+  Session ID: d441908021823bdb15024e59d360fde5
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering login/login
+Completed in 0.00365 (274 reqs/sec) | Rendering: 0.00254 (69%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2007-11-06 10:53:30) [GET]
+  Session ID: 0fafcc6e1c79e83dadf05e62e0179010
+  Parameters: {"action"=>"index", "controller"=>"login"}
+Redirected to http://localhost:3002/login/login
+Completed in 0.00324 (308 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-11-06 10:53:30) [GET]
+  Session ID: 0fafcc6e1c79e83dadf05e62e0179010
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering login/login
+Completed in 0.00622 (160 reqs/sec) | Rendering: 0.00505 (81%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#add_user (for 127.0.0.1 at 2007-11-06 10:53:36) [GET]
+  Session ID: 0fafcc6e1c79e83dadf05e62e0179010
+  Parameters: {"action"=>"add_user", "controller"=>"login"}
+  [4;36;1mUser Columns (0.051854)[0m   [0;1mSHOW FIELDS FROM users[0m
+Rendering login/add_user
+Completed in 0.39790 (2 reqs/sec) | Rendering: 0.01879 (4%) | DB: 0.05185 (13%) | 200 OK [http://localhost/login/add_user]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2007-11-08 15:40:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"index", "controller"=>"login"}
+Redirected to http://localhost:3000/login/login
+Completed in 0.00325 (308 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-11-08 15:40:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering login/login
+Completed in 0.02906 (34 reqs/sec) | Rendering: 0.02796 (96%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#add_user (for 127.0.0.1 at 2007-11-08 15:41:38) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"add_user", "controller"=>"login"}
+  [4;36;1mUser Columns (0.138312)[0m   [0;1mSHOW FIELDS FROM users[0m
+Rendering login/add_user
+Completed in 0.21797 (4 reqs/sec) | Rendering: 0.01885 (8%) | DB: 0.13831 (63%) | 200 OK [http://localhost/login/add_user]
+  [4;36;1mSQL (0.000173)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.026009)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreatePictures (3)
+  [4;36;1mSQL (0.146492)[0m   [0;1mCREATE TABLE approved_pictures (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user` varchar(255) DEFAULT NULL, `tag` varchar(255) DEFAULT NULL, `description` varchar(255) DEFAULT NULL, `date` varchar(255) DEFAULT NULL, `score` int DEFAULT NULL, `content_type` varchar(255) DEFAULT NULL, `data` blob(1048576) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001034)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000640)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000674)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.006390)[0m   [0;1mSHOW FIELDS FROM approved_pictures[0m
+  [4;35;1mSQL (0.007344)[0m   [0mSHOW KEYS FROM approved_pictures[0m
+  [4;36;1mSQL (0.005628)[0m   [0;1mSHOW FIELDS FROM sessions[0m
+  [4;35;1mSQL (0.007107)[0m   [0mSHOW KEYS FROM sessions[0m
+  [4;36;1mSQL (0.005482)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mSQL (0.007050)[0m   [0mSHOW KEYS FROM users[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreatePictures (3)
+  [4;36;1mSQL (0.399965)[0m   [0;1mDROP TABLE approved_pictures[0m
+  [4;35;1mSQL (0.000445)[0m   [0mUPDATE schema_info SET version = 2[0m
+Reached target version: 2
+  [4;36;1mSQL (0.000466)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.002659)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.005601)[0m   [0;1mSHOW FIELDS FROM sessions[0m
+  [4;35;1mSQL (0.006967)[0m   [0mSHOW KEYS FROM sessions[0m
+  [4;36;1mSQL (0.005496)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mSQL (0.007503)[0m   [0mSHOW KEYS FROM users[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000302)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000143)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000127)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreatePictures (3)
+  [4;36;1mSQL (0.021180)[0m   [0;1mCREATE TABLE pictures (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user` varchar(255) DEFAULT NULL, `tag` varchar(255) DEFAULT NULL, `description` varchar(255) DEFAULT NULL, `date` varchar(255) DEFAULT NULL, `score` int DEFAULT NULL, `content_type` varchar(255) DEFAULT NULL, `data` blob(1048576) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000375)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000305)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000566)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.005850)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+  [4;35;1mSQL (0.008737)[0m   [0mSHOW KEYS FROM pictures[0m
+  [4;36;1mSQL (0.005232)[0m   [0;1mSHOW FIELDS FROM sessions[0m
+  [4;35;1mSQL (0.007701)[0m   [0mSHOW KEYS FROM sessions[0m
+  [4;36;1mSQL (0.005486)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mSQL (0.006823)[0m   [0mSHOW KEYS FROM users[0m
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2007-11-08 15:50:33) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"index", "controller"=>"pictures"}
+Redirected to http://localhost:3000/
+Completed in 0.00215 (465 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/pictures]
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2007-11-08 15:50:40) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"index", "controller"=>"pictures"}
+Redirected to http://localhost:3000/
+Completed in 0.00183 (547 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/pictures]
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 15:59:13) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+Rendering pictures/upload
+Completed in 0.00548 (182 reqs/sec) | Rendering: 0.00430 (78%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pictures/upload]
+
+
+Processing PicturesController#save (for 127.0.0.1 at 2007-11-08 15:59:40) [POST]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"commit"=>"Upload picture", "action"=>"save", "controller"=>"pictures", "picture"=>{"tag"=>"", "username"=>"", "description"=>"", "uploaded_picture"=>#<StringIO:0x3478ddc>}}
+
+
+ActionController::UnknownAction (No action responded to save):
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 16:08:31) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+
+
+NameError (uninitialized constant PicturesController::Picture):
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:477:in `const_missing'
+    /app/controllers/pictures_controller.rb:10:in `upload'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 16:09:56) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005429)[0m   [0mSHOW FIELDS FROM pictures[0m
+Rendering pictures/upload
+
+
+ActionView::TemplateError (undefined method `username' for #<Picture:0x35625f4>) on line #7 of app/views/pictures/upload.rhtml:
+4: 		Tag: <%= form.text_field("tag") %><br/>
+5: 		Date: <%= form.text_field("date")%><br/>
+6: 		Description: <%=form.text_field("description") %><br/>
+7: 		User name: <%= form.text_field("username")%><br/>
+8: 		Picture: <%= form.file_field("uploaded_picture") %><br/>
+9: 	<%= submit_tag("Upload picture")%>
+10: <% end %>
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1860:in `method_missing'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:356:in `value_before_type_cast'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:344:in `value_before_type_cast'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:259:in `to_input_field_tag'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:162:in `text_field'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:430:in `text_field'
+    #{RAILS_ROOT}/app/views/pictures/upload.rhtml:7:in `_run_rhtml_47app47views47pictures47upload46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:151:in `fields_for'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:127:in `form_for'
+    #{RAILS_ROOT}/app/views/pictures/upload.rhtml:1:in `_run_rhtml_47app47views47pictures47upload46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 16:10:23) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.014298)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Rendering pictures/upload
+Completed in 0.02608 (38 reqs/sec) | Rendering: 0.00454 (17%) | DB: 0.01430 (54%) | 200 OK [http://localhost/pictures/upload]
+
+
+Processing PicturesController#save (for 127.0.0.1 at 2007-11-08 16:10:44) [POST]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"commit"=>"Upload picture", "action"=>"save", "controller"=>"pictures", "picture"=>{"user"=>"me", "date"=>"now", "tag"=>"paper", "description"=>"something", "uploaded_picture"=>#<StringIO:0x35d8f9c>}}
+  [4;35;1mPicture Columns (0.005222)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mSQL (0.006730)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000491)[0m   [0mINSERT INTO pictures (`content_type`, `score`, `user`, `date`, `tag`, `description`, `data`) VALUES('image/jpeg', NULL, 'me', 'now', 'paper', 'something', x'ffd8ffe000104a46494600010100000100010000ffdb004300090607080706090807080a0a090b0d160f0d0c0c0d1b14151016201d2222201d1f1f2428342c242631271f1f2d3d2d3135373a3a3a232b3f443f384334393a37ffdb0043010a0a0a0d0c0d1a0f0f1a37251f253737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737ffc00011080044003103012200021101031101ffc4001b00010002030101000000000000000000000001060304050207ffc400361000010303020205080b0000000000000001000203040511061213211416313241345155758194b3d1071522365271749195b4d3ffc40014010100000000000000000000000000000000ffc40014110100000000000000000000000000000000ffda000c03010002110311003f00fb8222202222022220222202e66a2babecf40c9e1a53532cb51153c71710332e91e1832e20e064f9974d57b5af90dbbd6f45f1d881f59ea7c7ddba7fe507f9ad3a1d6845f5d68bddb9d6e9773238e7e38961748e6ee6c65c00c388ecc8e7d9daa2e361351797d5f54ec755991aee99355b9b2bb18fb45bc13cc63f1780e6bc5dac7729ee17a68b55bae36fba08b732a6b5f0b9bb19b7b044ee79e60839082e28aaba0a7bab60b85aef6f6493db6a1b0c72094cae746e8daf6ee7ed6ee700ec13b4671ed56a4128a110157f5af90dbbd6f45f1d8ac0abbae646456eb7be47b58c6dda88b9ce380071d9e282b7a8e2d3c6f5546bae5a162a82e1bd971b5b259c1c0efb8ced24fb072c2d5b7c5a63a753186ebf478e938add8d82d11b64272301a7a41c3bcc7079ab4d655d74952f7516aab3c14e7b91494a2473463c5dc619fd82f10d4dd1b2b0cdabacaf8c381735b441a5c33cc678e71f9e106ce9ecf58b547eb20feb44ac2ab5a5e68a7bf6a79209192466b21c398e0e1e4d17885654128a110162aaa682ae1741550c73c4eef472b039a7d8565441cbead587d0b6df748fe49d5ab0fa16dbee91fc97511060a2a1a4a088c5434b053c64e4b618c3013e7c00b3a220945088088880888808888088883fffd9')[0m
+  [4;36;1mSQL (0.000661)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/show/1
+Completed in 0.02577 (38 reqs/sec) | DB: 0.01310 (50%) | 302 Found [http://localhost/pictures/save]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2007-11-08 16:10:44) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.007356)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.004847)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+
+
+ActionController::MissingTemplate (Missing template /Users/George/Documents/rails/photohunt-rails/config/../app/views/pictures/show.rhtml):
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1205:in `assert_existence_of_template_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:804:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2007-11-08 16:12:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.014733)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.009297)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Rendering pictures/show
+Completed in 0.03632 (27 reqs/sec) | Rendering: 0.00583 (16%) | DB: 0.02403 (66%) | 200 OK [http://localhost/pictures/show/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:12:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005176)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.006531)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.13537 (7 reqs/sec) | Rendering: 0.00008 (0%) | DB: 0.01171 (8%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:13:05) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+Rendering pictures/list
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for picture in @pictures do %>
+3: 	  <img src=" url_for(:action => 'picture', :id => @picture.id) %>"/>
+4: 	<% end %>
+5: </div>
+
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:14:10) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+Rendering pictures/list
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for picture in @pictures %>
+3: 	  <img src=" url_for(:action => 'picture', :id => @picture.id) %>"/>
+4: 	<% end %>
+5: </div>
+
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:16:01) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+Rendering pictures/list
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for item in @pictures %>
+3: 	  <img src=" url_for(:action => 'picture', :id => @item.id) %>"/>
+4: 	<% end %>
+5: </div>
+
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:22:59) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+Rendering pictures/list
+
+
+ActionView::TemplateError (No such file or directory - /Users/George/Documents/rails/photohunt-rails/config/../app/views/pictures/list.rhtml) in app/views/pictures/list.rhtml:
+
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:440:in `mtime'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:440:in `compile_template?'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:317:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:24:51) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000377)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+Completed in 0.10719 (9 reqs/sec) | Rendering: 0.00123 (1%) | DB: 0.00038 (0%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2007-11-08 16:25:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.014430)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+  [4;35;1mPicture Load (0.006907)[0m   [0mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Rendering pictures/show
+Completed in 0.03019 (33 reqs/sec) | Rendering: 0.00276 (9%) | DB: 0.02134 (70%) | 200 OK [http://localhost/pictures/show/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:25:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.005146)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+  [4;35;1mPicture Load (0.008487)[0m   [0mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.02239 (44 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01363 (60%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 16:25:25) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.014279)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Rendering pictures/upload
+Completed in 0.02457 (40 reqs/sec) | Rendering: 0.00447 (18%) | DB: 0.01428 (58%) | 200 OK [http://localhost/pictures/upload]
+
+
+Processing PicturesController#save (for 127.0.0.1 at 2007-11-08 16:25:43) [POST]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"commit"=>"Upload picture", "action"=>"save", "controller"=>"pictures", "picture"=>{"user"=>"blah", "date"=>"blah", "tag"=>"something else", "description"=>"blah", "uploaded_picture"=>#<StringIO:0x353fe14>}}
+  [4;35;1mPicture Columns (0.005240)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mSQL (0.007835)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000479)[0m   [0mINSERT INTO pictures (`content_type`, `score`, `user`, `date`, `tag`, `description`, `data`) VALUES('image/jpeg', NULL, 'blah', 'blah', 'something else', 'blah', x'ffd8ffe000104a46494600010100000100010000ffdb004300090607080706090807080a0a090b0d160f0d0c0c0d1b14151016201d2222201d1f1f2428342c242631271f1f2d3d2d3135373a3a3a232b3f443f384334393a37ffdb0043010a0a0a0d0c0d1a0f0f1a37251f253737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737ffc00011080068006803012200021101031101ffc4001b00010002030101000000000000000000000004060305070102ffc40034100002010302040403070403000000000001020300041105210612314113516171072291153281a1b1c1d1234252921433e1ffc4001801010101010100000000000000000000000003010204ffc4001d110101000203010101000000000000000000010211032131411251ffda000c03010002110311003f00ee14a5281414a0a05294a05294a05294a05294a05294a05298a6281414c578cca8accec155464927000a0f6b45aff16695a13725dc923cb8c98e25e62befd855635ee2db89f526b6b3b868ac882bcc8a0339f3c9dc0f6c553b5ae59c14897af53d6ad8f175ba9dcff8e8c78fac9caf816b3306eecca3f4cd7adc756e9bb59c98ef8901fdab9e70ed9da246cd76cf232b722c61f014601edbf7a97a85bda6e6169507973e7f5aa4e2c75e39fdddaf9a7f1ee9372e23b912dabf72ebcc9fec3f702acf0cd14f12cb0489246c32ae8c083ec6b852dce4a5b476eadf3639f382735bfd37569f876e91ade5636e5c78d11e8e3b9c7638ef5c5e29f1d4cffaeb34a89a76a369a943e2d9ccb2018e65077427b11daa5e2a1e285298a50294a502b9bf1ef1197bc1696533785082b28070b236771eb8c7d7356fe2fd4fecad0e7994812c9fd28fdcf7fc064fe15c96d34c9f5394b1461020e666c6c07fed5b8b1fa9e77e33d898e75925704b630be82a2dcc8d0c6eb1e304f52326b696cb1db4cf0bae6374c20ff161d2be238639670d2a8c28381e66ae92bb6b73702465488f36e4f29cf37ad6c92df50b80a5a178d0ef971cbfad659e18629d5c6d83daa53de9f0b05b38ac91bb60b910db2a98c05741f7879f9d7c59ccb7938695490bbf2f99fe2b12db5c6a970b0c11b3731c6474f5fcab611db47a6cf10c7344a71263ab0f3ad1934ed566d0f521776c3981f96446df9972091efb6c6bad595d437d6915d5b3878a540ca4791ae433c71cb37864009cdd73daaffc0d77035949648555e272ca99fed3dc0f7fdbcea5cb8f5b7785f8b35294af3aa5294a0a2fc528ee26874f48f1e087767f9bab6001b7b1355eb7bef02c56047257a9f5356bf88ce12dad327ab3fe82b96dc5c4ab2308f75af4f1dd628e7375bdb44fb4756b5b4527fad2aa923b0cee7e99ab95f585b58de5d5d5ee97a6dbe8d6e3e690233ccf91b6394edb91d47f3544e18d41b4ed462bc100b874ce109c750475c1c75ade5bf102d95c6a52dc409326a4c4cb049210a339d81c6fb1c74ec2994caf84b231ae80b2ea90c7730dda4570430000c401c9e4524fdf6008ce318f33585f8364d3959f5dd44a46642b125a47ceeea0fde25b007b6f563b7e2f64b5821f02379630144ac7c86338f3c7ad79aaf12c1751013e9f04ccbba176381f877fad6eb237192c74c8acf45b48ac8b185fc49ae2f4c4548881dbf2c6de9d2a99a8dd23c8de1925727973d71db353ee38cee60bed36586d814b384c4f08970b30231923181d3c8d57a2b8f1ef649fc208ad2165881c8404ecbeb8e94c6d9d56593d797534822c8621874ab1fc3ab9bd9788e1610c86231b24cea0f2aed9193ee056a6686321a5b8f918f41d00ab97c3dd42384a69f1042b373485bb938fe00fa53397f34c7d5f694a57957294a5053be25d934da5c1768c14c1261b2a7756f5f702b9dc42d6e26482d83f391b961b67bef5daf55b18b53d3e7b29fee4c85723aa9ec47a83835c8afed1741d4a685b0cd192a48f23dfe98abf15eb49673bdbe6cd05bdc18539579bfb8d42d7915a328a4b1352add56e99e72ff77ee0f33e7516e1d6247e74f11f3b1ce2ad7c71f59387aca6b88fc4baba11a21e4185e666381bf6f3a99a85a3c7911dd2c8be650afee6b4569a98899802c32d960474352cde4b7442c4acdcde42b259a2cbb39ed542c64399c9c138c83e5531601653a9c2f393824f6af87b68ad0c72e7322e1886f3af51d3509802d841bb7f15a326ac144072fccd8ed53be14594f26bb248ff00f45b44cc323a331c01f4e6ad5dc958dd8c83c45c1c0ce315d2f80f4a6d3b4512cf108ee2e8f88e3b85fed1f4dfdc9a9f2dd47584ed65a5295e658a52940aa771c708c9ad34777a73225d0c2caac70245ec7dc7e63daae3415b2d976cb36e39676ab6b34d693868dd576e61b961d4560ff8897330072100cb7afa574ae27e1b5d5d567b67486f23ce18aed27a311bf6ebefb5737d62d756d164e7bcb399220705c0e64ff61b57a71ce588dc6c43364905cab2e003b107b8ada1bb55842aaa2003a2a815a9864fb42709cfcabdd80ce2a3c89aa26d359ce8a7a3943823cc1aeb6c66bb792e64114409663818a9d65662cae224b8380c70effe24d6db846c2ede2335b599964390b215d976c1dced9ab6d97085bb112ea8de33e73e121f93d8f73f974accb298f75b25ad670ff092dc4b1df6a008895f9a38586f20ec5bc8671b77abd5295e6cb2b95dd5a4d4294a572d294a5028294a0508c8c11b1a52823269d6518609676ea18e58089467df6afb16b6e08616f102bd0f20da94addd34c91c6912048915117a2a8c01f857d5295814a52814a5283fffd9')[0m
+  [4;36;1mSQL (0.055726)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/show/2
+Completed in 0.08101 (12 reqs/sec) | DB: 0.06928 (85%) | 302 Found [http://localhost/pictures/save]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2007-11-08 16:25:43) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005436)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.006548)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Rendering pictures/show
+Completed in 0.02067 (48 reqs/sec) | Rendering: 0.00275 (13%) | DB: 0.01198 (57%) | 200 OK [http://localhost/pictures/show/2]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:25:43) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.014389)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.007087)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Sending data temp
+Completed in 0.02912 (34 reqs/sec) | Rendering: 0.00008 (0%) | DB: 0.02148 (73%) | 200 OK [http://localhost/pictures/picture/2]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:25:47) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000422)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+Completed in 0.00655 (152 reqs/sec) | Rendering: 0.00060 (9%) | DB: 0.00042 (6%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:26:13) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;36;1mPicture Load (0.000413)[0m   [0;1mSELECT * FROM pictures [0m
+Rendering pictures/list
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for item in @all_pictures %>
+3: 	  <img src="<%= url_for(:action => 'picture', :id => @item.id) %>"/>
+4: 	<% end %>
+5: </div>
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:3:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `each'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:26:58) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000449)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for item in @all_pictures %>
+3: 	  <img src="<%= url_for(:action => 'picture', :id => @item.id) %>"/>
+4: 	<% end %>
+5: </div>
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:3:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `each'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:30:15) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;36;1mPicture Load (0.000371)[0m   [0;1mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;35;1mPicture Columns (0.014515)[0m   [0mSHOW FIELDS FROM pictures[0m
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #4 of app/views/pictures/list.rhtml:
+1: <div class="picture-list">
+2: 	<% for picture in @all_pictures %>
+3: 	  <%= h(picture.user) %>
+4: 	  <!--><img src="<%= url_for(:action => 'picture', :id => @picture.id) %>"/> --><br/>
+5: 	<% end %>
+6: </div>
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:4:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `each'
+    #{RAILS_ROOT}/app/views/pictures/list.rhtml:2:in `_run_rhtml_47app47views47pictures47list46rhtml'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16:in `load'
+    /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/bin/mongrel_rails:16
+
+
+Rendering /Applications/Locomotive2/Bundles/standardRailsMar2007.locobundle/i386/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:30:40) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;36;1mPicture Load (0.002053)[0m   [0;1mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;35;1mPicture Columns (0.014032)[0m   [0mSHOW FIELDS FROM pictures[0m
+Completed in 0.02456 (40 reqs/sec) | Rendering: 0.00306 (12%) | DB: 0.03060 (124%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:31:39) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;36;1mPicture Load (0.001201)[0m   [0;1mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;35;1mPicture Columns (0.015035)[0m   [0mSHOW FIELDS FROM pictures[0m
+Completed in 0.03005 (33 reqs/sec) | Rendering: 0.00722 (24%) | DB: 0.01624 (54%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:31:39) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.006352)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+  [4;35;1mPicture Load (0.007784)[0m   [0mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.02175 (45 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01414 (64%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:31:39) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.005579)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+  [4;35;1mPicture Load (0.009173)[0m   [0mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Sending data temp
+Completed in 0.02304 (43 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01475 (64%) | 200 OK [http://localhost/pictures/picture/2]
+
+
+Processing PicturesController#upload (for 127.0.0.1 at 2007-11-08 16:31:53) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"upload", "controller"=>"pictures"}
+  [4;36;1mPicture Columns (0.016211)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Rendering pictures/upload
+Completed in 0.02827 (35 reqs/sec) | Rendering: 0.00472 (16%) | DB: 0.01621 (57%) | 200 OK [http://localhost/pictures/upload]
+
+
+Processing PicturesController#save (for 127.0.0.1 at 2007-11-08 16:32:09) [POST]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"commit"=>"Upload picture", "action"=>"save", "controller"=>"pictures", "picture"=>{"user"=>"", "date"=>"", "tag"=>"scissors", "description"=>"", "uploaded_picture"=>#<StringIO:0x33ea2bc>}}
+  [4;35;1mPicture Columns (0.005079)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mSQL (0.004044)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000361)[0m   [0mINSERT INTO pictures (`content_type`, `score`, `user`, `date`, `tag`, `description`, `data`) VALUES('image/jpeg', NULL, '', '', 'scissors', '', x'ffd8ffe000104a46494600010100000100010000ffdb004300090607080706090807080a0a090b0d160f0d0c0c0d1b14151016201d2222201d1f1f2428342c242631271f1f2d3d2d3135373a3a3a232b3f443f384334393a37ffdb0043010a0a0a0d0c0d1a0f0f1a37251f253737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737ffc00011080048005203012200021101031101ffc4001b00010100020301000000000000000000000007050601030408ffc4003810000103030106020804060300000000000102030400050611071221314161718113141522425191c11632527217232473b1f0a1c2f1ffc4001501010100000000000000000000000000000001ffc40014110100000000000000000000000000000000ffda000c03010002110311003f00b85294a05294a0529584ccb206719c7a55c9dd0ad037596c9fcee1e091f73d81a0d176a9b4797649fec6b0adb4c84a01912149de2d93c9291cb5d38927e62bcbb23b55d2fd35593641324ca69a514c44bee950539d5613cb8721df5f954d71fb54fccb284462ea96fca70bb21f3c7753aeaa51fb7722be9fb6408f6bb7c78109b0dc78ed843691d00a2bd54a52885294a057008238686a5b6f62e5b4d9536648bac9838f31214cc68f115baa7f77e251fa7d7b577cdd9bceb2a553f0ebf5c1a98d0de11e4b9be8774f87969c7b83414ca56bd82e46327b03531c425b96da8b529a1f0389e7e4781f3ad86806be76dafe522ff90fa9c4737a04025b4149e0e39f12bec3c3bd54f6af950c731d5b319cd2e1381699d0f1427e25f903a0ee454bf641889bf5ec5c6637adbe02828ef0e0ebbcd29ee0733e43ad154ad91e25f87ac4264c6b76e33805b81438b68f851f73dcf6adf294a214a52814a528260c5bf29c0674d6ec16b45e2c521e2f36c257bae304f303ff000f21cabb9ecef2f79b298581cb43bd14eba481e5ba3fcd52694102b1daf69966972e6db203ccaa5acb8fb6b0d94ad5a93aee93cf89acad932dda0c8be2605c90986ca095ca7df83ba965a4f15ab5e47877ab454f76df3a443c34371df0d893212d389eab4684903e835ed413fcae349cea5c7bcc3b94571c992fd4e25b77bf9ad3609d14a1d3f51f96bcebd1fc455620af61e2f1a148b7c4f70c87428aa439f1af504702797602b65d88e291e3daff00114909724ca0a43034d7d1b60e87cce9f4f13541918dd8a4021fb35b9cfdd1507ed411e4edb6f23f3dae01f02b1f7aee4edbee235deb3443e0f2c7daa96f6038a3c7dfb1421fb1053fe0d63dfd9661eeea45b0b7fdb7d63ef41a5276e3206bbd6164f84b23fe95ed87b6c4c8792c8c75e5bae1096d0cc90a2a27a69b82b30f6c6f167092daa7b5af44bfa8ff009159ec5b05b0e30af4b02315cad34f597cefafcba0f2a0c8313ef0e32db8bb325b52920942a6275492391d13cc52b2d4a05294a074a915de0bdb52cb2447664aa3d8ace4b45e48d7d2ba79eef4e9cfa01deb6bda6dfa45aed0d5bad60aaeb755fab464a79a75e0a5796a0789ed598c4ac31f19c7e35b59d356d3bcf39fad67f32bfde80506a5b32f59c7efb78c3653de9da860498ae91a7b8ad351a74e60f8eb547a9de00bf6ee679264cd8fe954a4c28cae8b4a7991f44fd6a8940a52940a52941cd2b8a50294a504d73697ec1da25a720bac57ddb4350d6ca5e69b2b0cba49e27e5c0ffba575dcb23bc67a836ac4a1c8896d77dd9774928281b879840eba8f3f0e74a506fd60b344b05a63db6023758653a6a79a8f551ee4f1ac852940a52940a52940a52941ffd9')[0m
+  [4;36;1mSQL (0.000729)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/show/3
+Completed in 0.02410 (41 reqs/sec) | DB: 0.01021 (42%) | 302 Found [http://localhost/pictures/save]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2007-11-08 16:32:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005363)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.006825)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 3) [0m
+Rendering pictures/show
+Completed in 0.02126 (47 reqs/sec) | Rendering: 0.00273 (12%) | DB: 0.01219 (57%) | 200 OK [http://localhost/pictures/show/3]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:32:09) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"3", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.004869)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.008588)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 3) [0m
+Sending data temp
+Completed in 0.02239 (44 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01346 (60%) | 200 OK [http://localhost/pictures/picture/3]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:32:15) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000422)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;36;1mPicture Columns (0.014239)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Completed in 0.02364 (42 reqs/sec) | Rendering: 0.00374 (15%) | DB: 0.01466 (62%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:32:15) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005172)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.008301)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Sending data temp
+Completed in 0.02110 (47 reqs/sec) | Rendering: 0.00009 (0%) | DB: 0.01347 (63%) | 200 OK [http://localhost/pictures/picture/2]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:32:15) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005074)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.009009)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.02186 (45 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01408 (64%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:32:16) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"3", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005305)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.009812)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 3) [0m
+Sending data temp
+Completed in 0.02459 (40 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01512 (61%) | 200 OK [http://localhost/pictures/picture/3]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:34:38) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000566)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;36;1mPicture Columns (0.015064)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Completed in 0.02920 (34 reqs/sec) | Rendering: 0.00474 (16%) | DB: 0.01563 (53%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:34:38) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.006242)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.008854)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.02849 (35 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01510 (52%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:34:39) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005663)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.007116)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Sending data temp
+Completed in 0.02181 (45 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01278 (58%) | 200 OK [http://localhost/pictures/picture/2]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:34:39) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"3", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005407)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.007848)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 3) [0m
+Sending data temp
+Completed in 0.02192 (45 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01326 (60%) | 200 OK [http://localhost/pictures/picture/3]
+
+
+Processing PicturesController#list (for 127.0.0.1 at 2007-11-08 16:39:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"list", "controller"=>"pictures"}
+  [4;35;1mPicture Load (0.000428)[0m   [0mSELECT * FROM pictures [0m
+Rendering pictures/list
+  [4;36;1mPicture Columns (0.015662)[0m   [0;1mSHOW FIELDS FROM pictures[0m
+Completed in 0.02948 (33 reqs/sec) | Rendering: 0.00555 (18%) | DB: 0.01609 (54%) | 200 OK [http://localhost/pictures/list]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:39:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"1", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.004802)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.005879)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 1) [0m
+Sending data temp
+Completed in 0.01802 (55 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01068 (59%) | 200 OK [http://localhost/pictures/picture/1]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:39:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"2", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.005895)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.007120)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 2) [0m
+Sending data temp
+Completed in 0.02258 (44 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.01302 (57%) | 200 OK [http://localhost/pictures/picture/2]
+
+
+Processing PicturesController#picture (for 127.0.0.1 at 2007-11-08 16:39:32) [GET]
+  Session ID: c2e16a5d068c2194543b305860d4f27e
+  Parameters: {"action"=>"picture", "id"=>"3", "controller"=>"pictures"}
+  [4;35;1mPicture Columns (0.006117)[0m   [0mSHOW FIELDS FROM pictures[0m
+  [4;36;1mPicture Load (0.005800)[0m   [0;1mSELECT * FROM pictures WHERE (pictures.`id` = 3) [0m
+Sending data temp
+Completed in 0.01987 (50 reqs/sec) | Rendering: 0.00009 (0%) | DB: 0.01192 (59%) | 200 OK [http://localhost/pictures/picture/3]
