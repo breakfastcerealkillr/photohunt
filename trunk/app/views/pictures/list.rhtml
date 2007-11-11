@@ -1,11 +1,23 @@
 <div class="picture-list">
-	<table>
+	<table border=3>
+		<tr>
+			<td><b><center>ID</center></b></td>
+			<td><b><center>Tag</center></b></td>
+			<td><b><center>Description</center></b></td>
+			<td><b><center>Data Taken</center></b></td>
+			<td><b><center>Photo</center></b></td>
+		</tr>
 	<% for picture in @all_pictures %>
-	<tr>
-    <td><img src="<%= url_for(:action => 'picture', :id => picture.id) %>"/></td>
-    <td><%= h(picture.id)%></td>
-    <td><%= h(picture.tag)%></td>
-	<% end %>
-	</tr>
+		<tr>
+			<td><%= h(picture.id)%></td>
+    	<td><%= h(picture.tag)%></td>
+			<td><%= h(picture.description)%></td>
+			<td><%= h(picture.date)%></td>
+			<td><%= link_to(image_tag(url_for(:action => 'picture', :id => picture.id)), 
+                  url_for(:action => 'picture', :id => picture.id)
+                 )%>
+ 			</td>
+			<% end %>
+		</tr>
 	</table>
 </div>
