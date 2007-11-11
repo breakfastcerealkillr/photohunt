@@ -2,13 +2,25 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>Admin: <%= controller.action_name %></title>
+	<title>Photo Hunt - Staff</title>
+	<%=stylesheet_link_tag "stylesheet", :media => "all" %>
 </head>
-<body id="admin">
-	<div id="main">
-	<% if flash[:notice] -%>
-		<div id="notice"><%= flash[:notice] %></div>
-	<% end -%>
-	  <%= yield :layout %>
+<body>
+	<div class="navbar">
+		<h2><%= link_to "Photo Hunt", :controller => 'pictures', :action => 'list' %></h2><br/>
+		<%= link_to "Visitors", :controller => 'pictures', :action => 'list' %>
+		<%= link_to "Administrators", :controller => 'admin', :action => 'index' %>
+	</div>
+	<hr>
+	<div class="side-navbar">
+		<%= link_to "Approve Photos", :controller => 'admin', :action => 'approve' %>
+		<%= link_to "Log Out", :controller => 'login', :action => 'logout' %>
+	</div>
+	<div class="content">
+		<% if flash[:notice] -%>
+			<div id="notice"><%= flash[:notice] %></div>
+		<% end -%>
+		<%= yield :layout %>
 	</div>
 </body>
+</html>
