@@ -1,5 +1,6 @@
 class LoginController < ApplicationController
 
+  layout "user"
   def index
     redirect_to(:action => "login")
   end
@@ -26,6 +27,12 @@ class LoginController < ApplicationController
         flash[:notice] = "Invalid user/password combination"
       end
     end
+  end
+  
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "Logged out"
+    redirect_to(:action => "login")
   end
   
 end

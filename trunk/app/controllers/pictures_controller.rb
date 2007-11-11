@@ -1,10 +1,12 @@
 class PicturesController < ApplicationController
+  layout "user"
+  
   def index
     redirect_to(:action => "list")
   end
   
   def list
-    @all_pictures = Picture.find(:all)
+    @all_pictures = Picture.find(:all, :conditions => "status='APPROVED'")
   end
   
   def upload
@@ -13,10 +15,11 @@ class PicturesController < ApplicationController
   
   def save
     @picture = Picture.new(params[:picture])
+    @picture.status = "PENDING"
     if @picture.save
       redirect_to(:action => 'list')
     else
-      render(:action => :get)
+      render(:action => :upload)
     end
   end
   

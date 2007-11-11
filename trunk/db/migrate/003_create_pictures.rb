@@ -12,6 +12,6 @@ class CreatePictures < ActiveRecord::Migration
     end
 
     def self.down
-      drop_table :approved_pictures
+      drop_table :pictures
     end
   end
