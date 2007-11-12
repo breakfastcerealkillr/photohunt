@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Photo Hunt</title>
+	<%=stylesheet_link_tag "stylesheet", :media => "all" %>
+</head>
+<body>
+	<div class="navbar">
+		<h2><%= link_to "Photo Hunt", :controller => 'pictures', :action => 'index' %></h2><br/>
+		<%= link_to "Visitors", :controller => 'pictures', :action => 'index' %>
+		<%= link_to "Administrators", :controller => 'admin', :action => 'index' %>
+	</div>
+	<hr>
+	<div class="side-navbar">
+		<%= link_to "Photo Upload", :controller => 'pictures', :action => 'upload' %>
+		<%= link_to "Browse Pictures", :controller => 'pictures', :action => 'index' %>
+	</div>
+	<div class="content">
+		<% if flash[:notice] -%>
+			<div id="notice"><%= flash[:notice] %></div>
+		<% end -%>
+		<%= yield :layout %>
+	</div>
+</body>
+</html>
