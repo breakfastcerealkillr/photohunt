@@ -1,0 +1,10 @@
+.side-navbar {float:left; padding: 5px; width: 140px;}
+.side-navbar a {display: block; padding: 5px; text-decoration: none}
+.content {padding: 10px; margin-top: 0px; margin-left: 155px}
+.deleted {float:right; width: 25%; margin-left: 5px}
+.pending-approved {width: 70%}
+.navbar {float: top; background-color: #2D73B9; padding: 10px}
+.navbar h2 {color: white; margin-top: 0px;}
+.navbar a {text-decoration: none; font-weight: bold; color: white; margin-right:10px;}
+#tagbrowser {margin-top: 30px; padding: 5px; background-color: #FEF886}
+body {font-family: arial}
