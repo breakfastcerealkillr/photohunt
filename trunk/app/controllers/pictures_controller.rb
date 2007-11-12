@@ -17,6 +17,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(params[:picture])
     @picture.status = "PENDING"
     if @picture.save
+      flash[:notice] = "Your picture has been submitted."
       redirect_to(:action => 'list')
     else
       render(:action => :upload)
