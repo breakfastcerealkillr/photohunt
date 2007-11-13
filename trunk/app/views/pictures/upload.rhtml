@@ -8,7 +8,10 @@
 	:html => {:multipart => true}) do |form| %>
 		<p>
 			<label for="tag">Tag:</label>
-			<%= form.text_field("tag") %>
+			<%= select("picture", 'tag',[
+				['Select a tag:', nil],
+				'Things that are 10000 years or older',
+				'Hawaiian canoe'] ) %>
 		</p>
 		<p>
 			<label for="date">Date:</label>

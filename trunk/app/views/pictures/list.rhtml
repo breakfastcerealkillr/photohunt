@@ -14,7 +14,7 @@
     	<td><%= h(picture.tag)%></td>
 			<td><%= h(picture.description)%></td>
 			<td><%= h(picture.date)%></td>
-			<td><%= link_to(image_tag(url_for(:action => 'picture', :id => picture.id)), 
+			<td><%= link_to(image_tag(url_for(:action => 'picture', :id => picture.id), :size => "100x100"), 
                   url_for(:action => 'picture', :id => picture.id)
                  )%>
  			</td>
