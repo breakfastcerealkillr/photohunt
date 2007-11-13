@@ -1,0 +1,36 @@
+<div class="picture-list">
+	<% form_tag do %>
+	<table border=3>
+		<tr>
+			<td><b><center>ID</center></b></td>
+			<td><b><center>Tag</center></b></td>
+			<td><b><center>Description</center></b></td>
+			<td><b><center>Date Taken</center></b></td>
+			<td><b><center>Photo</center></b></td>
+			<td><b><center>Status</center></b></td>
+		</tr>
+	<% for @picture in @all_pictures %>
+		<tr>
+			<td><%= h(@picture.id)%></td>
+    		<td><%= h(@picture.tag)%></td>
+			<td><%= h(@picture.description)%></td>
+			<td><%= h(@picture.date)%></td>
+			<td><%= link_to(image_tag( 
+				  url_for(:controller => 'pictures', :action => 'picture', :id => @picture.id), :size => "100x75"), 
+                  url_for(:controller => 'pictures', :action => 'picture', :id => @picture.id)
+                 )%>
+ 			</td>
+			<td>
+				<%= select "picture[]", 'status', [
+					['Pending approval', 'PENDING'],
+					['Approve', 'APPROVED'],
+					['Delete', 'DELETE' ]]
+				%>
+			</td>
+		</tr>
+		<% end %>
+
+	</table>
+	<%= submit_tag 'Submit' %>
+	<% end %>
+</div>
