@@ -1,0 +1,6 @@
+#labels Phase-Deploy
+The following items need to be installed for Photo Hunt to work properly.
+
+Hpricot gem
+OpenSSL
+Ruby OpenSSL extensions
