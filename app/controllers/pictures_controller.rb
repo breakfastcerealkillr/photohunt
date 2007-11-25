@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
   def save
     @picture = Picture.new(params[:picture])
     @picture.status = "PENDING"
+    @picture.score = 0
     if @picture.save
       flash[:notice] = "Your picture has been submitted."
       redirect_to(:action => 'list')
@@ -34,5 +35,13 @@ class PicturesController < ApplicationController
   
   def show
     @picture = Picture.find(params[:id])
+  end
+  
+  def rate
+    picture = Picture.find(params[:id])
+    picture.score += 1
+    picture.save
+    flash[:notice] = "Score updated!"
+    redirect_to(:action => 'list')
   end
 end
