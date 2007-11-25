@@ -16,7 +16,7 @@
 			<td><%= h(@picture.description)%></td>
 			<td><%= h(@picture.date)%></td>
 			<td><%= link_to(image_tag(
-				  url_for(:controller => 'pictures', :action => 'picture', :id => @picture.id), :size => "100x75"), 
+				  url_for(:controller => 'pictures', :action => 'picture', :id => @picture.id), :size => "100x100"), 
                   url_for(:controller => 'pictures', :action => 'picture', :id => @picture.id)
                  )%>
  			</td>
