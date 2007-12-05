@@ -9,22 +9,6 @@ class PicturesController < ApplicationController
     @all_pictures = Picture.find(:all, :conditions => "status='APPROVED'")
   end
   
-  def upload
-    @picture = Picture.new
-  end
-  
-  def save
-    @picture = Picture.new(params[:picture])
-    @picture.status = "PENDING"
-    @picture.score = 0
-    if @picture.save
-      flash[:notice] = "Your picture has been submitted."
-      redirect_to(:action => 'list')
-    else
-      render(:action => :upload)
-    end
-  end
-  
   def picture
     @picture = Picture.find(params[:id])
     send_data(@picture.data,

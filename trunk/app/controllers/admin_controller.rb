@@ -29,4 +29,12 @@ class AdminController < ApplicationController
       end
     end
   end
+  
+  def create_tag
+    @tag = Tag.new(params[:tag])
+    if request.post? and @tag.save
+      flash[:notice] = "Tag successfully created."
+      redirect_to(:action => 'index')
+    end
+  end
 end

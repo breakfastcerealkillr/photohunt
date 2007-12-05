@@ -1,6 +1,11 @@
 class Picture < ActiveRecord::Base
   
-  validates_presence_of :tag
+  validates_presence_of :tag, :user_email
+  
+  validates_format_of     :user_email,
+                          :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
+                          :message    => ' must be valid'
+                          
   validates_format_of :content_type,
     :with => /^image/,
     :message => " -- you can only upload pictures."
