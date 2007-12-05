@@ -1,0 +1,21 @@
+<div class="tag-form">
+
+	<%= error_messages_for 'tag' %>
+	
+	<fieldset>
+		<legend>Enter tag information:</legend>
+		<% form_for :tag do |form| %>
+			<p>
+				<label for="short_description">Short Description:</label>
+				<%= form.text_field :short_description, :size => 40 %>
+			</p>
+			
+			<p>
+				<label for="long_description">Long description (optional):</label>
+				<%= form.text_field :long_description, :size => 40 %>
+			</p>
+				
+			<%= submit_tag "Create tag", :class => "submit" %>
+		<% end %>
+	</fieldset>
+</div>
