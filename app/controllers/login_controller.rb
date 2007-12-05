@@ -8,9 +8,9 @@ class LoginController < ApplicationController
   def add_user
     @user = User.new(params[:user])
     if request.post? and @user.save
-      flash.now[:notice] = "User #{@user.name} created."
       @user = User.new
-      redirect_to({:action => "login"})
+      redirect_to(:action => "login")
+      flash[:notice] = "User #{@user.name} created."
     end
   end
   

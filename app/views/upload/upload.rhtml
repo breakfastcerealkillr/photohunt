@@ -1,0 +1,26 @@
+<%= error_messages_for 'picture' %>
+
+<fieldset>
+	<legend>Please enter information about the picture.</legend>
+	
+<% form_for(:picture,
+ 	:url => {:action => 'save'},
+	:html => {:multipart => true}) do |form| %>
+		<p>
+			<label for="tag">Tag:</label>
+			<%= select("picture", 'tag', @tags ) %>
+		</p>
+		<p>
+			<label for="description">Description (optional):</label>
+			<%=form.text_field("description") %>
+		</p>
+		<p>
+			<label for="user_email">Email Address:</label>
+			<%= form.text_field("user_email")%>
+		</p>
+		<p>
+			<label for="picture">Picture:</label><%= form.file_field("uploaded_picture") %>
+		</p>
+	<%= submit_tag("Upload picture")%>
+<% end %>
+</fieldset>
