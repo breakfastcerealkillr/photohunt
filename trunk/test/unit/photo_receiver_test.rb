@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/../test_helper'
+require 'photo_receiver'
 
 class PhotoReceiverTest < Test::Unit::TestCase
   FIXTURES_PATH = File.dirname(__FILE__) + '/../fixtures'
@@ -16,6 +17,11 @@ class PhotoReceiverTest < Test::Unit::TestCase
     @expected.mime_version = '1.0'
   end
 
+  def test_photo_receiver
+      email_text = read_fixture('hello-world.mail').join
+      PhotoReceiver.receive(email_text)
+  end
+  
   private
     def read_fixture(action)
       IO.readlines("#{FIXTURES_PATH}/photo_receiver/#{action}")
