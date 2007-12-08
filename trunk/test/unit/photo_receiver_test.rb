@@ -18,7 +18,7 @@ class PhotoReceiverTest < Test::Unit::TestCase
   end
 
   def test_photo_receiver
-    puts "Testing hello-world.mail"
+    puts "Testing message with attachment."
     email_text = read_fixture('hello-world.mail').join
     PhotoReceiver.receive(email_text)
     puts "Testing Sprint Picture Mail."
