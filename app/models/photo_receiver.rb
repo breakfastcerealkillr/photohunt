@@ -16,6 +16,7 @@ class PhotoReceiver < ActionMailer::Base
             :date => Date.today,
             :score => 0
           )
+          break
          
         elsif part.content_type =~ /text\/html/
           # Check for Sprint Picture Mail.
@@ -32,6 +33,8 @@ class PhotoReceiver < ActionMailer::Base
                 :score => 0
               )
             end
+            
+            break
           end
         end
         
@@ -39,6 +42,7 @@ class PhotoReceiver < ActionMailer::Base
       
       if @picture.save
         # Create reply email.
+        Notifier.deliver_received_picture(email.from[0])
       else
         raise "Could not save picture."
       end
