@@ -18,8 +18,12 @@ class PhotoReceiverTest < Test::Unit::TestCase
   end
 
   def test_photo_receiver
-      email_text = read_fixture('hello-world.mail').join
-      PhotoReceiver.receive(email_text)
+    puts "Testing hello-world.mail"
+    email_text = read_fixture('hello-world.mail').join
+    PhotoReceiver.receive(email_text)
+    puts "Testing Sprint Picture Mail."
+    email_text2 = read_fixture('sprint_picturemail.mail').join
+    PhotoReceiver.receive(email_text2)
   end
   
   private
