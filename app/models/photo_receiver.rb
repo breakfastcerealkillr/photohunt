@@ -4,7 +4,6 @@ require "open-uri"
 class PhotoReceiver < ActionMailer::Base
     # email is a TMail::Mail
     def receive(email)
-      puts email.from[0]
       # Iterate through parts of the email.
       email.parts.each_with_index do |part, index|
         if part.content_type =~ /^image/
@@ -14,7 +13,8 @@ class PhotoReceiver < ActionMailer::Base
             :content_type => part.content_type.chomp,
             :data => part.body,
             :status => 'PENDING',
-            :date => Date.today
+            :date => Date.today,
+            :score => 0
           )
          
         elsif part.content_type =~ /text\/html/
@@ -28,7 +28,8 @@ class PhotoReceiver < ActionMailer::Base
                 :content_type => p.content_type.chomp,
                 :data => p.read,
                 :status => 'PENDING',
-                :date => Date.today
+                :date => Date.today,
+                :score => 0
               )
             end
           end
