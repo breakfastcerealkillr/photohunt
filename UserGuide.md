@@ -1,0 +1,35 @@
+# Introduction #
+
+This guide is for new users to the Photo Hunt web application, specifically Bishop Museum staff members.
+
+
+# Log In #
+
+  1. Click on "Photo Hunt" on the main Bishop Museum http://www.bishopmuseum.org website.
+  1. Click on the employee's link at the top.
+  1. Enter your username and password.
+
+# Functions #
+You will see a summary page like below.
+
+> ![http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png](http://photohunt.googlecode.com/svn/trunk/screenshots/staff-page.png)
+  * To review pictures, click on "Review Photos".
+  * To manage or delete approved pictures, click on "Manage Pictures".
+  * To manage ongoing scavenger hunts or to create new one, click on "Manage Games".
+  * To edit account settings, click on "Preferences".
+  * To log out from Photo Hunt, click on "Log Out".
+
+> # Approving pictures in Photo Hunt #
+
+> ![http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png](http://photohunt.googlecode.com/svn/trunk/screenshots/approval.png)
+    * Click on "Review Photos" on the left side of the page.
+    * To approve a picture, click and drag the picture to the approved pictures panel.
+    * Click on the "Approve" button in the approved panel to submit the pictures.
+    * To delete a picture, click and drag the picture to the deleted pictures panel.
+    * Click on the "Delete" button in the deleted pictures panel to erase the pictures permanently.
+
+> # Managing pictures in Photo Hunt #
+    * Click on "Manage Photos" on the left side of the page.
+    * Select a tag to display.
+    * Again, a list of the approved pictures will be displayed with check boxes next to them.  This time, you may select pictures to delete by clicking on the box.  When you are finished, click on submit at the bottom of the page.
+    * A confirmation page will display the pictures marked for deletion.  Click on the continue button to permanently delete the pictures or click on "Go Back" to return to the previous page.

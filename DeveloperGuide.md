@@ -1,0 +1,99 @@
+# Introduction #
+To get started with the development of Photo Hunt, please follow this Developers Guide to set up your environment properly.
+
+
+# Basic Installation #
+These instructions assume that you have unzipped the zip file containing this system to create a directory containing the system components. A note to Unix users: due to a bug in java.util.zip, the directory permissions are munged if you unzip in Unix, and you won't be able to cd into interior directories.  To fix this, invoke the following from the parent directory of this system: chmod -R a+x <system directory>.
+
+  1. Install Java 1.5
+    * Install the Java JDK (the full JDK, not just the JRE) by following the instructions at http://java.sun.com.
+    * Set the JAVA\_HOME environment variable to point to your Java installation (for example, c:\java\jdk1.5.0\_08)
+    * Add JAVA\_HOME/bin to your PATH variable.
+
+  1. Install Ant 1.7
+    * Download and unzip apache-ant-1.7.0Beta1.zip (or later) from http://ant.apache.org/.
+    * Set the ANT\_HOME environment variable to point to your Ant installation (for example, c:\apache-ant-1.7.0Beta1)
+    * Add ANT\_HOME/bin to your PATH variable.
+
+  1. Install Tomcat 5.5.20
+    * Download and unzip apache-tomcat-5.5.20.zip from http://tomcat.apache.org/.  DO NOT download the "windows installer .exe" version.
+    * Set the CATALINA\_HOME environment variable to point to your Tomcat installation (why "Catalina"?  Beats me. But that's what it should be named.)
+    * Add CATALINA\_HOME/bin to your PATH variable.
+
+  1. Configure Tomcat for Ant-based deployment.
+    * Copy the "sample.tomcat-users.xml" file to 
+
+&lt;tomcat&gt;
+
+/conf/tomcat-users.xml.  You will overwrite the default tomcat-users.xml. This sets up an admin role and password consistent with the value found in tomcat.build.xml.
+
+  1. Configure Eclipse for building the system
+    * Under Window | Preferences | Java | Build Path | Classpath Variables, create three new Classpath Variables called ANT\_HOME, CATALINA\_HOME, and HTTPUNIT\_HOME. The values of these classpath variables should be the same as their corresponding environment variables.
+    * After you have done this, you should be able to import this project into your Eclipse workspace without error.
+
+# Invocation #
+  1. Basic compilation
+To perform a basic compilation, invoke "ant":
+
+C:\photohunt>ant
+
+  1. Basic Web Deployment
+
+To deploy this web application, first invoke "startup" to bring up Tomcat.
+
+Once Tomcat is running, invoke "ant -f tomcat.build.xml".  The results should look as follows:
+
+C:\photohunt>ant -f tomcat.build.xml
+
+  1. The web interface
+The web interface is quite simple.  Go to http://localhost:8080/photohunt/ to play around with it once you have successfully deployed the system.
+
+  1. Running JUnit Tests
+
+To run the JUnit tests over the system, invoke 'ant -f junit.build.xml'. The results should look as follows:
+
+C:\photohunt>ant -f junit.build.xml
+
+# Developer documentation #
+This distribution includes Eclipse project definition files. In addition, it includes the following developer build files and targets. For the external tools (Checkstyle, PMD, FindBugs, JUnit, SCLC), you must download them from their home pages, unzip them, and then set an environment variable (CHECKSTYLE\_HOME, PMD\_HOME, etc.) to point to this directory.
+
+  * checkstyle.build.xml
+Requires: checkstyle 4.2
+Runs Checkstyle on the system, using rules in lib/checkstyle/checkstyle.modules.xml
+Invocation: ant -f checkstyle.build.xml
+
+  * junit.build.xml
+Requires: JUnit 4.1
+Runs JUnit on the system, using Test case code in src//Test**.java.
+Invocation: ant -f junit.build.xml**
+
+  * javadoc.build.xml
+Runs JavaDoc on the system.
+Invocation: ant -f javadoc.build.xml
+
+  * findbugs.build.xml
+Requires: FindBugs 1.0.0
+Runs FindBugs on the system, using rules in lib/findbugs/findbugs.filter.xml
+Invocation: ant -f findbugs.build.xml
+
+  * pmd.build.xml
+Requires: PMD 3.7
+Runs PMD on the system, using rules in lib/pmd/pmd.rulesets.xml
+Invocation: ant -f pmd.build.xml
+
+  * sclc.build.xml
+Requires: SCLC 2.4.525
+Runs SCLC on the system.
+Invocation: ant -f sclc.build.xml
+
+  * dist.build.xml
+Creates a distribution zip file for this system.
+Invocation: ant -f dist.build.xml
+
+# Contact information #
+If you would like to know more about this software, or would like to be informed of future releases:
+
+  * Home page:  http://code.google.com/p/photohunt/
+  * Developer contact: Elayne Man (elaynem@hawaii.edu), George Lee (gelee@hawaii.edu)
+  * Configuration management repository: http://photohunt.googlecode.com/svn/
+  * Developer and user mailing lists: http://groups.google.com/group/photohunt-discuss

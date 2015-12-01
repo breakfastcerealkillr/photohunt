@@ -1,0 +1,16 @@
+# Contents #
+
+The images from the member process report in Hackystat will be posted here.  Analysis of each set of data will follow.
+
+> ## Week of 4/29 to 5/5 ##
+> ![http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png](http://photohunt.googlecode.com/svn/trunk/wiki/activetime.png)
+
+> George did a steady amount of work this week in preparation for 3.0.  Elayne put in quite a few hours this week in preparation for 3.0.
+
+> ![http://photohunt.googlecode.com/svn/trunk/wiki/commits.png](http://photohunt.googlecode.com/svn/trunk/wiki/commits.png)
+
+> The commit sensor hasn't been working for us lately.  We have committed items over the past few days, but they have not been recorded.
+
+> ![http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png](http://photohunt.googlecode.com/svn/trunk/wiki/unittest.png)
+
+> Some unit tests were run, mostly by George.  The web application does not have any unit tests at the moment.  Tests were run mostly to pass verification.

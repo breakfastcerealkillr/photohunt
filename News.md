@@ -1,0 +1,20 @@
+# 5/3/07 #
+> Version 3.0 of Photo Hunt will be out sometime on Friday.  Here's a small list of changes.
+  * A SecurityFilter was added.  Navigating to staff.jsp or approval.jsp will redirect you to a login page if you're not logged in.  Current username and password are both hard coded.  The username is "photohunt" and the password is "uhmics414".  Clicking on "Log Out" in the sidebar will log you out and redirect you to the front page.
+  * Drag and drop functionality was added to the approval page. Now to approve pictures, you simply drag the pictures to the approve panel and then click on the approve button. Similarly, to delete pictures, you simply drag the pictures to the delete panel and then click on the delete button.
+  * Various changes to the wiki pages.  Added some screenshots.
+
+# 4/4/07 #
+  * Version 2.0 of Photo Hunt will be out sometime on Friday.  Here's what currently works and what doesn't work.
+    * Clicking on the visitor's link takes you straight to the photo viewer.  The upload pictures link does not work.
+    * Clicking on the employee's link takes you to the staff welcome page.  The login page exists but it may or may not be used in the released version.  If it is, check this page for the username and password.
+    * On the staff welcome page, the "Review Photos" and "Manage Photos" links work, but the rest of them don't for now.
+    * It is possible that this list could change, but the remaining focus is more on making the web application more usable and presentable.
+    * Persistence mechanism works, but will need to be tied in together with existing pictures
+    * Included README files to help out first-time users for both binary and source distributions
+
+# 3/9/07 #
+  * A newer version of 1.0 with more complete functionality is now available for download.  There are two distributions, the binary and the source code.  Get them [here](http://code.google.com/p/photohunt/downloads/list).
+
+# 2/23/07 #
+  * Version 1.0 of Photo Hunt is here.  You can get it by clicking on the "Downloads" tab or by clicking [here](http://code.google.com/p/photohunt/downloads/list).
